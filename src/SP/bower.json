@@ -7,7 +7,13 @@
     "hammer.js": "2.0.4",
     "jquery": "2.1.4",
     "jquery-validation": "1.11.1",
-    "jquery-validation-unobtrusive": "3.2.2"
+    "jquery-validation-unobtrusive": "3.2.2",
+    "angular-resource": "~1.4.6",
+    "angular-sanitize": "~1.4.6",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-bootstrap": "~0.13.4",
+    "angular-animate": "~1.4.6",
+    "angular-route": "~1.4.6"
   },
   "resolutions": {
     "bootstrap": "~3.3.5"
