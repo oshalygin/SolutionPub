@@ -784,19 +784,19 @@ declare module angular {
          */
         (name: string): IFilterFunc;
     }
-    
+
     interface IFilterFunc {
         <T>(array: T[], expression: string | IFilterPatternObject | IFilterPredicateFunc<T>, comparator?: IFilterComparatorFunc<T>|boolean): T[];
     }
-    
+
     interface IFilterPatternObject {
         [name: string]: string;
     }
-    
+
     interface IFilterPredicateFunc<T> {
         (value: T, index: number, array: T[]): T[];
     }
-    
+
     interface IFilterComparatorFunc<T> {
         (actual: T, expected: T): boolean;
     }
