@@ -60,7 +60,8 @@ ClientBin/
 *.pfx
 *.publishsettings
 node_modules/
-/**/node_modules/
+src/SP/node_modules/**
+src/SP/node_modules
 orleans.codegen.cs
 
 # SQL Server files

@@ -3,8 +3,8 @@
   "description": "Solution Pub Blog and Playground",
   "author": "Oleg Shalygin oshalygin@gmail.com",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/oshalygin/SP"
+    "type": "git",
+    "url": "https://github.com/oshalygin/SP"
   },
   "version": "0.0.0",
   "devDependencies": {
