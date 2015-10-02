@@ -7,8 +7,8 @@
     <ProjectGuid>{5FDD0470-C172-4B37-99FE-57167F6D8C4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SP.BAL.Tests</RootNamespace>
-    <AssemblyName>SP.BAL.Tests</AssemblyName>
+    <RootNamespace>SP.BLL.Tests</RootNamespace>
+    <AssemblyName>SP.BLL.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

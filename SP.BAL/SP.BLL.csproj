@@ -7,8 +7,8 @@
     <ProjectGuid>{BB55AF55-4597-4116-AB72-F498BAEC9247}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SP.BAL</RootNamespace>
-    <AssemblyName>SP.BAL</AssemblyName>
+    <RootNamespace>SP.BLL</RootNamespace>
+    <AssemblyName>SP.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
