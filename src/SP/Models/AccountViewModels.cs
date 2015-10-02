@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Mvc.Rendering;
 
+//TODO: Microsoft why do you create these files in the root project, facepalm.  REFACTOR
 namespace SP.Models
 {
     public class ExternalLoginConfirmationViewModel

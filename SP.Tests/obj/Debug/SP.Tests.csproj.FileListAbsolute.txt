@@ -1,5 +1,0 @@
-C:\dev\SP\SP.Tests\bin\Debug\SP.Tests.dll
-C:\dev\SP\SP.Tests\bin\Debug\SP.Tests.pdb
-C:\dev\SP\SP.Tests\obj\Debug\SP.Tests.csprojResolveAssemblyReference.cache
-C:\dev\SP\SP.Tests\obj\Debug\SP.Tests.dll
-C:\dev\SP\SP.Tests\obj\Debug\SP.Tests.pdb

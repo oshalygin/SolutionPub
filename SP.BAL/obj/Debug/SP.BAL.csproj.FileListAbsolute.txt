@@ -1,5 +1,0 @@
-C:\dev\SP\SP.BAL\bin\Debug\SP.BAL.dll
-C:\dev\SP\SP.BAL\bin\Debug\SP.BAL.pdb
-C:\dev\SP\SP.BAL\obj\Debug\SP.BAL.csprojResolveAssemblyReference.cache
-C:\dev\SP\SP.BAL\obj\Debug\SP.BAL.dll
-C:\dev\SP\SP.BAL\obj\Debug\SP.BAL.pdb

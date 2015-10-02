@@ -1,4 +1,0 @@
-C:\dev\SP\SP.BAL\bin\Debug\SP.BLL.dll
-C:\dev\SP\SP.BAL\bin\Debug\SP.BLL.pdb
-C:\dev\SP\SP.BAL\obj\Debug\SP.BLL.dll
-C:\dev\SP\SP.BAL\obj\Debug\SP.BLL.pdb
