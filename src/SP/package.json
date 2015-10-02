@@ -1,7 +1,10 @@
 {
-  "name": "ASP.NET",
+  "name": "solution-pub",
+  "description": "Solution Pub Blog and Playground",
+  "author": "Oleg Shalygin oshalygin@gmail.com",
   "version": "0.0.0",
   "devDependencies": {
+    "del": "^2.0.2",
     "gulp": "3.9.0",
     "gulp-concat": "2.6.0",
     "gulp-cssmin": "0.1.7",
@@ -9,4 +12,5 @@
     "rimraf": "2.2.8",
     "tsd": "0.6.4"
   }
+
 }
