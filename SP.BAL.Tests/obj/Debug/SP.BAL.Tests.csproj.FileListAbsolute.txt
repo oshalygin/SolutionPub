@@ -1,0 +1,5 @@
+C:\dev\SP\SP.BAL.Tests\bin\Debug\SP.BAL.Tests.dll
+C:\dev\SP\SP.BAL.Tests\bin\Debug\SP.BAL.Tests.pdb
+C:\dev\SP\SP.BAL.Tests\obj\Debug\SP.BAL.Tests.csprojResolveAssemblyReference.cache
+C:\dev\SP\SP.BAL.Tests\obj\Debug\SP.BAL.Tests.dll
+C:\dev\SP\SP.BAL.Tests\obj\Debug\SP.BAL.Tests.pdb
