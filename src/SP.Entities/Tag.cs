@@ -17,5 +17,6 @@ namespace SP.Entities
         public int TimesUsed { get; set; }
         public List<Comment> Comments { get; set; }
 
+
     }
 }
