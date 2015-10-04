@@ -8,9 +8,7 @@ namespace SP.DAL
     public class BlogContext: DbContext
     {
         public BlogContext()
-                :base(@"Data Source=(localdb)\mssqllocaldb;
-          Initial Catalog=NinjaContext;
-          Integrated Security=True;")
+                :base("DefaultConnection")
         {
             
         }
