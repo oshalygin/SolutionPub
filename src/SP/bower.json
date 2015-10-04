@@ -14,7 +14,8 @@
     "angular-ui-bootstrap": "~0.13.4",
     "angular-animate": "~1.4.6",
     "angular-route": "~1.4.6",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "font-awesome": "~4.4.0"
   },
   "resolutions": {
     "bootstrap": "~3.3.5"

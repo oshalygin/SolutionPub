@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $state.current.title }}</title>
     <!--TODO:  Later this will be refactored to point to the wwwroot minified files folder.-->
+    <link href="~/wwwroot/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/wwwroot/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
 
 </head>
@@ -13,24 +16,26 @@
         @RenderBody()
     </div>
 
+
+
+
     <!--TODO: Later this will be refactored to point to the wwwroot minified files folder.-->
-<!-- Bower Packages -->
+    <!-- Bower Packages -->
     <script src="~/wwwroot/lib/angular/angular.min.js"></script>
-<script src="~/wwwroot/lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="~/wwwroot/lib/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="~/wwwroot/lib/angular-animate/angular-animate.min.js"></script>
     <script src="~/wwwroot/lib/angular-resource/angular-resource.min.js"></script>
     <script src="~/wwwroot/lib/angular-route/angular-route.min.js"></script>
-<script src="~/wwwroot/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/wwwroot/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="~/wwwroot/lib/toastr/toastr.min.js"></script>
-<!-- bower: js -->
+    <!-- bower: js -->
     <!-- endbower -->
     <!-- Non-Angular Configuration -->
     <!-- Model Classes -->
-
-<!-- App Modules -->
+    <!-- App Modules -->
     <script src="~/application/app.js"></script>
 
-<!-- Configuration -->
+    <!-- Configuration -->
     <!-- Services -->
     <!-- Routing -->
     <!-- Directives -->
