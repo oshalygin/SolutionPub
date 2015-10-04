@@ -4,7 +4,7 @@
   },
   "Data": {
     "DefaultConnection": {
-      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true"
+      "ConnectionString": "Server=.\\SQLEXPRESS;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
   }
 }
