@@ -1,10 +1,10 @@
 {
   "AppSettings": {
-    "SiteTitle": "SP"
+    "SiteTitle": "SolutionPub"
   },
   "Data": {
     "DefaultConnection": {
-      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-SP-509faeb1-b2fe-4e4c-8ffb-c61ae9030a4a;Trusted_Connection=True;MultipleActiveResultSets=true"
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
   }
 }
