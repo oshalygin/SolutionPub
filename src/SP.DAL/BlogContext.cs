@@ -1,6 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Security.AccessControl;
-using System.Security.Policy;
 using SP.Entities;
 
 namespace SP.DAL
@@ -10,7 +8,7 @@ namespace SP.DAL
         public BlogContext()
                 :base("DefaultConnection")
         {
-            
+
         }
 
         public DbSet<Post> Posts { get; set; }
