@@ -61,8 +61,19 @@ gulp.task("jshint", function () {
         .pipe($.jshint())
         .pipe($.jshint.reporter("jshint-stylish", { verbose: true }))
         //todo:  Step necessary to stop the build process in case of JSHint blows up
-        .pipe($.jshint.reporter('fail'));
+        .pipe($.jshint.reporter("fail"));
 });
+
+gulp.task("tslint", function () {
+    log("** TSLint Check **");
+
+    return gulp
+        .src(config.appTsDev)
+        .pipe($.tslint())
+        .pipe($.tslint.report("verbose"));
+
+});
+
 
 
 
