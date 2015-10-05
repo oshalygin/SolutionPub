@@ -54,6 +54,8 @@ gulp.task("min", ["min:js", "min:css"]);
 
 ///SolutionPub Gulp Tasks
 
+gulp.task("help", $.taskListing);
+
 gulp.task("jshint", function () {
     log("** JSHint Check **");
     return gulp
@@ -93,7 +95,15 @@ gulp.task("transpile", function () {
         .pipe(gulp.dest(config.appDeployFolder));
 });
 
+gulp.task("typescript-watcher", function () {
+    log("*** Watching TypeScript files for changes **");
 
+    gulp.watch([config.appTsDev], ["transpile"])
+            .on("change", function (event) {
+                changedEvent(event);
+            });
+
+});
 
 
 
@@ -114,4 +124,10 @@ function cleanApplicationInWwwRoot() {
     log("Cleaning " + $.util.colors.red(deployedApplicationFolder));
     del(deployedApplicationFolder);
     log("*** Cleaning Complete ***");
+}
+
+function changedEvent(event) {
+    var srcPattern = new RegExp("/.*(?=/" + config.source + ")/");
+    var message = "File: " + event.path.replace(srcPattern, "") + " was " + event.type;
+    $.util.log($.util.colors.green(message));
 }
