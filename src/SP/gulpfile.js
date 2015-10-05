@@ -60,7 +60,7 @@ gulp.task("jshint", function () {
         .src(config.appJavaScriptFiles)
         .pipe($.jshint())
         .pipe($.jshint.reporter("jshint-stylish", { verbose: true }))
-        //todo:  Step necessary to stop the build process in case of JSHint blows up
+    //todo:  Step necessary to stop the build process in case of JSHint blows up
         .pipe($.jshint.reporter("fail"));
 });
 
@@ -74,7 +74,7 @@ gulp.task("tslint", function () {
 
 });
 
-gulp.task("transpile", function () {
+gulp.task("transpile", ["clean-app"], function () {
     log("** Transpiling TypeScript Files **");
 
     var typescriptOptions = {
@@ -85,10 +85,17 @@ gulp.task("transpile", function () {
     //todo: fix sourcemaps destination
     return gulp
         .src([config.appTsDev, config.tsTypingDefinitions])
-        //.pipe($.sourcemaps.init({loadMaps: true}))
+    //.pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.typescript(typescriptOptions))
-        //.pipe($.sourcemaps.write({includeContent: false}))
+    //.pipe($.sourcemaps.write({includeContent: false}))
         .pipe(gulp.dest(config.appDeployFolder));
+});
+
+gulp.task("clean-app", function (done) {
+    var deployedApplicationFolder = config.wwwrootApplication;
+    log("Cleaning " + $.util.colors.red(deployedApplicationFolder));
+    del(deployedApplicationFolder);
+
 });
 
 
@@ -103,4 +110,10 @@ function log(msg) {
     } else {
         $.util.log($.util.colors.blue(msg));
     }
+}
+
+function clean(path, done) {
+    log("Cleaning " + $.util.colors.red(path));
+    del(path, done);
+
 }

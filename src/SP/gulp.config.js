@@ -28,6 +28,7 @@ module.exports = function () {
 
         appDeployFolder: deploymentPath,
         appDevFolder: devPath,
+        wwwrootApplication: deploymentPath + "/application",
 
         bower: {
             json: bowerJson,
