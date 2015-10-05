@@ -7,6 +7,7 @@ var del = require("del");
 var wiredepModule = require("wiredep");
 
 
+//TODO: All this crap came over from the default ASP.NET 5 application.
 var gulp = require("gulp"),
     rimraf = require("rimraf"),
     concat = require("gulp-concat"),
@@ -50,6 +51,20 @@ gulp.task("min:css", function () {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+///SolutionPub Gulp Tasks
+
+gulp.task("jshint", function () {
+    log("** JSHint Check **");
+    return gulp
+        .src(config.appJavaScriptFiles)
+        .pipe($.jshint())
+        .pipe($.jshint.reporter("jshint-stylish", { verbose: true }))
+        //todo:  Step necessary to stop the build process in case of JSHint blows up
+        .pipe($.jshint.reporter('fail'));
+});
+
+
 
 
 function log(msg) {

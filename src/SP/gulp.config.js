@@ -1,6 +1,6 @@
 module.exports = function () {
 
-    var deploymentPath = "./app_deploy/";
+    var deploymentPath = "./wwwroot/";
     var devPath = "./application";
     var appJsDev = devPath + "**/*.js";
     var bowerJson = require("./bower.json");
@@ -31,7 +31,7 @@ module.exports = function () {
 
         bower: {
             json: bowerJson,
-            directory: "./bower_components/",
+            directory: "./lib/",
             ignorePath: "../.."
         },
 
@@ -49,8 +49,7 @@ module.exports = function () {
             devPath + "**/*.widget.js",
             devPath + "**/*.filter.js",
             devPath + "**/*.controller.js",
-            devPath + "**/*.js",
-            "!" + devPath + "**/*.spec.js"
+            devPath + "**/*.js"
         ],
 
         layoutPage: layout,
