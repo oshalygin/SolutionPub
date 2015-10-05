@@ -74,7 +74,9 @@ gulp.task("tslint", function () {
 
 });
 
-gulp.task("transpile", ["clean-app"], function () {
+gulp.task("transpile", function () {
+
+    cleanApplicationInWwwRoot();
     log("** Transpiling TypeScript Files **");
 
     var typescriptOptions = {
@@ -91,12 +93,7 @@ gulp.task("transpile", ["clean-app"], function () {
         .pipe(gulp.dest(config.appDeployFolder));
 });
 
-gulp.task("clean-app", function (done) {
-    var deployedApplicationFolder = config.wwwrootApplication;
-    log("Cleaning " + $.util.colors.red(deployedApplicationFolder));
-    del(deployedApplicationFolder);
 
-});
 
 
 
@@ -112,8 +109,9 @@ function log(msg) {
     }
 }
 
-function clean(path, done) {
-    log("Cleaning " + $.util.colors.red(path));
-    del(path, done);
-
+function cleanApplicationInWwwRoot() {
+    var deployedApplicationFolder = config.wwwrootApplication;
+    log("Cleaning " + $.util.colors.red(deployedApplicationFolder));
+    del(deployedApplicationFolder);
+    log("*** Cleaning Complete ***");
 }
