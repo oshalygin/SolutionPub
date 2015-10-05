@@ -50,7 +50,7 @@ gulp.task("transpile", function () {
         .pipe(gulp.dest(config.wwwrootApplication));
 });
 
-gulp.task("typescript-watcher", function () {
+gulp.task("tsc-watch", function () {
     log("*** Watching TypeScript files for changes **");
 
     gulp.watch([config.appTsDev], ["transpile"])
