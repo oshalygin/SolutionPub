@@ -74,7 +74,22 @@ gulp.task("tslint", function () {
 
 });
 
+gulp.task("transpile", function () {
+    log("** Transpiling TypeScript Files **");
 
+    var typescriptOptions = {
+        removeComments: true,
+        target: "ES5",
+        noImplicitAny: true
+    };
+    //todo: fix sourcemaps destination
+    return gulp
+        .src([config.appTsDev, config.tsTypingDefinitions])
+        //.pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.typescript(typescriptOptions))
+        //.pipe($.sourcemaps.write({includeContent: false}))
+        .pipe(gulp.dest(config.appDeployFolder));
+});
 
 
 

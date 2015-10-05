@@ -10,6 +10,9 @@ artifacts/
 *DS_Store
 *.sln.ide
 
+# Exclude deployed wwwroot application
+src/SP/wwwroot/application/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
