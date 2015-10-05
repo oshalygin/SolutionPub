@@ -22,7 +22,7 @@ module.exports = function () {
             devPath + "**/*.ts"
         ],
 
-        appTsDev: devPath + "**/*.ts",
+        appTsDev: devPath + "/**/*.ts",
         appJsDev: appJsDev,
         appJsDepolyment: deploymentPath + "**/*.js",
 

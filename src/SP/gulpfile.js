@@ -47,7 +47,7 @@ gulp.task("transpile", function () {
     //.pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.typescript(typescriptOptions))
     //.pipe($.sourcemaps.write({includeContent: false}))
-        .pipe(gulp.dest(config.appDeployFolder));
+        .pipe(gulp.dest(config.wwwrootApplication));
 });
 
 gulp.task("typescript-watcher", function () {
