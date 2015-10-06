@@ -23,12 +23,13 @@ module.exports = function () {
         ],
 
         appTsDev: devPath + "/**/*.ts",
+        appHtmlFiles: "application/**/*.html",
         appJsDev: appJsDev,
         appJsDepolyment: deploymentPath + "**/*.js",
 
         appDeployFolder: deploymentPath,
         appDevFolder: devPath,
-        wwwrootApplication: deploymentPath + "/application",
+        wwwrootApplication: deploymentPath + "application",
 
         bower: {
             json: bowerJson,
