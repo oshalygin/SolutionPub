@@ -25,6 +25,9 @@
     },
     "toastr/toastr.d.ts": {
       "commit": "ef32bff4d15782dbbabf99ecb17ba22119cc2bd2"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "05557455c49043ff0189182e27c9e04403a70802"
     }
   }
 }

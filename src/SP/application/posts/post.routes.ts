@@ -14,6 +14,7 @@
                 .state("posts", {
                     url: "/",
                     title: "Solution Pub",
+                    templateUrl: "./wwwroot/application/posts/posts.html",
                     controller: "app.posts.PostController",
                     controllerAs: "vm"
                 });

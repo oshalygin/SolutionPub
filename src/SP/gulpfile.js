@@ -60,6 +60,15 @@ gulp.task("tsc-watch", function () {
 
 });
 
+gulp.task("move-html", function () {
+
+    log("*** Moving HTML Files to Deployment wwww folder ****");
+
+    gulp.src(config.devPath, { base: "." })
+        .pipe(gulp.dest(config.wwwrootApplication));
+
+});
+
 
 
 function log(msg) {
