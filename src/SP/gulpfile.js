@@ -61,11 +61,12 @@ gulp.task("tsc-watch", function () {
 });
 
 //TODO: Minify HTML whitespace
-gulp.task("move-html", function () {
+gulp.task("move-html", ["transpile"], function () {
 
     log("*** Moving HTML Files to Deployment wwww folder ****");
-    
+
     gulp.src([config.appHtmlFiles], { base: "application" })
+        .pipe($.debug({title: "file deployed"}))
         .pipe(gulp.dest(config.wwwrootApplication));
 
 });

@@ -28,6 +28,12 @@
     },
     "gulp/gulp.d.ts": {
       "commit": "05557455c49043ff0189182e27c9e04403a70802"
+    },
+    "node/node.d.ts": {
+      "commit": "05557455c49043ff0189182e27c9e04403a70802"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "05557455c49043ff0189182e27c9e04403a70802"
     }
   }
 }
