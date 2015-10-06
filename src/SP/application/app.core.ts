@@ -8,7 +8,8 @@
         "ngSanitize",
 
         //Third Party
-        "ui.router"
+        "ui.router",
+        "ui.bootstrap"
 
     ]);
 
