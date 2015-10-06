@@ -8,6 +8,7 @@
         , "app.posts"
         , "app.comments"
         , "app.tags"
+        , "app.images"
 
 
     ]);

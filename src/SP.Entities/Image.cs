@@ -2,7 +2,7 @@
 
 namespace SP.Entities
 {
-    public class PublicImage
+    public class Image
     {
         public int Id { get; set; }
         public DateTime UploadDate { get; set; }

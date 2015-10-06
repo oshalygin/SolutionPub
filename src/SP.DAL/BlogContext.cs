@@ -14,7 +14,7 @@ namespace SP.DAL
         public DbSet<Post> Posts { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<PublicImage> PublicImages { get; set; }
+        public DbSet<Image> Images { get; set; }
 
 
     }
