@@ -16,12 +16,13 @@
     <meta name="author" content="">
 
     <!-- Title -->
-    <title>{{ $state.current.title }}</title>
+    <title ng-if>{{ $state.current.title }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Web Fonts -->
+     <!--TODO: Select a font and apply it across the board in css -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
 
@@ -51,6 +52,7 @@
     </div>
 
 
+     <!--TODO: Determine what part of this crap is necessary -->
   <!-- JS Global Compulsory -->
     <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -71,13 +73,6 @@
         FancyBox.initFancybox();
     });
     </script>
-    <!--[if lt IE 9]>
-        <script src="assets/plugins/respond.js"></script>
-        <script src="assets/plugins/html5shiv.js"></script>
-        <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-    <![endif]-->
-
-
 
     <!--TODO: Later this will be refactored to point to the wwwroot minified files folder.-->
     <!-- Bower Packages -->
