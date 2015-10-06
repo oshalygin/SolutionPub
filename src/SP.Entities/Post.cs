@@ -14,7 +14,7 @@ namespace SP.Entities
         public string Title { get; set; }
         public string UrlTitle { get; set; }
         public string PhotoPath { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime PostedDate { get; set; }
         public DateTime DateEdited { get; set; }
         public string Body { get; set; }
         public string Preview { get; set; }

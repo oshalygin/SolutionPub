@@ -1,6 +1,6 @@
 ((): void=> {
 
     angular
-        .module("app.tag", []);
+        .module("app.tags", []);
 
 })();

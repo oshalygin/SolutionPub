@@ -6,12 +6,12 @@ namespace SP.Entities
     {
         public Tag()
         {
-            Comments = new List<Comment>();
+            Posts = new List<Post>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
         public int TimesUsed { get; set; }
-        public List<Comment> Comments { get; set; }
+        public List<Post> Posts { get; set; }
 
     }
 }
