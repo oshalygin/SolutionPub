@@ -1,4 +1,8 @@
-﻿<div class="header">
+﻿@{
+    ViewData["Title"] = "Solution Pub";
+}
+
+<div class="header">
 
     <div class="topbar">
         <div class="container">
@@ -49,7 +53,7 @@
                 <ul class="nav navbar-nav">
                     <!-- Home -->
                     <li class="dropdown">
-                        <a href="/">Index</a>
+                        <a ui-sref="home">Home</a>
 
                     </li>
                     <!-- End Home -->
@@ -59,14 +63,6 @@
                             Laboratory
                         </a>
                         <ul class="dropdown-menu">
-
-                            @*<li class="dropdown-submenu">
-                                    <a href="javascript:void(0);"><i class="fa fa-flask"></i>Royal Truck Body</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="http://www.royaltruckbody.com"><i class="fa fa-user"></i>Portal</a></li>
-                                    </ul>
-                                </li>*@
-
                             <li class="dropdown-submenu">
                                 <a href="javascript:void(0);"><i class="fa fa-flask"></i>FSAE Sim</a>
                                 <ul class="dropdown-menu">
@@ -79,14 +75,11 @@
                                     <li><a href="http://www.westernregister.com"><i class="fa fa-user"></i>Portal</a></li>
                                 </ul>
                             </li>
-
-
-
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <a href="/">Images</a>
+                        <a ui-sref="images">Images</a>
 
                     </li>
                     <li class="dropdown">
@@ -94,9 +87,8 @@
                             Contact
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="~/Home/About"><i class="fa fa-beer"></i>About</a></li>
-                            <li><a href="~/Blog/Contact"><i class="fa fa-search"></i>Get In Touch</a></li>
-                            @*<li><a href="~/Community/Index"><i class="fa fa-beer"></i>Community</a></li>*@
+                            <li><a ui-sref="about"><i class="fa fa-beer"></i>About</a></li>
+                            <li><a ui-sref="contact"><i class="fa fa-search"></i>Get In Touch</a></li>
                         </ul>
 
                     </li>
@@ -115,14 +107,10 @@
                         </div>
                     </li>
 
-
-
-                    <!-- End Search Block -->
                 </ul>
-            </div><!--/navbar-collapse-->
+            </div>
         </div>
     </div>
-    <!-- End Navbar -->
 </div>
 
 
@@ -319,25 +307,9 @@
         <!-- End Blog All Posts -->
         <!-- Blog Sidebar -->
         <div class="col-md-3">
-            <div class="headline-v2 bg-color-light"><h2>Trending</h2></div>
-            <!-- Trending -->
-            <ul class="list-unstyled blog-trending margin-bottom-50">
-                <li>
-                    <h3><a href="#">Proin dapibus ornare magna.</a></h3>
-                    <small>19 Jan, 2015 / <a href="#">Hi-Tech,</a> <a href="#">Technology</a></small>
-                </li>
-                <li>
-                    <h3><a href="#">Fusce at diam ante.</a></h3>
-                    <small>17 Jan, 2015 / <a href="#">Artificial Intelligence</a></small>
-                </li>
-                <li>
-                    <h3><a href="#">Donec quis consequat magna...</a></h3>
-                    <small>5 Jan, 2015 / <a href="#">Web,</a> <a href="#">Webdesign</a></small>
-                </li>
-            </ul>
-            <!-- End Trending -->
 
-            <div class="headline-v2 bg-color-light"><h2>Latest Posts</h2></div>
+
+            <div class="headline-v2 bg-color-light"><h2>Latest Tweets</h2></div>
             <!-- Latest Links -->
             <ul class="list-unstyled blog-latest-posts margin-bottom-50">
                 <li>
@@ -353,70 +325,17 @@
             </ul>
             <!-- End Latest Links -->
 
-            <div class="headline-v2 bg-color-light"><h2>Tags</h2></div>
+            <div class="headline-v2 bg-color-light"><h2>Popular Tags</h2></div>
             <!-- Tags v2 -->
             <ul class="list-inline tags-v2 margin-bottom-50">
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Economy</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Elections</a></li>
-                <li><a href="#">Flickr</a></li>
-                <li><a href="#">Politics</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">C#</a></li>
+                <li><a href="#">.NET</a></li>
+                <li><a href="#">AngularJS</a></li>
+                <li><a href="#">Fundamentals</a></li>
             </ul>
             <!-- End Tags v2 -->
 
-            <div class="headline-v2 bg-color-light"><h2>Photostream</h2></div>
-            <!-- Photostream -->
-            <ul class="list-inline blog-photostream margin-bottom-50">
-                <li>
-                    <a href="assets/img/main/img22.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 1">
-                        <span><img class="img-responsive" src="assets/img/main/img22.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img23.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 2">
-                        <span><img class="img-responsive" src="assets/img/main/img23.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img4.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 3">
-                        <span><img class="img-responsive" src="assets/img/main/img4.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img9.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 4">
-                        <span><img class="img-responsive" src="assets/img/main/img9.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img25.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 5">
-                        <span><img class="img-responsive" src="assets/img/main/img25.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img6.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 6">
-                        <span><img class="img-responsive" src="assets/img/main/img6.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img20.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 7">
-                        <span><img class="img-responsive" src="assets/img/main/img20.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img3.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 8">
-                        <span><img class="img-responsive" src="assets/img/main/img3.jpg" alt=""></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="assets/img/main/img7.jpg" rel="gallery" class="fancybox img-hover-v2" title="Image 9">
-                        <span><img class="img-responsive" src="assets/img/main/img7.jpg" alt=""></span>
-                    </a>
-                </li>
-            </ul>
-            <!-- End Photostream -->
         </div>
         <!-- End Blog Sidebar -->
     </div>
@@ -474,21 +393,20 @@
                         Email: <a href="mailto:info@TechieJS.com" class="">info@TechieJS.com</a>
                     </address>
                 </div><!--/col-md-3-->
-                <!-- End Address -->
+
             </div>
         </div>
-    </div><!--/footer-->
+    </div>
 
     <div class="copyright">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <p>
-                        2014 &copy; All Rights Reserved. Solution Pub
+                        2015 &copy; All Rights Reserved. Solution Pub
 
                     </p>
                 </div>
-                <!-- Social Links -->
                 <div class="col-md-6">
                     <ul class="social-icons pull-right">
                         <li><a href="https://www.facebook.com/oshalygin/" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
@@ -498,9 +416,7 @@
 
                     </ul>
                 </div>
-                <!-- End Social Links -->
             </div>
         </div>
-    </div><!--/copyright-->
+    </div>
 </div>
-<!--=== End Footer Version 1 ===-->

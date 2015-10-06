@@ -4,12 +4,7 @@
 
     <title>{{ $state.current.title }}</title>
     <!--TODO:  Later this will be refactored to point to the wwwroot minified files folder.-->
-
-
-
-
-
- <!-- Meta -->
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -22,7 +17,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Web Fonts -->
-     <!--TODO: Select a font and apply it across the board in css -->
+    <!--TODO: Select a font and apply it across the board in css -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
 
@@ -46,14 +41,14 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 
 </head>
-    <body class="header-fixed">
+<body class="header-fixed">
     <div class="wrapper">
         @RenderBody()
     </div>
 
 
-     <!--TODO: Determine what part of this crap is necessary -->
-  <!-- JS Global Compulsory -->
+    <!--TODO: Determine what part of this crap is necessary -->
+    <!-- JS Global Compulsory -->
     <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -68,10 +63,10 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
     <script type="text/javascript">
-    jQuery(document).ready(function() {
-      	App.init();
-        FancyBox.initFancybox();
-    });
+        jQuery(document).ready(function () {
+            App.init();
+            FancyBox.initFancybox();
+        });
     </script>
 
     <!--TODO: Later this will be refactored to point to the wwwroot minified files folder.-->
@@ -82,6 +77,7 @@
     <script src="~/lib/angular-resource/angular-resource.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
     <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="~/lib/toastr/toastr.min.js"></script>
     <!-- bower: js -->
     <!-- endbower -->
@@ -104,4 +100,3 @@
     <!-- Controllers -->
 </body>
 </html>
-
