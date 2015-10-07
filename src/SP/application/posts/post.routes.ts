@@ -10,18 +10,24 @@
 
         $urlRouterProvider.otherwise("/");
 
-
         $stateProvider
-            .state({
-                name: "posts",
+            .state("posts", {
                 url: "/",
-                templateUrl: "./application/posts/posts.html",
-                controller: "app.posts.PostController",
-                controllerAs: "vm",
-                data: {
-                    title: "SolutionPub"
+                views: {
+                    "mainContent@": {
+                            templateUrl: "./application/posts/posts.html",
+                            controller: "app.posts.PostController",
+                            controllerAs: "vm",
+                            data: {
+                                title: "SolutionPub"
+                            }
+                    },
+                    "rightSidebar@": {
+                        templateUrl: "./application/sidebar/sidebar.html"
+                    }
                 }
             });
+
 
     }
 

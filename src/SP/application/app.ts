@@ -9,6 +9,7 @@
         , "app.comments"
         , "app.tags"
         , "app.images"
+        , "app.tweets"
 
 
 

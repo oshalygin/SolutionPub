@@ -9,15 +9,18 @@
     function configuration($stateProvider: angular.ui.IStateProvider) {
 
         $stateProvider
-            .state({
-                name: "about",
+            .state("about", {
                 url: "/about",
-                data: {
-                    title: "About Me"
-                },
-                templateUrl: "./application/contact/about.html",
-                controller: "app.contact.AboutController",
-                controllerAs: "vm"
+                views: {
+                    "mainContent@": {
+                        templateUrl: "./application/contact/about.html",
+                        controller: "app.contact.AboutController",
+                        controllerAs: "vm",
+                        data: {
+                            title: "About Me"
+                        }
+                    }
+                }
             });
 
     }
