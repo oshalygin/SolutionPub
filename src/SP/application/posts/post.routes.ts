@@ -4,19 +4,23 @@
         .config(configuration);
 
 
-    //configuration.$inject = ["$stateProvider", "$urlRouterProvider"];
+    configuration.$inject = ["$stateProvider", "$urlRouterProvider"];
     function configuration($stateProvider: angular.ui.IStateProvider,
         $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 
         $urlRouterProvider.otherwise("/");
-        
+
 
         $stateProvider
-            .state("posts", {
+            .state({
+                name: "posts",
                 url: "/",
                 templateUrl: "./application/posts/posts.html",
                 controller: "app.posts.PostController",
-                controllerAs: "vm"
+                controllerAs: "vm",
+                data: {
+                    title: "SolutionPub"
+                }
             });
 
     }
