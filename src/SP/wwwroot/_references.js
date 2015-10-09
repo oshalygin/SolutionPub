@@ -20,7 +20,6 @@
 /// <reference path="application/posts/posts.module.js" />
 /// <reference path="application/services/services.module.js" />
 /// <reference path="application/sidebar/sidebar.module.js" />
-/// <reference path="application/sidebar/sidebar.routes.js" />
 /// <reference path="application/tags/tags.controller.js" />
 /// <reference path="application/tags/tags.module.js" />
 /// <reference path="application/tweets/tweets.controller.js" />
