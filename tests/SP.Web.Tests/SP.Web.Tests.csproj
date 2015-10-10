@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="post.controller.spec.js" />
+    <Content Include="stateMock.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
