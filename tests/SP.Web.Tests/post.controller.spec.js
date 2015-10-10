@@ -7,26 +7,25 @@
 
         var $controller;
         var scope = {};
-        var $rootScope;
+        var rootScope;
 
         beforeEach(module("app"));
-        //  beforeEach(module("app.post"));
 
-        beforeEach(inject(function (_$controller_) {
-            $controller = _$controller_;
+
+        beforeEach(inject(function (_$controller_, _$rootScope_) {
+            rootScope = _$rootScope_;
+            scope = rootScope.$new();
+            $controller = _$controller_("app.posts.PostController", { $scope: scope });
+
         }));
-
-
-
-
 
         it("Sanity Check", function () {
             expect(true).toBeTruthy();
         });
 
         it("page title is Solution Pub", function () {
-            var controller = $controller('PasswordController', { $scope: $scope });
-            expect($scope.title).is.equal.to("Solution Pub");
+            scope.$apply();
+            expect(scope.title).is.equal.to("Solution Pub");
         });
 
 
