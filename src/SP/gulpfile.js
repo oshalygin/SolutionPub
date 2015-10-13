@@ -5,6 +5,7 @@ var config = require("./gulp.config")();
 var $ = require("gulp-load-plugins")({ lazy: true });
 var del = require("del");
 var wiredepModule = require("wiredep");
+var rimraf = require("rimraf");
 
 
 ///SolutionPub Gulp Tasks
@@ -32,26 +33,33 @@ gulp.task("tslint", function () {
 
 });
 
-gulp.task("wiredep-app", function () {
+gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
     log("*** Wiring up bower css, js and application into html page");
 
+    var options = config.getWiredepDefaultOptions();
+    var wiredep = require("wiredep").stream;
 
-    //Move bower files from root folder to webroot.
-        log("*** Moving Bower Files to WWWROOT ****");
+    return gulp
+        .src(config.layoutInjector)
+        .pipe(wiredep(options))
+        .pipe($.inject(gulp.src(config.js)))
+        .pipe(gulp.dest(config.layoutPage));
+
+});
+
+gulp.task("delete-webroot-lib", function (cb) {
+
+    log("*** Deleting Current webroot/lib folder ****");
+    rimraf("./wwwroot/lib", cb);
+
+});
+
+gulp.task("populate-webroot-lib", ["delete-webroot-lib"], function () {
+
+    log("*** Moving Bower Files to WWWROOT ****");
 
     gulp.src([config.bowerFiles], { base: "lib" })
-        .pipe($.debug({title: "DEPLOYED"}))
         .pipe(gulp.dest(config.wwwrootBower));
-
-//     var options = config.getWiredepDefaultOptions();
-//     var wiredep = require("wiredep").stream;
-//
-//     return gulp
-//     .src(config.layoutInjector)
-//         .pipe(wiredep(options))
-//         .pipe($.inject(gulp.src(config.js)))
-//         .pipe(gulp.dest(config.layoutPage));
-
 });
 
 //todo: wiredep-testing file
@@ -79,9 +87,9 @@ gulp.task("tsc-watch", function () {
     log("*** Watching TypeScript files for changes **");
 
     gulp.watch([config.appTsDev], ["transpile"])
-            .on("change", function (event) {
-                changedEvent(event);
-            });
+        .on("change", function (event) {
+            changedEvent(event);
+        });
 
 });
 
@@ -91,7 +99,7 @@ gulp.task("move-html", ["transpile"], function () {
     log("*** Moving HTML Files to Deployment wwww folder ****");
 
     gulp.src([config.appHtmlFiles], { base: "application" })
-        .pipe($.debug({title: "DEPLOYED"}))
+        .pipe($.debug({ title: "DEPLOYED" }))
         .pipe(gulp.dest(config.wwwrootApplication));
 
 });
