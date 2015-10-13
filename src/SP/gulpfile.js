@@ -124,6 +124,12 @@ gulp.task("move-html", ["transpile"], function () {
 
 });
 
+gulp.task("deploy", ["wiredep-app", "move-html"], function () {
+    log("*** Deploying bower files, HTML files, and Transpiling *** ");
+
+    
+});
+
 
 
 function log(msg) {
