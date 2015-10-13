@@ -8,8 +8,6 @@ var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
 
 
-///SolutionPub Gulp Tasks
-
 gulp.task("help", $.taskListing);
 gulp.task("default", ["help"]);
 
@@ -19,7 +17,6 @@ gulp.task("jshint", function () {
         .src(config.appJavaScriptFiles)
         .pipe($.jshint())
         .pipe($.jshint.reporter("jshint-stylish", { verbose: true }))
-    //todo:  Step necessary to stop the build process in case of JSHint blows up
         .pipe($.jshint.reporter("fail"));
 });
 
