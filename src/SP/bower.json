@@ -5,8 +5,6 @@
     "bootstrap": "~3.3.5",
     "bootstrap-touch-carousel": "0.8.0",
     "jquery": "2.1.4",
-    "jquery-validation": "1.11.1",
-    "jquery-validation-unobtrusive": "3.2.2",
     "angular-resource": "~1.4.6",
     "angular-sanitize": "~1.4.6",
     "angular-ui-router": "~0.2.15",
