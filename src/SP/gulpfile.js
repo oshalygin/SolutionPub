@@ -10,6 +10,7 @@ var wiredepModule = require("wiredep");
 ///SolutionPub Gulp Tasks
 
 gulp.task("help", $.taskListing);
+gulp.task("default", ["help"]);
 
 gulp.task("jshint", function () {
     log("** JSHint Check **");
@@ -30,6 +31,22 @@ gulp.task("tslint", function () {
         .pipe($.tslint.report("verbose"));
 
 });
+
+gulp.task("wiredep-application", function () {
+    log("*** Wiring up bower css, js and application into html page");
+
+    var options = config.getWiredepDefaultOptions();
+    var wiredep = require("wiredep").stream;
+
+    return gulp
+        .src(config.layoutInjector) 
+        .pipe(wiredep(options))
+        .pipe($.inject(gulp.src(config.js)))
+        .pipe(gulp.dest(config.layoutPage));
+
+});
+
+//todo: wiredep-testing file
 
 gulp.task("transpile", function () {
 

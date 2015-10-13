@@ -2,18 +2,16 @@
 <html ng-app="app">
 <head>
 
-
-    <!--TODO:  Later this will be refactored to point to the wwwroot minified files folder.-->
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <style>
+        .ng-hide { display: none!important; }
+    </style>
 
-    <!-- Title -->
     <title ng-bind>{{ $state.current.data.title }}</title>
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- Web Fonts -->
@@ -21,9 +19,14 @@
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
 
-    <!-- CSS General CSS -->
+
+
+    <!-- bower:css -->
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- endbower -->
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/theme-colors/blue.css">
 
@@ -34,32 +37,28 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/animate.css">
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
 
 </head>
-<body class="header-fixed">
+    <body class="header-fixed">
     <div class="wrapper">
         @RenderBody()
     </div>
 
 
     <!--TODO: Determine what part of this crap is necessary -->
-    <!-- JS Global Compulsory -->
     <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- JS Implementing Plugins -->
     <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
     <script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
     <script type="text/javascript" src="assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-    <!-- JS Customization -->
     <script type="text/javascript" src="assets/js/custom.js"></script>
-    <!-- JS Page Level -->
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
     <script type="text/javascript">
@@ -69,26 +68,26 @@
         });
     </script>
 
-    <!--TODO: Later this will be refactored to point to the wwwroot minified files folder.-->
-    <!-- Bower Packages -->
+
+
+    <!-- bower:js -->
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="~/lib/angular-animate/angular-animate.min.js"></script>
     <script src="~/lib/angular-resource/angular-resource.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
-<script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="~/lib/angular-mocks/angular-mocks.js"></script>
     <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="~/lib/toastr/toastr.min.js"></script>
-    <!-- bower: js -->
     <!-- endbower -->
-    <!-- Non-Angular Configuration -->
-    <!-- Model Classes -->
+
+    <!-- inject:js -->
     <script src="~/application/models/comment.model.js"></script>
     <script src="~/application/models/post.model.js"></script>
     <script src="~/application/models/tag.model.js"></script>
     <script src="~/application/models/image.model.js"></script>
-    <!-- App Modules -->
+
     <script src="~/application/app.core.js"></script>
     <script src="~/application/services/services.module.js"></script>
     <script src="~/application/contact/contact.module.js"></script>
@@ -101,21 +100,19 @@
 
     <script src="~/application/app.js"></script>
 
-    <!-- Configuration -->
+
     <script src="~/application/app.config.js"></script>
     <script src="~/application/app.run.js"></script>
-    <!-- Services -->
-    <!-- Routing -->
+
     <script src="~/application/posts/post.routes.js"></script>
     <script src="~/application/contact/contact.routes.js"></script>
 
-    <!-- Directives -->
-    <!-- Filters -->
-    <!-- Controllers -->
+
     <script src="~/application/posts/post.controller.js"></script>
     <script src="~/application/contact/about.controller.js"></script>
     <script src="~/application/tweets/tweets.controller.js"></script>
     <script src="~/application/tags/tags.controller.js"></script>
+    <!-- endinject -->
 </body>
 </html>
 
