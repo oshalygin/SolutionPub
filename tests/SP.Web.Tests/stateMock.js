@@ -1,6 +1,6 @@
-//todo: refactor this into a typescript file and find a good home for it.
+﻿//todo: refactor this into a typescript file and find a good home for it.
 angular.module('stateMock', []);
-angular.module('stateMock').service("$state", function(){
+angular.module('stateMock').service("$state", function () {
     this.expectedTransitions = [];
     this.transitionTo = function (stateName) {
         if (this.expectedTransitions.length > 0) {
