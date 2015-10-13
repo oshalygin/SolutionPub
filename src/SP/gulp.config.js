@@ -5,7 +5,7 @@ module.exports = function () {
     var appJsDev = devPath + "**/*.js";
     var bowerJson = require("./bower.json");
     var layout = "./Views/Shared/";
-    var layoutInjector = "./_Layout.cshtml";
+    var layoutInjector = "./Views/Shared/_Layout.cshtml";
 
     var config = {
         appJavaScriptFiles:
@@ -33,8 +33,9 @@ module.exports = function () {
 
         bower: {
             json: bowerJson,
-            directory: "./lib/",
+            directory: "lib/",
             ignorePath: "../.."
+
         },
 
 
@@ -60,11 +61,24 @@ module.exports = function () {
     };
 
     config.getWiredepDefaultOptions = function () {
+
+
         var options = {
             bowerJson: config.bower.json,
             directory: config.bower.directory,
-            ignorePath: config.bower.ignorePath
+            ignorePath: config.bower.ignorePath,
+              fileTypes: {
+                html: {
+                replace: {
+                    js: '<script src="~{{filePath}}"></script>', // jshint ignore:line
+                    css: '<link rel="stylesheet" href="~{{filePath}}" />' // jshint ignore:line
+                    }
+                }
+            }
+
+
         };
+
         return options;
     };
 

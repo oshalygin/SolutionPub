@@ -32,14 +32,14 @@ gulp.task("tslint", function () {
 
 });
 
-gulp.task("wiredep-application", function () {
+gulp.task("wiredep-app", function () {
     log("*** Wiring up bower css, js and application into html page");
 
     var options = config.getWiredepDefaultOptions();
     var wiredep = require("wiredep").stream;
 
     return gulp
-        .src(config.layoutInjector) 
+    .src(config.layoutInjector)
         .pipe(wiredep(options))
         .pipe($.inject(gulp.src(config.js)))
         .pipe(gulp.dest(config.layoutPage));
