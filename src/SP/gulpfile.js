@@ -35,14 +35,22 @@ gulp.task("tslint", function () {
 gulp.task("wiredep-app", function () {
     log("*** Wiring up bower css, js and application into html page");
 
-    var options = config.getWiredepDefaultOptions();
-    var wiredep = require("wiredep").stream;
 
-    return gulp
-    .src(config.layoutInjector)
-        .pipe(wiredep(options))
-        .pipe($.inject(gulp.src(config.js)))
-        .pipe(gulp.dest(config.layoutPage));
+    //Move bower files from root folder to webroot.
+        log("*** Moving Bower Files to WWWROOT ****");
+
+    gulp.src([config.bowerFiles], { base: "lib" })
+        .pipe($.debug({title: "DEPLOYED"}))
+        .pipe(gulp.dest(config.wwwrootBower));
+
+//     var options = config.getWiredepDefaultOptions();
+//     var wiredep = require("wiredep").stream;
+//
+//     return gulp
+//     .src(config.layoutInjector)
+//         .pipe(wiredep(options))
+//         .pipe($.inject(gulp.src(config.js)))
+//         .pipe(gulp.dest(config.layoutPage));
 
 });
 

@@ -22,6 +22,9 @@ module.exports = function () {
             devPath + "**/*.ts"
         ],
 
+        bowerFiles: "lib/**",
+        wwwrootBower: deploymentPath + "lib",
+
         appTsDev: devPath + "/**/*.ts",
         appHtmlFiles: "application/**/*.html",
         appJsDev: appJsDev,
