@@ -64,6 +64,7 @@ gulp.task("populate-webroot-lib", ["delete-webroot-lib"], function () {
 gulp.task("transpile", function () {
 
     cleanApplicationInWwwRoot();
+
     log("** Transpiling TypeScript Files **");
 
     var typescriptOptions = {
@@ -80,6 +81,29 @@ gulp.task("transpile", function () {
         .pipe(gulp.dest(config.wwwrootApplication));
 });
 
+gulp.task("transpile-in-dev", function () {
+
+    cleanApplicationInWwwRoot();
+    log("** Transpiling Dev Folder **");
+
+    var typescriptOptions = {
+
+        removeComments: true,
+        target: "ES5",
+        noImplicitAny: true
+
+    };
+
+    //todo: fix sourcemaps destination
+    return gulp
+        .src([config.appTsDev, config.tsTypingDefinitions])
+        .pipe($.sourcemaps.init())
+        .pipe($.typescript(typescriptOptions))
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest(config.wwwrootApplication));
+});
+
+
 gulp.task("tsc-watch", function () {
     log("*** Watching TypeScript files for changes **");
 
@@ -95,7 +119,7 @@ gulp.task("move-html", ["transpile"], function () {
 
     log("*** Moving HTML Files to Deployment wwww folder ****");
 
-    gulp.src([config.appHtmlFiles], { base: "application" })
+    return gulp.src([config.appHtmlFiles], { base: "application" })
         .pipe($.debug({ title: "DEPLOYED" }))
         .pipe(gulp.dest(config.wwwrootApplication));
 

@@ -43,19 +43,19 @@ module.exports = function () {
 
 
         js: [
-            devPath + "**/*.model.js",
-            devPath + "**/*.module.js",
-            devPath + "**/*.core.js",
-            devPath + "**/app.js",
-            devPath + "**/app.run.js",
-            devPath + "**/*.config.js",
-            devPath + "**/*.services.js",
-            devPath + "**/*.routes.js",
-            devPath + "**/*.directive.js",
-            devPath + "**/*.widget.js",
-            devPath + "**/*.filter.js",
-            devPath + "**/*.controller.js",
-            devPath + "**/*.js"
+            devPath + "/**/*.model.js",
+            devPath + "/**/*.module.js",
+            devPath + "/**/*.core.js",
+            devPath + "/**/app.js",
+            devPath + "/**/app.run.js",
+            devPath + "/**/*.config.js",
+            devPath + "/**/*.services.js",
+            devPath + "/**/*.routes.js",
+            devPath + "/**/*.directive.js",
+            devPath + "/**/*.widget.js",
+            devPath + "/**/*.filter.js",
+            devPath + "/**/*.controller.js",
+            devPath + "/**/*.js"
         ],
 
         layoutPage: layout,

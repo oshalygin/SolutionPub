@@ -13,6 +13,8 @@ artifacts/
 # Exclude deployed wwwroot application & lib
 src/SP/wwwroot/application/
 src/SP/wwwroot/lib/
+src/SP/application/*.js
+src/SP/application/**/*.js
 
 # Build results
 [Dd]ebug/
