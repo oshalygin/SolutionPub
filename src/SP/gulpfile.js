@@ -8,6 +8,14 @@ var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
 
 
+var typescriptOptions = {
+
+    removeComments: true,
+    target: "ES5",
+    noImplicitAny: true
+
+};
+
 gulp.task("help", $.taskListing);
 gulp.task("default", ["help"]);
 
@@ -36,10 +44,17 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
     var options = config.getWiredepDefaultOptions();
     var wiredep = require("wiredep").stream;
 
+
     return gulp
         .src(config.layoutInjector)
         .pipe(wiredep(options))
-        .pipe($.inject(gulp.src(config.js)))
+        .pipe($.inject(gulp.src(config.js,
+            { read: false }), {
+                transform: function (filepath) {
+                    return '<script src="~' + filepath + '"></script>'; // jshint ignore:line
+                }
+            }
+            ))
         .pipe(gulp.dest(config.layoutPage));
 
 });
@@ -61,46 +76,30 @@ gulp.task("populate-webroot-lib", ["delete-webroot-lib"], function () {
 
 //todo: wiredep-testing file
 
-gulp.task("transpile", function () {
+gulp.task("transpile", ["transpile-in-dev"], function () {
 
     cleanApplicationInWwwRoot();
 
-    log("** Transpiling TypeScript Files **");
+    log("** Transpiling to WWWROOT Folder **");
 
-    var typescriptOptions = {
-        removeComments: true,
-        target: "ES5",
-        noImplicitAny: true
-    };
-    //todo: fix sourcemaps destination
-    return gulp
-        .src([config.appTsDev, config.tsTypingDefinitions])
-    //.pipe($.sourcemaps.init({loadMaps: true}))
-        .pipe($.typescript(typescriptOptions))
-    //.pipe($.sourcemaps.write({includeContent: false}))
-        .pipe(gulp.dest(config.wwwrootApplication));
-});
-
-gulp.task("transpile-in-dev", function () {
-
-    cleanApplicationInWwwRoot();
-    log("** Transpiling Dev Folder **");
-
-    var typescriptOptions = {
-
-        removeComments: true,
-        target: "ES5",
-        noImplicitAny: true
-
-    };
-
-    //todo: fix sourcemaps destination
     return gulp
         .src([config.appTsDev, config.tsTypingDefinitions])
         .pipe($.sourcemaps.init())
         .pipe($.typescript(typescriptOptions))
         .pipe($.sourcemaps.write())
         .pipe(gulp.dest(config.wwwrootApplication));
+});
+
+gulp.task("transpile-in-dev", function () {
+
+    log("** Transpiling Dev Folder **");
+
+    return gulp
+        .src([config.appTsDev, config.tsTypingDefinitions])
+        .pipe($.sourcemaps.init())
+        .pipe($.typescript(typescriptOptions))
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest(config.appDevFolder));
 });
 
 
