@@ -6,7 +6,7 @@ var $ = require("gulp-load-plugins")({ lazy: true });
 var del = require("del");
 var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
-
+var Server = require("karma").Server;
 
 var typescriptOptions = {
 
@@ -113,6 +113,16 @@ gulp.task("tsc-watch", function () {
 
 });
 
+gulp.task("run-jtests", function (done) {
+    new Server({
+        configFile: config.karmaConfiguration,
+        basePath: "../../..",
+        singleRun: true
+    }, done).start();
+});
+
+
+
 //TODO: Minify HTML whitespace
 gulp.task("move-html", ["transpile"], function () {
 
@@ -127,7 +137,7 @@ gulp.task("move-html", ["transpile"], function () {
 gulp.task("deploy", ["wiredep-app", "move-html"], function () {
     log("*** Deploying bower files, HTML files, and Transpiling *** ");
 
-    
+
 });
 
 

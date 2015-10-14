@@ -6,6 +6,8 @@ module.exports = function () {
     var bowerJson = require("./bower.json");
     var layout = "./Views/Shared/";
     var layoutInjector = "./Views/Shared/_Layout.cshtml";
+    var javaScriptTestProject = "~/../../tests/SP.WEB.Tests/";
+    var karmaConfig = "~/../../tests/SP.WEB.Tests/karma.conf.js";
 
     var config = {
         appJavaScriptFiles:
@@ -24,6 +26,11 @@ module.exports = function () {
 
         bowerFiles: "lib/**",
         wwwrootBower: deploymentPath + "lib",
+
+        karmaConfiguration: karmaConfig,
+        javaScriptTestProject: javaScriptTestProject,
+
+        javaScriptTestFiles: javaScriptTestProject + "post.controller.spec.js",
 
         appTsDev: devPath + "/**/*.ts",
         appHtmlFiles: "application/**/*.html",

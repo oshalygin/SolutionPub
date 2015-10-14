@@ -39,7 +39,7 @@
             expect(actual).toEqual(expected);
         });
 
-        it("page size is set t5", function () {
+        it("page size is set to 5", function () {
             var expected = 5;
             var actual = vm.pageSize;
 
