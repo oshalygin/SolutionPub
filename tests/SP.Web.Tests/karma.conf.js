@@ -1,6 +1,7 @@
 ﻿module.exports = function(config) {
     config.set({
         browsers: ["PhantomJS"],
+        // browsers: ["Chrome"],
         frameworks: ["jasmine"],
         files: [
             "src/sp/wwwroot/assets/plugins/jquery/jquery.min.js",
