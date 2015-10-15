@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SP", "src\SP\SP.xproj", "{27F157DC-2DA1-436B-8FDC-B704EB1F899A}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SP.WEB", "src\SP\SP.WEB.xproj", "{27F157DC-2DA1-436B-8FDC-B704EB1F899A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.BLL", "src\SP.BLL\SP.BLL.csproj", "{5B83F4D9-A1F8-48D4-A922-362134600AD3}"
 EndProject
@@ -19,6 +19,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Entities", "src\SP.Entities\SP.Entities.csproj", "{AAC7D8C2-FF8A-4FEB-BC2F-BAA3F652D4FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E188DEC2-7216-4CE6-8C49-F6B1D11B5463}"
+	ProjectSection(SolutionItems) = preProject
+		src\SP\karma.conf.js = src\SP\karma.conf.js
+	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SP.WEB.Tests", "tests\SP.WEB.Tests\SP.WEB.Tests.xproj", "{9A9A328D-C3AE-43CC-94D9-4FB8AFD37F00}"
 EndProject

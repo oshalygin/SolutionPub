@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using System.Threading.Tasks;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
-using SP.Models;
-using SP.Services;
+using SP.WEB.Models;
+using SP.WEB.Services;
 
-namespace SP.Controllers
+namespace SP.WEB.Controllers
 {
     [Authorize]
     public class ManageController : Controller

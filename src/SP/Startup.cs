@@ -9,10 +9,10 @@ using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using SP.Models;
-using SP.Services;
+using SP.WEB.Models;
+using SP.WEB.Services;
 
-namespace SP
+namespace SP.WEB
 {
     public class Startup
     {

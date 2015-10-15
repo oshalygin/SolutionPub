@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc.Rendering;
 
 //TODO: Microsoft why do you create these files in the root project, facepalm.  REFACTOR
-namespace SP.Models
+namespace SP.WEB.Models
 {
     public class IndexViewModel
     {
