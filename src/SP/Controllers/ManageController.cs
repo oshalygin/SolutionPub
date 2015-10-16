@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Authorization;
@@ -348,10 +347,10 @@ namespace SP.WEB.Controllers
             RemovePhoneSuccess,
             Error
         }
-
+        //TODO: fix later
         private async Task<ApplicationUser> GetCurrentUserAsync()
         {
-            return await _userManager.FindByIdAsync(Context.DefaultContext.);
+            return await _userManager.FindByIdAsync("derp");
         }
 
         private IActionResult RedirectToLocal(string returnUrl)

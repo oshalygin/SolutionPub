@@ -6,6 +6,7 @@ using Microsoft.Data.Entity;
 using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.Logging;
 using SP.WEB.Models;
 using SP.WEB.Services;
 
@@ -17,18 +18,18 @@ namespace SP.WEB
         {
             // Setup configuration sources.
 
-            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
-                .AddJsonFile("config.json")
-                .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+            //var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
+            //    .AddJsonFile("config.json")
+            //    .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
-            if (env.IsDevelopment())
-            {
-                // This reads the configuration keys from the secret store.
-                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
-            }
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
+            //if (env.IsDevelopment())
+            //{
+            //    // This reads the configuration keys from the secret store.
+            //    // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+            //    builder.AddUserSecrets();
+            //}
+            //builder.AddEnvironmentVariables();
+            //Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -50,17 +51,7 @@ namespace SP.WEB
             // Configure the options for the authentication middleware.
             // You can add options for Google, Twitter and other middleware as shown below.
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
-            services.Configure<FacebookAuthenticationOptions>(options =>
-            {
-                options.AppId = Configuration["Authentication:Facebook:AppId"];
-                options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
-
-            services.Configure<MicrosoftAccountAuthenticationOptions>(options =>
-            {
-                options.ClientId = Configuration["Authentication:MicrosoftAccount:ClientId"];
-                options.ClientSecret = Configuration["Authentication:MicrosoftAccount:ClientSecret"];
-            });
+          
 
             // Add MVC services to the services container.
             services.AddMvc();
@@ -87,15 +78,9 @@ namespace SP.WEB
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
-                app.UseErrorPage();
                 app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
             }
-            else
-            {
-                // Add Error handling middleware which catches all application specific errors and
-                // sends the request to the following path or controller action.
-                app.UseErrorHandler("/Home/Error");
-            }
+           
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
