@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+branches:
+  only:
+    - angular
+before_script:
+  - npm install -g bower
+  - npm install -g gulp
+  - npm install phantomjs
+  - npm install -g karma
+  - npm install -g typescript
+  - npm install -g karma-cli
+  - bower install
+  - npm install tsd
