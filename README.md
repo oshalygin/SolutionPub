@@ -1,3 +1,5 @@
+https://travis-ci.org/oshalygin/SolutionPub.svg
+
 ##Solution Pub
 ###Built using ASP.NET 5 and AngularJS 1.5.
 
