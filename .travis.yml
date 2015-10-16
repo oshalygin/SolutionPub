@@ -10,3 +10,5 @@ before_script:
   - npm install -g karma-cli
   - bower install
   - npm install tsd
+  - gulp wiredep-app
+  - gulp run-jtests
