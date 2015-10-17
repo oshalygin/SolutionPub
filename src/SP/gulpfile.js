@@ -115,7 +115,7 @@ gulp.task("tsc-watch", function () {
 
 gulp.task("run-jtests", function (done) {
     new Server({
-        configFile: __dirname + "/karma.conf.js",
+        configFile: config.karmaConfiguration,
         singleRun: true
     }, done).start();
 });

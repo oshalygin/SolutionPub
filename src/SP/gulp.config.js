@@ -7,8 +7,7 @@ module.exports = function () {
     var layout = "./Views/Shared/";
     var layoutInjector = "./Views/Shared/_Layout.cshtml";
     var javaScriptTestProject = "~/../../tests/SP.WEB.Tests/";
-    // var karmaConfig = "/wwwroot/karma.conf.js";
-    var karmaConfig = "/../../tests/SP.WEB.Tests/karma.conf.js";
+    var karmaConfig = __dirname + "/karma.conf.js";
 
     var config = {
         appJavaScriptFiles:
