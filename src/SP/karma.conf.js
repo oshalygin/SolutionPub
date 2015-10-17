@@ -22,7 +22,7 @@ module.exports = function (config) {
             "application/app.run.js",
             "application/**/*.routes.js", "application/**/*.controller.js",
         //Test Files
-            "../../tests/SP.Web.Tests/statemock.js",
+            "../../tests/SP.Web.Tests/stateMock.js",
             "../../tests/SP.Web.Tests/*.controller.spec.js",
         ],
         reporters: ["mocha"],
