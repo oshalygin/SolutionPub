@@ -12,14 +12,12 @@ artifacts/
 
 # Exclude deployed wwwroot application & lib
 src/SP/wwwroot/application/
-
 src/SP/application/*.js
 src/SP/application/**/*.js
 
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-
 [Rr]eleases/
 x64/
 x86/
