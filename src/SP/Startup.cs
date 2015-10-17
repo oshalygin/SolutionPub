@@ -16,20 +16,18 @@ namespace SP.WEB
     {
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
-            // Setup configuration sources.
+            var builder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath)
+                .AddJsonFile("config.json")
+                .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
-            //var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
-            //    .AddJsonFile("config.json")
-            //    .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
-
-            //if (env.IsDevelopment())
-            //{
-            //    // This reads the configuration keys from the secret store.
-            //    // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-            //    builder.AddUserSecrets();
-            //}
-            //builder.AddEnvironmentVariables();
-            //Configuration = builder.Build();
+            if (env.IsDevelopment())
+            {
+                // This reads the configuration keys from the secret store.
+                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+                builder.AddUserSecrets();
+            }
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -51,7 +49,7 @@ namespace SP.WEB
             // Configure the options for the authentication middleware.
             // You can add options for Google, Twitter and other middleware as shown below.
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
-          
+
 
             // Add MVC services to the services container.
             services.AddMvc();
@@ -80,7 +78,12 @@ namespace SP.WEB
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
             }
-           
+
+            //todo: this doesnt actually exist yet...
+            app.UseDeveloperExceptionPage();
+            app.UseExceptionHandler("Home/Error");
+
+            app.UseIISPlatformHandler();
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
