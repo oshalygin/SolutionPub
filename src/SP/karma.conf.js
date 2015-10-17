@@ -13,7 +13,7 @@ module.exports = function (config) {
             "lib/angular-animate/angular-animate.min.js",
             "lib/angular-resource/angular-resource.min.js",
             "lib/angular-route/angular-route.min.js",
-            "lib/angular-ui-router/release/angular-ui-router.js",
+            "lib/angular-ui-router/release/angular-ui-router.min.js",
             "lib/angular-mocks/angular-mocks.js",
             "lib/angular-bootstrap/ui-bootstrap-tpls.min.js",
             "lib/toastr/toastr.min.js", "application/**/*.model.js",
