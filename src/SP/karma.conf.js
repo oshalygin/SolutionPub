@@ -23,10 +23,10 @@ module.exports = function (config) {
             "application/**/*.routes.js", "application/**/*.controller.js",
         //Test Files
             "../../tests/SP.Web.Tests/stateMock.js",
-            "../../tests/SP.Web.Tests/*.controller.spec.js",
+            "../../tests/SP.Web.Tests/*.controller.spec.js"
         ],
         reporters: ["mocha"],
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_INFO
 
     });
 };

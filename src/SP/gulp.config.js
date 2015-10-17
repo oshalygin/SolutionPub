@@ -80,6 +80,7 @@ module.exports = function () {
               fileTypes: {
                 html: {
                 replace: {
+                // ReSharper disable once StringLiteralWrongQuotes
                     js: '<script src="~{{filePath}}"></script>', // jshint ignore:line
                     css: '<link rel="stylesheet" href="~{{filePath}}" />' // jshint ignore:line
                     }

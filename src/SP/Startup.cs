@@ -81,7 +81,7 @@ namespace SP.WEB
 
             //todo: this doesnt actually exist yet...
             app.UseDeveloperExceptionPage();
-            app.UseExceptionHandler("Home/Error");
+            app.UseExceptionHandler("/Home/Error");
 
             app.UseIISPlatformHandler();
 
