@@ -11,9 +11,9 @@ artifacts/
 *.sln.ide
 
 # Exclude deployed wwwroot application & lib
-src/SP/wwwroot/application/
-src/SP/application/*.js
-src/SP/application/**/*.js
+src/SP.WEB/wwwroot/application/
+src/SP.WEB/application/*.js
+src/SP.WEB/application/**/*.js
 
 # Build results
 [Dd]ebug/
@@ -64,7 +64,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 
-src/SP/node_modules/
+src/SP.WEB/node_modules/
 orleans.codegen.cs
 
 # SQL Server files

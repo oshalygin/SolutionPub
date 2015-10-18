@@ -1,6 +1,7 @@
-language: node_js
-node_js:
-  - "0.10"
+language: csharp
+solution: SolutionPub.sln
+before_install:
+  - sudo apt-get install nunit-console
 before_script:
   - npm install -g bower
   - npm install -g gulp
@@ -8,3 +9,5 @@ before_script:
   - npm install -g karma
   - npm install -g typescript
 script: cd src/SP && bower install && npm install && gulp deploy && gulp run-jtests
+after_script:
+  - nunit-console Tests/bin/Release/Tests.dll
