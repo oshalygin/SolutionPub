@@ -1,12 +1,17 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 using SP.Entities;
 
 namespace SP.DAL
 {
     public class BlogContext: DbContext
     {
+
         public BlogContext()
-                :base("DefaultConnection")
+                : base()
         {
 
         }
@@ -15,7 +20,5 @@ namespace SP.DAL
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Image> Images { get; set; }
-
-
     }
 }

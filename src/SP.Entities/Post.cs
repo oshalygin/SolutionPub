@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 namespace SP.Entities
 {
-    public sealed class Post
+    public class Post
     {
+
         public Post()
         {
             Tags = new List<Tag>();
