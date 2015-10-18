@@ -7,6 +7,7 @@ var del = require("del");
 var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
 var Server = require("karma").Server;
+var wiredep = require("wiredep").stream;
 
 var typescriptOptions = {
 
@@ -42,7 +43,7 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
     log("*** Wiring up bower css, js and application into html page");
 
     var options = config.getWiredepDefaultOptions();
-    var wiredep = require("wiredep").stream;
+ 
 
 
     return gulp
@@ -51,6 +52,7 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
         .pipe($.inject(gulp.src(config.js,
             { read: false }), {
                 transform: function (filepath) {
+                    // ReSharper disable once StringLiteralWrongQuotes
                     return '<script src="~' + filepath + '"></script>'; // jshint ignore:line
                 }
             }
