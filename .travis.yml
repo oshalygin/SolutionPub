@@ -1,5 +1,6 @@
 language: csharp
 solution: SolutionPub.sln
+install: curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | sh && source ~/.dnx/dnvm/dnvm.sh && dnvm upgrade
 before_script:
   - npm install -g bower
   - npm install -g gulp
@@ -8,4 +9,4 @@ before_script:
   - npm install -g typescript
 script:
   - cd src/SP.WEB && bower install && npm install && gulp deploy && gulp run-jtests
-  - cd tests/SP.WEB.Tests && dnx run-ctests
+  - cd tests/SP.WEB.Tests && dnu restore && dnx . run-ctests
