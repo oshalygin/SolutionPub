@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -7,6 +8,8 @@ using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Newtonsoft.Json.Serialization;
+using SP.Entities;
 using SP.WEB.Models;
 using SP.WEB.Services;
 
@@ -52,7 +55,11 @@ namespace SP.WEB
 
 
             // Add MVC services to the services container.
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(x =>
+                {
+                    x.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                });
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
@@ -90,6 +97,15 @@ namespace SP.WEB
 
             // Add cookie-based authentication to the request pipeline.
             app.UseIdentity();
+
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<Post, PostViewModel>().ReverseMap();
+                config.CreateMap<Tag, TagViewModel>().ReverseMap();
+                config.CreateMap<Comment, CommentViewModel>().ReverseMap();
+                config.CreateMap<Image, ImageViewModel>().ReverseMap();
+            });
+
 
             // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715

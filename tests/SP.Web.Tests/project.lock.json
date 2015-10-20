@@ -3,6 +3,21 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "AutoMapper/4.0.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AutoMapper.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -1918,10 +1933,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.Entities/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "SP.WEB/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "AutoMapper": "4.0.4",
           "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta8",
@@ -1944,7 +1964,8 @@
           "Microsoft.Framework.Logging": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.Entities": "1.0.0"
         }
       },
       "System.Collections/4.0.0": {
@@ -2247,6 +2268,21 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "AutoMapper/4.0.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AutoMapper.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -4165,10 +4201,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.Entities/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "SP.WEB/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "AutoMapper": "4.0.4",
           "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta8",
@@ -4191,7 +4232,8 @@
           "Microsoft.Framework.Logging": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.Entities": "1.0.0"
         }
       },
       "System.Collections/4.0.0": {
@@ -4494,6 +4536,21 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "AutoMapper/4.0.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AutoMapper.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -6412,10 +6469,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.Entities/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "SP.WEB/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "AutoMapper": "4.0.4",
           "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta8",
@@ -6438,7 +6500,8 @@
           "Microsoft.Framework.Logging": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.Entities": "1.0.0"
         }
       },
       "System.Collections/4.0.0": {
@@ -6742,9 +6805,44 @@
     }
   },
   "libraries": {
+    "SP.Entities/1.0.0": {
+      "type": "project",
+      "path": "../../src/SP.Entities/project.json"
+    },
     "SP.WEB/1.0.0": {
       "type": "project",
       "path": "../../src/SP.WEB/project.json"
+    },
+    "AutoMapper/4.0.4": {
+      "type": "package",
+      "sha512": "7EJaXSD7mI/T1nwlAgsUcxiuSW4zAY8cQy52/onmc8+lM4T9XqVlDqvFuY9pzcNxI1c2X3GD47G8qDO0hcip1g==",
+      "files": [
+        "AutoMapper.4.0.4.nupkg",
+        "AutoMapper.4.0.4.nupkg.sha512",
+        "AutoMapper.nuspec",
+        "lib/dotnet/AutoMapper.dll",
+        "lib/dotnet/AutoMapper.xml",
+        "lib/MonoAndroid/AutoMapper.dll",
+        "lib/MonoAndroid/AutoMapper.XML",
+        "lib/MonoTouch/AutoMapper.dll",
+        "lib/MonoTouch/AutoMapper.XML",
+        "lib/net40/AutoMapper.dll",
+        "lib/net40/AutoMapper.xml",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/AutoMapper.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/AutoMapper.xml",
+        "lib/sl50/AutoMapper.dll",
+        "lib/sl50/AutoMapper.xml",
+        "lib/win/AutoMapper.dll",
+        "lib/win/AutoMapper.xml",
+        "lib/wp80/AutoMapper.dll",
+        "lib/wp80/AutoMapper.xml",
+        "lib/wpa81/AutoMapper.dll",
+        "lib/wpa81/AutoMapper.xml",
+        "lib/Xamarin.iOS10/AutoMapper.dll",
+        "lib/Xamarin.iOS10/AutoMapper.XML"
+      ]
     },
     "EntityFramework.Commands/7.0.0-beta8": {
       "type": "package",
