@@ -11,4 +11,4 @@ before_script:
   - npm install -g typescript
 script:
   - cd src/SP.WEB && bower install && npm install && gulp deploy && gulp run-jtests
-  - cd ../../tests/SP.Web.Tests && dnu restore && dnx run-ctests
+  - cd ../../tests/SP.Web.Tests && dnu restore && dnx run-ctests -parallel none
