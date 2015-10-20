@@ -13,7 +13,7 @@ namespace SP.WEB.Tests
         public void ConfigurationIsSuccessful()
         {
             var expected = 5 + 5;
-            var actual = 8;
+            var actual = 10;
 
             Assert.Equal(expected,actual);
         }
