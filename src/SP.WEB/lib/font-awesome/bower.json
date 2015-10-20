@@ -7,8 +7,7 @@
   "devDependencies": {},
   "license": ["OFL-1.1", "MIT", "CC-BY-3.0"],
   "main": [
-    "less/font-awesome.less",
-    "scss/font-awesome.scss"
+    "css/font-awesome.css"
   ],
   "ignore": [
     "*/.*",
