@@ -28,7 +28,8 @@
     "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
     "AutoMapper": "4.0.4",
-    "SP.Entities": "1.0.0-*"
+    "SP.Entities": "1.0.0-*",
+    "SP.BLL": "1.0.0-*"
   },
 
   "commands": {

@@ -1933,6 +1933,22 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.BLL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "SP.DAL": "1.0.0",
+          "SP.Entities": "1.0.0"
+        }
+      },
+      "SP.DAL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8",
+          "SP.Entities": "1.0.0"
+        }
+      },
       "SP.Entities/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
@@ -1965,6 +1981,7 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.BLL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },
@@ -4201,6 +4218,22 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.BLL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "SP.DAL": "1.0.0",
+          "SP.Entities": "1.0.0"
+        }
+      },
+      "SP.DAL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8",
+          "SP.Entities": "1.0.0"
+        }
+      },
       "SP.Entities/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
@@ -4233,6 +4266,7 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.BLL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },
@@ -6469,6 +6503,22 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "SP.BLL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "SP.DAL": "1.0.0",
+          "SP.Entities": "1.0.0"
+        }
+      },
+      "SP.DAL/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8",
+          "SP.Entities": "1.0.0"
+        }
+      },
       "SP.Entities/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
@@ -6501,6 +6551,7 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "SP.BLL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },
@@ -6805,6 +6856,14 @@
     }
   },
   "libraries": {
+    "SP.BLL/1.0.0": {
+      "type": "project",
+      "path": "../../src/SP.BLL/project.json"
+    },
+    "SP.DAL/1.0.0": {
+      "type": "project",
+      "path": "../../src/SP.DAL/project.json"
+    },
     "SP.Entities/1.0.0": {
       "type": "project",
       "path": "../../src/SP.Entities/project.json"

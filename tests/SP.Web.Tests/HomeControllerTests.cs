@@ -16,10 +16,10 @@ namespace SP.WEB.Tests
         {
             var controller = new HomeController();
 
-            var result = controller.Index() as ViewResult;
+            var result = controller.Index(1) as ViewResult;
             Assert.NotNull(result);
 
-
+            
         }
 
     }
