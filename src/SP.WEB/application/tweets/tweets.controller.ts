@@ -12,7 +12,7 @@ module app.tweets {
         constructor() {
 
             var vm = this;
-            vm.tweetsToDisplay = 3;
+            vm.tweetsToDisplay = 4;
 
         }
     }
