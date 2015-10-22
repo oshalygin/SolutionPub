@@ -1,4 +1,4 @@
-![alt tag](https://travis-ci.org/oshalygin/SolutionPub.svg)
+[![Build Status](https://travis-ci.org/oshalygin/SolutionPub.svg?branch=master)](https://travis-ci.org/oshalygin/SolutionPub)
 
 ##Solution Pub
 ###Built using ASP.NET 5 and AngularJS 1.5.
