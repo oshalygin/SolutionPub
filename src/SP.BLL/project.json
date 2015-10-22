@@ -18,6 +18,7 @@
     }
   },
   "dependencies": {
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta8",
     "SP.DAL": "1.0.0-*",
     "SP.Entities": "1.0.0-*"
   }
