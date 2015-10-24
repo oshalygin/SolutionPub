@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using ImageProcessor;
+
 
 namespace SP.Utilities
 {
@@ -8,10 +8,10 @@ namespace SP.Utilities
     public interface IImageUtility
     {
         bool ValidFileExtension(string extension);
-        ImageFactory ResizeImage(int imageWidth, int imageHeight, Stream filePath);
+        string ResizeImage(int imageWidth, int imageHeight, Stream filePath);
         string GetServerPath(string originalPhotoUrlPath);
-        bool SaveImage(ImageFactory image);
-        bool FormatImage(ImageFactory image);
+        bool SaveImage(string image);
+        bool FormatImage(string image);
 
     }
 }

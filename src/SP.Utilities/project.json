@@ -8,7 +8,6 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
-        "ImageProcessor": "2.3.0"
       }
     },
     "dnxcore50": {

@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using ImageProcessor;
 
 namespace SP.Utilities
 {
@@ -10,7 +9,7 @@ namespace SP.Utilities
             throw new System.NotImplementedException();
         }
 
-        public ImageFactory ResizeImage(int imageWidth, int imageHeight, Stream filePath)
+        public string ResizeImage(int imageWidth, int imageHeight, Stream filePath)
         {
             throw new System.NotImplementedException();
         }
@@ -20,12 +19,12 @@ namespace SP.Utilities
             throw new System.NotImplementedException();
         }
 
-        public bool SaveImage(ImageFactory image)
+        public bool SaveImage(string image)
         {
             throw new System.NotImplementedException();
         }
 
-        public bool FormatImage(ImageFactory image)
+        public bool FormatImage(string image)
         {
             throw new System.NotImplementedException();
         }
