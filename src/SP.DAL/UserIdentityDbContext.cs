@@ -1,15 +1,10 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 
-//TODO: Microsoft why do you create these files in the root project, facepalm.  REFACTOR
-namespace SP.WEB.Models
+namespace SP.DAL
 {
-    // Add profile data for application users by adding properties to the ApplicationUser class
-    public class ApplicationUser : IdentityUser
-    {
-    }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class UserIdentityDbContext : IdentityDbContext<ApplicationUser>
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {

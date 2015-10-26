@@ -2041,6 +2041,7 @@
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
           "SP.BLL": "1.0.0",
+          "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },
@@ -4385,6 +4386,7 @@
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
           "SP.BLL": "1.0.0",
+          "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },
@@ -6729,6 +6731,7 @@
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
           "SP.BLL": "1.0.0",
+          "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
         }
       },

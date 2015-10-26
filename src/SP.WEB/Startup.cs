@@ -9,6 +9,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Newtonsoft.Json.Serialization;
+using SP.DAL;
 using SP.Entities;
 using SP.WEB.Models;
 using SP.WEB.Services;
@@ -41,12 +42,12 @@ namespace SP.WEB
             // Add Entity Framework services to the services container.
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>(options =>
+                .AddDbContext<UserIdentityDbContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<UserIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             // Configure the options for the authentication middleware.

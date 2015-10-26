@@ -5,6 +5,7 @@ using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
+using SP.DAL;
 using SP.WEB.Models;
 using SP.WEB.Services;
 
@@ -17,7 +18,7 @@ namespace SP.WEB.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly UserIdentityDbContext _applicationDbContext;
         private static bool _databaseChecked;
 
         public AccountController(
@@ -25,7 +26,7 @@ namespace SP.WEB.Controllers
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ApplicationDbContext applicationDbContext)
+            UserIdentityDbContext applicationDbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -434,7 +435,7 @@ namespace SP.WEB.Controllers
         // not yet supported in this release.
          //Please see this http://go.microsoft.com/fwlink/?LinkID=615859 for more information on how to do deploy the database
          //when publishing your application.
-        private static void EnsureDatabaseCreated(ApplicationDbContext context)
+        private static void EnsureDatabaseCreated(UserIdentityDbContext context)
         {
             if (!_databaseChecked)
             {
