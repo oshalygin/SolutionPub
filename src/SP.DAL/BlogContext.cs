@@ -1,6 +1,5 @@
 ﻿using Microsoft.Data.Entity;
 using SP.Entities;
-using System.Configuration;
 using Microsoft.Framework.ConfigurationModel;
 
 namespace SP.DAL
@@ -21,8 +20,11 @@ namespace SP.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var configuration = new Configuration();
-            var connectionString = configuration.Get("Data:ConnectionString");
+            var connectionString = configuration.Get("Data:DefaultConnection:ConnectionString");
+
             optionsBuilder.UseSqlServer(connectionString);
+
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }

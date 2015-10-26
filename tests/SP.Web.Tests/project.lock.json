@@ -1995,6 +1995,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.Core": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
@@ -4338,6 +4339,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.Core": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
@@ -6681,6 +6683,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
           "EntityFramework.Core": "7.0.0-beta8",
           "EntityFramework.SqlServer": "7.0.0-beta8",
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
