@@ -34,17 +34,16 @@ namespace SP.DAL
         {
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<UserIdentityDbContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]))
                 .AddDbContext<BlogContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            
 
 
 
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<UserIdentityDbContext>()
+                .AddEntityFrameworkStores<BlogContext>()
                 .AddDefaultTokenProviders();
         }
 

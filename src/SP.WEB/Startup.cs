@@ -42,12 +42,12 @@ namespace SP.WEB
             // Add Entity Framework services to the services container.
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<UserIdentityDbContext>(options =>
+                .AddDbContext<BlogContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<UserIdentityDbContext>()
+                .AddEntityFrameworkStores<BlogContext>()
                 .AddDefaultTokenProviders();
 
             // Configure the options for the authentication middleware.

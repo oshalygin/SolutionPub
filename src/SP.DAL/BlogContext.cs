@@ -1,10 +1,11 @@
-﻿using Microsoft.Data.Entity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Data.Entity;
 using SP.Entities;
 using Microsoft.Framework.ConfigurationModel;
 
 namespace SP.DAL
 {
-    public class BlogContext : DbContext
+    public class BlogContext : IdentityDbContext<ApplicationUser>
     {
 
         public BlogContext()
