@@ -6,11 +6,6 @@ namespace SP.Entities
     public class Post
     {
 
-        public Post()
-        {
-            Tags = new List<Tag>();
-            Comments = new List<Comment>();
-        }
         public int Id { get; set; }
         public string Title { get; set; }
         public string UrlTitle { get; set; }
@@ -22,8 +17,8 @@ namespace SP.Entities
         public int Views { get; set; }
         public bool Inactive { get; set; }
 
-        public List<Tag> Tags { get; set; }
-        public List<Comment> Comments { get; set; }
+        public ICollection<PostTag> Tags { get; set; }
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }
