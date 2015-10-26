@@ -5,7 +5,7 @@ using SP.Entities;
 
 namespace SP.DAL
 {
-    public class BlogDataAccess: IBlogDataAccess
+    public class BlogDataAccess : IBlogDataAccess
     {
         private readonly BlogContext _context;
 
@@ -22,7 +22,7 @@ namespace SP.DAL
                 .Include(x => x.Tags)
                 .Include(x => x.Comments)
                 .OrderBy(x => x.PostedDate)
-                .Skip(page*pageSize)
+                .Skip(page * pageSize)
                 .Take(pageSize);
         }
 
@@ -47,7 +47,6 @@ namespace SP.DAL
             return _context
                 .Tags
                 .OrderBy(x => x.TimesUsed);
-
         }
 
         public Tag EditTag(Tag tag)
@@ -64,8 +63,5 @@ namespace SP.DAL
             _context.SaveChanges();
             return tag;
         }
-
-
     }
-
 }

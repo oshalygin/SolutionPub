@@ -8,7 +8,7 @@ namespace SP.BLL
     {
         Post GetPostById(int postId);
         IEnumerable<Post> GetPostTitles(int quantity);
-        IEnumerable<Post> Get(int page, int pageSize);
+        IEnumerable<Post> Get(int page);
         IEnumerable<Post> SavePost(Post post);
         IEnumerable<Post> GetInactivePosts(int? page);
         int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate);

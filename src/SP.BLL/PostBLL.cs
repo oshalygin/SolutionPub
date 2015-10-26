@@ -7,9 +7,19 @@ namespace SP.BLL
 {
     public class PostBLL: IPostBLL
     {
+        readonly int _pagesize = 5;
         public Post GetPostById(int postId)
         {
-            throw new NotImplementedException();
+            var post = new Post
+            {
+                PostedDate = DateTime.UtcNow,
+                Body = $"Single Post with ID: {postId}",
+                Title = "Single Post",
+                Id = postId
+            };
+
+            return post;
+
         }
 
         public IEnumerable<Post> GetPostTitles(int quantity)
@@ -17,9 +27,10 @@ namespace SP.BLL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Post> Get(int page, int pageSize)
+        public IEnumerable<Post> Get(int page)
         {
             
+
             var post = new Post();
             post.Body =
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more";
