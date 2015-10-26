@@ -1973,6 +1973,27 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.Extensions.Conventions/3.2.1-unstable-005": {
+        "type": "package",
+        "dependencies": {
+          "Ninject": "3.2.0-unstable"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -2042,6 +2063,8 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "Ninject": "3.2.0",
+          "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
@@ -4320,6 +4343,27 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.Extensions.Conventions/3.2.1-unstable-005": {
+        "type": "package",
+        "dependencies": {
+          "Ninject": "3.2.0-unstable"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -4389,6 +4433,8 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "Ninject": "3.2.0",
+          "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
@@ -6667,6 +6713,27 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.Extensions.Conventions/3.2.1-unstable-005": {
+        "type": "package",
+        "dependencies": {
+          "Ninject": "3.2.0-unstable"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -6736,6 +6803,8 @@
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
           "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "Ninject": "3.2.0",
+          "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
           "SP.Entities": "1.0.0"
@@ -8653,6 +8722,60 @@
         "Newtonsoft.Json.7.0.1.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Ninject/3.2.0": {
+      "type": "package",
+      "sha512": "CN7i6J/a1y85jVdeg0FkH5Obqo47SVQBU5929NPmlsi/AbE6ofJoStPHJco4H3aSI696obvoDmFxbZ+tfz7m6A==",
+      "files": [
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.xml",
+        "Ninject.3.2.0.nupkg",
+        "Ninject.3.2.0.nupkg.sha512",
+        "Ninject.nuspec"
+      ]
+    },
+    "Ninject.Extensions.Conventions/3.2.1-unstable-005": {
+      "type": "package",
+      "sha512": "uTSrZtnrTcmkjftBoXgaD/Ht7/zVxrygGjloEDrP+8Copj2SuDX6iSeLJPnmBiLGhERxRVr8utfK/zdUeiInkw==",
+      "files": [
+        "lib/net35/Ninject.Extensions.Conventions.dll",
+        "lib/net35/Ninject.Extensions.Conventions.xml",
+        "lib/net40/Ninject.Extensions.Conventions.dll",
+        "lib/net40/Ninject.Extensions.Conventions.xml",
+        "lib/net45-full/Ninject.Extensions.Conventions.dll",
+        "lib/net45-full/Ninject.Extensions.Conventions.xml",
+        "lib/sl2/Ninject.Extensions.Conventions.dll",
+        "lib/sl2/Ninject.Extensions.Conventions.xml",
+        "lib/sl3/Ninject.Extensions.Conventions.dll",
+        "lib/sl3/Ninject.Extensions.Conventions.xml",
+        "lib/sl3-wp/Ninject.Extensions.Conventions.dll",
+        "lib/sl3-wp/Ninject.Extensions.Conventions.xml",
+        "lib/sl4/Ninject.Extensions.Conventions.dll",
+        "lib/sl4/Ninject.Extensions.Conventions.xml",
+        "lib/sl4-windowsphone71/Ninject.Extensions.Conventions.dll",
+        "lib/sl4-windowsphone71/Ninject.Extensions.Conventions.xml",
+        "lib/sl5/Ninject.Extensions.Conventions.dll",
+        "lib/sl5/Ninject.Extensions.Conventions.xml",
+        "Ninject.Extensions.Conventions.3.2.1-unstable-005.nupkg",
+        "Ninject.Extensions.Conventions.3.2.1-unstable-005.nupkg.sha512",
+        "Ninject.Extensions.Conventions.nuspec"
       ]
     },
     "Remotion.Linq/2.0.0-beta-002": {

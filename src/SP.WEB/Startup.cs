@@ -10,6 +10,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Newtonsoft.Json.Serialization;
+using Ninject;
 using SP.BLL;
 using SP.DAL;
 using SP.Entities;
@@ -64,6 +65,9 @@ namespace SP.WEB
                     x.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
 
+
+
+
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
             // services.AddWebApiConventions();
@@ -72,6 +76,7 @@ namespace SP.WEB
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IPostBLL, PostBLL>();
+            
         }
 
         // Configure is called after ConfigureServices is called.

@@ -17,7 +17,7 @@ namespace SP.BLL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Post> Get(int? page)
+        public IEnumerable<Post> Get(int page, int pageSize)
         {
             
             var post = new Post();

@@ -27,6 +27,8 @@
     "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
     "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+    "Ninject.Extensions.Conventions": "3.2.1-*",
+    "Ninject": "3.2.0",
     "AutoMapper": "4.0.4",
     "SP.Entities": "1.0.0-*",
     "SP.BLL": "1.0.0-*",

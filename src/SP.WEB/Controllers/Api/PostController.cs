@@ -17,41 +17,31 @@ namespace SP.WEB.Controllers.Api
             _postBll = postBll;
         }
         
+        [Route("{page}")]
         [HttpGet]
-        public IEnumerable<PostViewModel> Get()
+        public IActionResult Get(int page)
         {
-
+            var pageSize = 5;
             var posts = Mapper
                 .Map<IEnumerable<Post>, IEnumerable<PostViewModel>>
-                (_postBll.Get(0));            
-            
-            return posts;
+                (_postBll.Get(page, pageSize));
+
+            return Ok(posts);
 
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public IActionResult Get()
         {
-            return "value";
-        }
+            var totalNumberOfPosts = 10;
+            var totals = new BlogTotals
+            {
+                TotalNumberOfPosts = totalNumberOfPosts
+            };
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
+            return Ok(totals);
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
         }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        
     }
 }
