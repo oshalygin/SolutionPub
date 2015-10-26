@@ -6,7 +6,6 @@ namespace SP.WEB.Controllers
     {
         public IActionResult Index(int? page)
         {
-
             return View();
         }
         

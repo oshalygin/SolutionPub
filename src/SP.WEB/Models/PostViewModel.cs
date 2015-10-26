@@ -25,7 +25,7 @@ namespace SP.WEB.Models
         public int Views { get; set; }
 
 
-        public IEnumerable<Tag> Tags { get; set; }
-        public IEnumerable<Comment> Comments { get; set; }
+        //public IEnumerable<Tag> Tags { get; set; }
+        //public IEnumerable<Comment> Comments { get; set; }
     }
 }

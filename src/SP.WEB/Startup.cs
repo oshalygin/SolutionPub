@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.AspNet.Hosting;
@@ -9,6 +10,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Newtonsoft.Json.Serialization;
+using SP.BLL;
 using SP.DAL;
 using SP.Entities;
 using SP.WEB.Models;
@@ -69,6 +71,7 @@ namespace SP.WEB
             // Register application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IPostBLL, PostBLL>();
         }
 
         // Configure is called after ConfigureServices is called.
@@ -89,7 +92,7 @@ namespace SP.WEB
 
             //todo: this doesnt actually exist yet...
             app.UseDeveloperExceptionPage();
-            app.UseExceptionHandler("/Home/Error");
+            //app.UseExceptionHandler("/Home/Error");
 
             app.UseIISPlatformHandler();
 

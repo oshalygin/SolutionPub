@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using SP.WEB.Controllers;
 using Xunit;
 
@@ -15,8 +11,9 @@ namespace SP.WEB.Tests
         public void IndexReturnsView()
         {
             var controller = new HomeController();
+            var page = 1;
 
-            var result = controller.Index(1) as ViewResult;
+            var result = controller.Index(page) as ViewResult;
             Assert.NotNull(result);
 
             

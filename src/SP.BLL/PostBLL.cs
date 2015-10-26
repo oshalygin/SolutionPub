@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SP.Entities;
 
 namespace SP.BLL
@@ -18,7 +19,21 @@ namespace SP.BLL
 
         public IEnumerable<Post> Get(int? page)
         {
-            throw new NotImplementedException();
+            
+            var post = new Post();
+            post.Body =
+                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more";
+            post.Title = "Random Post";
+            post.PostedDate = DateTime.Now;
+
+            var listOfPosts = new List<Post>
+            {
+                post,
+                post,
+                post
+            };
+            return listOfPosts.AsEnumerable();
+
         }
 
         public IEnumerable<Post> SavePost(Post post)
