@@ -2003,8 +2003,10 @@
           "Microsoft.Framework.Configuration.CommandLine": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
           "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "SP.Entities": "1.0.0"
         }
       },
@@ -4348,8 +4350,10 @@
           "Microsoft.Framework.Configuration.CommandLine": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
           "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "SP.Entities": "1.0.0"
         }
       },
@@ -6693,8 +6697,10 @@
           "Microsoft.Framework.Configuration.CommandLine": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta8",
           "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
           "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
           "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
           "SP.Entities": "1.0.0"
         }
       },

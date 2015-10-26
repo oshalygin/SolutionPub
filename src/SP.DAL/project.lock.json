@@ -857,6 +857,24 @@
           "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -975,6 +993,24 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -2049,6 +2085,20 @@
           "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "System.Runtime": "4.0.21-beta-23409",
+          "System.Runtime.Serialization.Primitives": "4.0.11-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -2173,6 +2223,21 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.11-beta-23409",
+          "System.Globalization": "4.0.11-beta-23409",
+          "System.Linq": "4.0.1-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -2998,6 +3063,19 @@
         },
         "runtime": {
           "lib/DNXCore50/System.Runtime.Loader.dll": {}
+        }
+      },
+      "System.Runtime.Serialization.Primitives/4.0.11-beta-23409": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "ref/dotnet/System.Runtime.Serialization.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Runtime.Serialization.Primitives.dll": {}
         }
       },
       "System.Security.Claims/4.0.1-beta-23409": {
@@ -4119,6 +4197,24 @@
           "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -4237,6 +4333,24 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -5381,6 +5495,24 @@
           "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -5499,6 +5631,24 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -6573,6 +6723,20 @@
           "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "System.Runtime": "4.0.21-beta-23409",
+          "System.Runtime.Serialization.Primitives": "4.0.11-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -6697,6 +6861,21 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.11-beta-23409",
+          "System.Globalization": "4.0.11-beta-23409",
+          "System.Linq": "4.0.1-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -7871,6 +8050,19 @@
           "lib/dotnet/System.Runtime.Numerics.dll": {}
         }
       },
+      "System.Runtime.Serialization.Primitives/4.0.11-beta-23409": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "ref/dotnet/System.Runtime.Serialization.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Runtime.Serialization.Primitives.dll": {}
+        }
+      },
       "System.Security.Claims/4.0.1-beta-23409": {
         "type": "package",
         "dependencies": {
@@ -8975,6 +9167,20 @@
           "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "System.Runtime": "4.0.21-beta-23409",
+          "System.Runtime.Serialization.Primitives": "4.0.11-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll": {}
+        }
+      },
       "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
         "type": "package",
         "dependencies": {
@@ -9099,6 +9305,21 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.11-beta-23409",
+          "System.Globalization": "4.0.11-beta-23409",
+          "System.Linq": "4.0.1-beta-23409"
+        },
+        "compile": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -10273,6 +10494,19 @@
           "lib/dotnet/System.Runtime.Numerics.dll": {}
         }
       },
+      "System.Runtime.Serialization.Primitives/4.0.11-beta-23409": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "ref/dotnet/System.Runtime.Serialization.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Runtime.Serialization.Primitives.dll": {}
+        }
+      },
       "System.Security.Claims/4.0.1-beta-23409": {
         "type": "package",
         "dependencies": {
@@ -11327,6 +11561,20 @@
         "Microsoft.Framework.Configuration.Json.nuspec"
       ]
     },
+    "Microsoft.Framework.Configuration.UserSecrets/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "P0ZPcnvy2t/3yYxd0eFbZdqGbwqNR2UBIoOLkFexr2XYpbPS8jXt/TQWVn+eA8ml5/L4B17G6davwZU25PYn1A==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.UserSecrets.xml",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.dll",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.UserSecrets.xml",
+        "Microsoft.Framework.Configuration.UserSecrets.1.0.0-beta8.nupkg",
+        "Microsoft.Framework.Configuration.UserSecrets.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Configuration.UserSecrets.nuspec"
+      ]
+    },
     "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
       "type": "package",
       "serviceable": true,
@@ -11451,6 +11699,24 @@
         "Microsoft.Framework.Logging.Console.1.0.0-beta8.nupkg",
         "Microsoft.Framework.Logging.Console.1.0.0-beta8.nupkg.sha512",
         "Microsoft.Framework.Logging.Console.nuspec"
+      ]
+    },
+    "Microsoft.Framework.Logging.Debug/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "VAnYlP9IJ2ZIuHaDdMc8JzIfb3BNHhf08kTKDeMOEy2Q2cCnjKt7UOLFyMhJX52Is1U+WGeoMvogc+WY1GRR8g==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.Debug.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Debug.xml",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Debug.dll",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Debug.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.Debug.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.Debug.xml",
+        "lib/net45/Microsoft.Framework.Logging.Debug.dll",
+        "lib/net45/Microsoft.Framework.Logging.Debug.xml",
+        "Microsoft.Framework.Logging.Debug.1.0.0-beta8.nupkg",
+        "Microsoft.Framework.Logging.Debug.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Logging.Debug.nuspec"
       ]
     },
     "Microsoft.Framework.OptionsModel/1.0.0-beta8": {
@@ -14123,6 +14389,38 @@
         "System.Runtime.Numerics.nuspec"
       ]
     },
+    "System.Runtime.Serialization.Primitives/4.0.11-beta-23409": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "AQywM01eG8EgYde/RRrJDVdHmOOI3KkgK9GEjLQqvTLsrWsamNHN/j7Pxwa3XX7klSSrfDpvTNfUl40855idVg==",
+      "files": [
+        "lib/dotnet/de/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/es/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/fr/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/it/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/ja/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/ko/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/ru/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/System.Runtime.Serialization.Primitives.dll",
+        "lib/dotnet/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/zh-hans/System.Runtime.Serialization.Primitives.xml",
+        "lib/dotnet/zh-hant/System.Runtime.Serialization.Primitives.xml",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/System.Runtime.Serialization.Primitives.dll",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Runtime.Serialization.Primitives.4.0.11-beta-23409.nupkg",
+        "System.Runtime.Serialization.Primitives.4.0.11-beta-23409.nupkg.sha512",
+        "System.Runtime.Serialization.Primitives.nuspec"
+      ]
+    },
     "System.Security.Claims/4.0.1-beta-23409": {
       "type": "package",
       "serviceable": true,
@@ -14823,7 +15121,9 @@
       "Microsoft.Framework.Configuration.Json >= 1.0.0-beta8",
       "Microsoft.Framework.ConfigurationModel >= 1.0.0-beta4",
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta8",
-      "SP.Entities >= 1.0.0-*"
+      "SP.Entities >= 1.0.0-*",
+      "Microsoft.Framework.Logging.Debug >= 1.0.0-beta8",
+      "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta8"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": [

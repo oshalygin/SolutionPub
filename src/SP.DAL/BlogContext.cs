@@ -19,11 +19,6 @@ namespace SP.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var configuration = new Configuration();
-            var connectionString = configuration.Get("Data:DefaultConnection:ConnectionString");
-
-            optionsBuilder.UseSqlServer(connectionString);
-
             base.OnConfiguring(optionsBuilder);
         }
     }

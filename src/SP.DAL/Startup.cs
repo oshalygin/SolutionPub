@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
+using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.Logging;
 
 namespace SP.DAL
 {
@@ -10,22 +13,48 @@ namespace SP.DAL
     {
         public IConfigurationRoot Configuration { get; set; }
 
-        public void Configure(IApplicationBuilder app)
+        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
-            // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
+            var builder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath)
+                .AddJsonFile("config.json")
+                .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+
+            if (env.IsDevelopment())
+            {
+                // This reads the configuration keys from the secret store.
+                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+                builder.AddUserSecrets();
+            }
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
+
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFramework()
-               .AddSqlServer()
-               .AddDbContext<UserIdentityDbContext>(options =>
-                   options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+                .AddSqlServer()
+                .AddDbContext<UserIdentityDbContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]))
+                .AddDbContext<BlogContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+
+
+
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<UserIdentityDbContext>()
                 .AddDefaultTokenProviders();
+        }
+
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.MinimumLevel = LogLevel.Information;
+            loggerFactory.AddConsole();
+            loggerFactory.AddDebug();
+
+            app.UseIdentity();
         }
 
     }

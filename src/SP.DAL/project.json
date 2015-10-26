@@ -1,7 +1,8 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "SP.DAL Class Library",
   "authors": [ "Admin" ],
+  
   "tags": [ "" ],
   "projectUrl": "",
   "licenseUrl": "",
@@ -28,9 +29,12 @@
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
     "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
-    "SP.Entities": "1.0.0-*"
+    "SP.Entities": "1.0.0-*",
+    "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+    "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8"
   },
   "commands": {
     "ef": "EntityFramework.Commands"
-  }
+  },
+  "userSecretsId": "aspnet5-SP-bd18072a-4f8f-4ecc-ad44-8c28f74c2d06"
 }
