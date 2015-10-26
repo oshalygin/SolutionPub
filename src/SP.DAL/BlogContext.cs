@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 using SP.Entities;
-using Microsoft.Framework.ConfigurationModel;
 
 namespace SP.DAL
 {
@@ -18,7 +17,7 @@ namespace SP.DAL
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<PostTag> PostTag { get; set; }
-    
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
