@@ -22,8 +22,8 @@ module.exports = function (config) {
             "application/app.run.js",
             "application/**/*.routes.js", "application/**/*.controller.js",
         //Test Files
-            "../../tests/SP.Web.Tests/stateMock.js",
-            "../../tests/SP.Web.Tests/*.controller.spec.js"
+            "../../tests/SP.WEB.Tests/stateMock.js",
+            "../../tests/SP.WEB.Tests/*.controller.spec.js"
         ],
         reporters: ["mocha"],
         logLevel: config.LOG_INFO

@@ -15,7 +15,7 @@ src/SP.WEB/wwwroot/application/
 src/SP.WEB/application/*.js
 src/SP.WEB/application/**/*.js
 
-tests/SP.Web.Tests/
+
 
 # Build results
 [Dd]ebug/
