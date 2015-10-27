@@ -6,5 +6,10 @@
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false
-    }
+    },
+    "exclude": [
+    "bower_components",
+    "node_modules",
+    "wwwroot"
+  ]
 }
