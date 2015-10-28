@@ -2,60 +2,92 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using SP.Entities;
 
 namespace SP.DAL
 {
-    public static class SeedData
+    public class SeedData
     {
-        public static void SeedPostTagComments(BlogContext context)
+
+        private readonly BlogContext _context;
+        private readonly UserManager<ApplicationUser> _userManager; 
+
+        public SeedData(BlogContext context, UserManager<ApplicationUser> userManager)
         {
-            int numberOfPosts = 17;
+            _context = context;
+            _userManager = userManager;
+        }
 
-            var bodyTextFirstSample =
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae scelerisque tortor. Fusce ac augue in nulla lobortis auctor fringilla id urna. Aenean eleifend metus mi, non fringilla libero tempus ac. Curabitur vitae posuere ligula, ac faucibus ex. Cras placerat est lectus, condimentum dictum est volutpat quis. Proin bibendum vel tortor sit amet lobortis. Curabitur bibendum porttitor erat vel molestie. Morbi auctor cursus nisl et posuere. Donec ac placerat mauris, quis rutrum turpis";
+        public async Task SeedUserData()
+        {
 
-            var bodyTextSecondSample =
-                "Aenean sed fringilla lectus, vitae placerat mi. Proin non ante interdum, congue metus dignissim, gravida enim. Praesent pulvinar vehicula sodales. In congue hendrerit vestibulum. Sed vitae interdum quam. Maecenas nec quam urna. Nulla sollicitudin, nisi a vulputate luctus, leo neque luctus turpis, quis ultrices mauris dui sit amet diam. Nunc imperdiet quam id lectus convallis, eget condimentum lorem consectetur. Sed dignissim bibendum ultrices. Proin in sem ac dolor vestibulum sodales a nec lacus. Praesent lectus quam, interdum a condimentum accumsan, congue in ante. Phasellus at mi euismod, mollis dui in, ornare nisl.";
-
-            var postList = new List<Post>();
-
-            var angularJsTag = new Tag { TimesUsed = 3, Name = "angularjs" };
-            var javaScriptTag = new Tag { TimesUsed = 6, Name = "javascript" };
-            var cSharpTag = new Tag { TimesUsed = 2, Name = "csharp" };
-
-            context.Tags.Add(angularJsTag);
-            context.Tags.Add(javaScriptTag);
-            context.Tags.Add(cSharpTag);
-
-            var random = new Random();
-
-
-            for (int i = 0; i < numberOfPosts; i++)
+            if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
             {
-                var post = new Post
+                var user = new ApplicationUser
                 {
-                    Preview =
-                        i%2 == 0 ? bodyTextFirstSample.Substring(50, 400) : bodyTextSecondSample.Substring(50, 400),
-                    Body =
-                        i%2 == 0
-                            ? bodyTextFirstSample + "<br><br>" + bodyTextSecondSample
-                            : bodyTextSecondSample + "<br><br>" + bodyTextFirstSample,
-                    PostedDate = DateTime.UtcNow,
-                    Title = i%2 == 0 ? "AngularJS Routing" : "JavaScript Fundamentals",
-                    UrlTitle = i%2 == 0 ? "AngularJS-Routing" : "JavaScript-Fundamentals",
-                    Views = random.Next(100),
-                    PhotoPath = @"C:\dev\PhotoPath",
-                    Inactive = false,
-                    Comments = BuildCommentList(random.Next(7))
+                    UserName = "oshalygin",
+                    Email = "oshalygin@gmail.com"
                 };
 
-
-                postList.Add(post);
+                await _userManager.CreateAsync(user, "Password1234");
             }
 
-            context.Posts.AddRange(postList);
-            context.SaveChanges();
+       
+        }
+
+
+        public void SeedPostTagComments()
+        {
+            if (!_context.Posts.Any())
+            {
+                int numberOfPosts = 17;
+
+                var bodyTextFirstSample =
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae scelerisque tortor. Fusce ac augue in nulla lobortis auctor fringilla id urna. Aenean eleifend metus mi, non fringilla libero tempus ac. Curabitur vitae posuere ligula, ac faucibus ex. Cras placerat est lectus, condimentum dictum est volutpat quis. Proin bibendum vel tortor sit amet lobortis. Curabitur bibendum porttitor erat vel molestie. Morbi auctor cursus nisl et posuere. Donec ac placerat mauris, quis rutrum turpis";
+
+                var bodyTextSecondSample =
+                    "Aenean sed fringilla lectus, vitae placerat mi. Proin non ante interdum, congue metus dignissim, gravida enim. Praesent pulvinar vehicula sodales. In congue hendrerit vestibulum. Sed vitae interdum quam. Maecenas nec quam urna. Nulla sollicitudin, nisi a vulputate luctus, leo neque luctus turpis, quis ultrices mauris dui sit amet diam. Nunc imperdiet quam id lectus convallis, eget condimentum lorem consectetur. Sed dignissim bibendum ultrices. Proin in sem ac dolor vestibulum sodales a nec lacus. Praesent lectus quam, interdum a condimentum accumsan, congue in ante. Phasellus at mi euismod, mollis dui in, ornare nisl.";
+
+                var postList = new List<Post>();
+
+                var angularJsTag = new Tag {TimesUsed = 3, Name = "angularjs"};
+                var javaScriptTag = new Tag {TimesUsed = 6, Name = "javascript"};
+                var cSharpTag = new Tag {TimesUsed = 2, Name = "csharp"};
+
+                _context.Tags.Add(angularJsTag);
+                _context.Tags.Add(javaScriptTag);
+                _context.Tags.Add(cSharpTag);
+
+                var random = new Random();
+
+
+                for (int i = 0; i < numberOfPosts; i++)
+                {
+                    var post = new Post
+                    {
+                        Preview =
+                            i%2 == 0 ? bodyTextFirstSample.Substring(50, 400) : bodyTextSecondSample.Substring(50, 400),
+                        Body =
+                            i%2 == 0
+                                ? bodyTextFirstSample + "<br><br>" + bodyTextSecondSample
+                                : bodyTextSecondSample + "<br><br>" + bodyTextFirstSample,
+                        PostedDate = DateTime.UtcNow,
+                        Title = i%2 == 0 ? "AngularJS Routing" : "JavaScript Fundamentals",
+                        UrlTitle = i%2 == 0 ? "AngularJS-Routing" : "JavaScript-Fundamentals",
+                        Views = random.Next(100),
+                        PhotoPath = @"C:\dev\PhotoPath",
+                        Inactive = false,
+                        Comments = BuildCommentList(random.Next(7))
+                    };
+
+
+                    postList.Add(post);
+                }
+
+                _context.Posts.AddRange(postList);
+                _context.SaveChanges();
+            }
         }
 
         public static List<Comment> BuildCommentList(int commentSize)

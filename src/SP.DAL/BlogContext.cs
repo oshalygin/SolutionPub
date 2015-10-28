@@ -10,6 +10,7 @@ namespace SP.DAL
         public BlogContext()
         {
             Database.EnsureCreated();
+
         }
 
         public DbSet<Post> Posts { get; set; }

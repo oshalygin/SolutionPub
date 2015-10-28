@@ -39,21 +39,29 @@ namespace SP.DAL
             
 
 
-
+            
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<BlogContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<SeedData>();
         }
 
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, SeedData seedData)
         {
             loggerFactory.MinimumLevel = LogLevel.Information;
             loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
             app.UseIdentity();
+
+            await seedData.SeedUserData();
+            seedData.SeedPostTagComments();
+            
+
+
         }
 
     }
