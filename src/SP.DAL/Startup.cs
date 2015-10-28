@@ -49,7 +49,7 @@ namespace SP.DAL
             services.AddTransient<SeedData>();
         }
 
-        public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, SeedData seedData)
+        public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.MinimumLevel = LogLevel.Information;
             loggerFactory.AddConsole();
@@ -57,8 +57,8 @@ namespace SP.DAL
 
             app.UseIdentity();
 
-            await seedData.SeedUserData();
-            seedData.SeedPostTagComments();
+            //await seedData.SeedUserData();
+            //seedData.SeedPostTagComments();
             
 
 

@@ -11,33 +11,34 @@ namespace SP.DAL
     {
 
         private readonly BlogContext _context;
-        private readonly UserManager<ApplicationUser> _userManager; 
 
-        public SeedData(BlogContext context, UserManager<ApplicationUser> userManager)
+        public SeedData(BlogContext context)
         {
             _context = context;
-            _userManager = userManager;
+
         }
+//        private readonly UserManager<ApplicationUser> _userManager; 
 
-        public async Task SeedUserData()
-        {
 
-            if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
-            {
-                var user = new ApplicationUser
-                {
-                    UserName = "oshalygin",
-                    Email = "oshalygin@gmail.com"
-                };
+        //public async Task SeedUserData()
+        //{
 
-                await _userManager.CreateAsync(user, "Password1234");
-            }
+        //    if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
+        //    {
+        //        var user = new ApplicationUser
+        //        {
+        //            UserName = "oshalygin",
+        //            Email = "oshalygin@gmail.com"
+        //        };
+
+        //        await _userManager.CreateAsync(user, "Password1234");
+        //    }
 
        
-        }
+        //}
 
 
-        public void SeedPostTagComments()
+        public bool SeedPostTagComments()
         {
             if (!_context.Posts.Any())
             {
@@ -87,7 +88,9 @@ namespace SP.DAL
 
                 _context.Posts.AddRange(postList);
                 _context.SaveChanges();
+                return true;
             }
+            return false;
         }
 
         public static List<Comment> BuildCommentList(int commentSize)
