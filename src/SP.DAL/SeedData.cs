@@ -17,25 +17,25 @@ namespace SP.DAL
             _context = context;
 
         }
-//        private readonly UserManager<ApplicationUser> _userManager; 
+        private readonly UserManager<ApplicationUser> _userManager; 
 
 
-        //public async Task SeedUserData()
-        //{
+        public async Task SeedUserData()
+        {
 
-        //    if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
-        //    {
-        //        var user = new ApplicationUser
-        //        {
-        //            UserName = "oshalygin",
-        //            Email = "oshalygin@gmail.com"
-        //        };
+            if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = "oshalygin",
+                    Email = "oshalygin@gmail.com"
+                };
 
-        //        await _userManager.CreateAsync(user, "Password1234");
-        //    }
+                await _userManager.CreateAsync(user, "Password1234");
+            }
 
        
-        //}
+        }
 
 
         public bool SeedPostTagComments()
