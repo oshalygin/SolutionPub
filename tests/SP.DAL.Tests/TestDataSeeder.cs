@@ -10,19 +10,37 @@ namespace SP.DAL.Tests
 {
     public class TestDataSeeder
     {
+        private UserManager<ApplicationUser> _userManager; 
 
+        public TestDataSeeder(UserManager<ApplicationUser> userManager )
+        {
+            _userManager = userManager;
+
+        }
+   
         [Fact]
         public void SeedBlogPostTagAndComments()
         {
 
-            
+
             var context = new BlogContext();
             var seeder = new SeedData(context);
             var success = seeder.SeedPostTagComments();
 
-            Assert.True(success);
+            Assert.False(success);
 
 
         }
+
+        [Fact]
+        public async Task SeedUserData()
+        {
+            var context = new BlogContext();
+            var seeder = new SeedData(context);
+           await  seeder.SeedUserData(_userManager);
+
+            Assert.True(true);
+        }
+
     }
 }

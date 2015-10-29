@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
+using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.OptionsModel;
 using SP.Entities;
 
 namespace SP.DAL
@@ -15,14 +17,12 @@ namespace SP.DAL
         public SeedData(BlogContext context)
         {
             _context = context;
-
         }
-        private readonly UserManager<ApplicationUser> _userManager; 
 
 
-        public async Task SeedUserData()
+        public async Task SeedUserData(UserManager<ApplicationUser> _userManager )
         {
-
+            
             if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
             {
                 var user = new ApplicationUser
@@ -33,8 +33,6 @@ namespace SP.DAL
 
                 await _userManager.CreateAsync(user, "Password1234");
             }
-
-       
         }
 
 
@@ -101,7 +99,7 @@ namespace SP.DAL
                 var comment = new Comment
                 {
                     DateOfComment = DateTime.UtcNow,
-                    Body = i % 3 == 0
+                    Body = i%3 == 0
                         ? "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
                         : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur"
                 };
