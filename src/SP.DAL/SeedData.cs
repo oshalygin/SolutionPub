@@ -19,23 +19,6 @@ namespace SP.DAL
             _context = context;
         }
 
-
-        public async Task SeedUserData(UserManager<ApplicationUser> _userManager )
-        {
-            
-            if (await _userManager.FindByEmailAsync("oshalygin@gmail.com") == null)
-            {
-                var user = new ApplicationUser
-                {
-                    UserName = "oshalygin",
-                    Email = "oshalygin@gmail.com"
-                };
-
-                await _userManager.CreateAsync(user, "Password1234");
-            }
-        }
-
-
         public bool SeedPostTagComments()
         {
             if (!_context.Posts.Any())
