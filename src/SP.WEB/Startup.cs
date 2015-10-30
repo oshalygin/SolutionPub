@@ -74,7 +74,8 @@ namespace SP.WEB
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IPostBLL, PostBLL>();
-            
+            services.AddTransient<IBlogDataAccess, BlogDataAccess>();
+
         }
 
         // Configure is called after ConfigureServices is called.
