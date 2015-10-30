@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SP.DAL;
 using SP.Entities;
 
 namespace SP.BLL
 {
     public class PostBLL: IPostBLL
     {
-        readonly int _pagesize = 5;
-        public Post GetPostById(int postId)
+
+        private IBlogDataAccess _blogDataAccess;
+
+        public PostBLL(IBlogDataAccess blogDataAccess)
         {
-            var post = new Post
-            {
-                PostedDate = DateTime.UtcNow,
-                Body = $"Single Post with ID: {postId}",
-                Title = "Single Post",
-                Id = postId
-            };
-
-            return post;
-
+            _blogDataAccess = blogDataAccess;
+        }
+        
+        readonly int _pagesize = 5;
+        public Post GetPost(int postId)
+        {
+            return _blogDataAccess.GetPost(postId);            
         }
 
         public IEnumerable<Post> GetPostTitles(int quantity)

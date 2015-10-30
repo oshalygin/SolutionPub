@@ -23,8 +23,15 @@ namespace SP.DAL
                 .Include(x => x.Tags)
                 .Include(x => x.Comments)
                 .OrderBy(x => x.PostedDate)
-                .Skip(page * pageSize)
+                .Skip(page*pageSize)
                 .Take(pageSize);
+        }
+
+        public Post GetPost(int postId)
+        {
+            return _context
+                .Posts
+                .FirstOrDefault(x => x.Id == postId);
         }
 
         public IEnumerable<Tag> GetTopTags(int maxNumberOfTags)
@@ -64,7 +71,5 @@ namespace SP.DAL
             _context.SaveChanges();
             return tag;
         }
-
-        
     }
 }

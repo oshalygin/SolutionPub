@@ -6,7 +6,7 @@ namespace SP.BLL
 {
     public interface IPostBLL
     {
-        Post GetPostById(int postId);
+        Post GetPost(int postId);
         IEnumerable<Post> GetPostTitles(int quantity);
         IEnumerable<Post> Get(int page);
         IEnumerable<Post> SavePost(Post post);

@@ -54,7 +54,7 @@ namespace SP.WEB.Controllers.Api
         [Route("{id}")]
         public IActionResult Get(int id)
         {
-            var posts = _postBll.GetPostById(id);
+            var posts = _postBll.GetPost(id);
             if (posts == null)
             {
                 return HttpNotFound();

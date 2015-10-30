@@ -49,7 +49,7 @@ namespace SP.DAL
             services.AddTransient<SeedData>();
         }
 
-        public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, SeedData seeder)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, SeedData seeder)
         {
             loggerFactory.MinimumLevel = LogLevel.Information;
             loggerFactory.AddConsole();

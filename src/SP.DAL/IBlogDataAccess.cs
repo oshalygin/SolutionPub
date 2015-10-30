@@ -7,6 +7,7 @@ namespace SP.DAL
     {
         
         IEnumerable<Post> GetPosts(int page, int pageSize);
+        Post GetPost(int postId);
         IEnumerable<Tag> GetTopTags(int maxNumberOfTags);
         IEnumerable<Post> GetLatestPosts(int quantity);
 
