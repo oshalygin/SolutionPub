@@ -9,7 +9,7 @@ namespace SP.BLL
     public class PostBLL: IPostBLL
     {
 
-        private IBlogDataAccess _blogDataAccess;
+        private readonly IBlogDataAccess _blogDataAccess;
 
         public PostBLL(IBlogDataAccess blogDataAccess)
         {
@@ -17,14 +17,17 @@ namespace SP.BLL
         }
         
         readonly int _pagesize = 5;
-        public Post GetPost(int postId)
+        public Post GetPostById(int postId)
         {
             return _blogDataAccess.GetPost(postId);            
         }
 
-        public IEnumerable<Post> GetPostTitles(int quantity)
+        
+
+        public IEnumerable<Post> GetRecentPosts(int quantity)
         {
-            throw new NotImplementedException();
+            return _blogDataAccess
+                .GetRecentPosts(quantity);
         }
 
         public IEnumerable<Post> Get(int page)
@@ -47,14 +50,17 @@ namespace SP.BLL
 
         }
 
-        public IEnumerable<Post> SavePost(Post post)
+        public Post SaveNewPost(Post post)
         {
-            throw new NotImplementedException();
+            return _blogDataAccess
+                .SaveNewPost(post);
+
         }
 
-        public IEnumerable<Post> GetInactivePosts(int? page)
+        public IEnumerable<Post> GetInactivePosts()
         {
-            throw new NotImplementedException();
+            return _blogDataAccess
+                .GetInactivePosts();
         }
 
         public int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate)

@@ -6,11 +6,11 @@ namespace SP.BLL
 {
     public interface IPostBLL
     {
-        Post GetPost(int postId);
-        IEnumerable<Post> GetPostTitles(int quantity);
+        Post GetPostById(int postId);
+        IEnumerable<Post> GetRecentPosts(int quantity);
         IEnumerable<Post> Get(int page);
-        IEnumerable<Post> SavePost(Post post);
-        IEnumerable<Post> GetInactivePosts(int? page);
+        Post SaveNewPost(Post post);
+        IEnumerable<Post> GetInactivePosts();
         int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate);
         Post EditPost(Post post);
         Post DeactivatePost(int postId);

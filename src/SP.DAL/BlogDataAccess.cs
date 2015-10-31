@@ -42,13 +42,29 @@ namespace SP.DAL
                 .Take(maxNumberOfTags);
         }
 
-        public IEnumerable<Post> GetLatestPosts(int quantity)
+        public IEnumerable<Post> GetRecentPosts(int quantity)
         {
             return _context
                 .Posts
                 .OrderBy(x => x.PostedDate)
                 .Take(quantity);
         }
+
+        public Post SaveNewPost(Post post)
+        {
+            _context.Add(post);
+            _context.SaveChanges();
+            return post;
+
+        }
+
+        public IEnumerable<Post> GetInactivePosts()
+        {
+            return _context
+                .Posts
+                .Where(x => x.Inactive);
+        }
+
 
         public IEnumerable<Tag> GetTags()
         {
