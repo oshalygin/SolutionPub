@@ -4,17 +4,15 @@ using SP.Entities;
 
 namespace SP.DAL
 {
-    public interface IBlogDataAccess
+    public interface IPostDataAccess
     {
         
         IEnumerable<Post> GetPosts(int page, int pageSize);
         Post GetPost(int postId);
-        IEnumerable<Tag> GetTopTags(int maxNumberOfTags);
         IEnumerable<Post> GetRecentPosts(int quantity);
         Post SaveNewPost(Post post);
-
+        Post EditPost(Post post);
         int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate);
-
         IEnumerable<Post> GetInactivePosts();
 
 

@@ -6,11 +6,11 @@ using SP.Entities;
 
 namespace SP.DAL
 {
-    public class BlogDataAccess : IBlogDataAccess
+    public class PostDataAccess : IPostDataAccess
     {
         private readonly BlogContext _context;
 
-        public BlogDataAccess()
+        public PostDataAccess()
         {
             _context = new BlogContext();
         }
@@ -34,13 +34,7 @@ namespace SP.DAL
                 .FirstOrDefault(x => x.Id == postId);
         }
 
-        public IEnumerable<Tag> GetTopTags(int maxNumberOfTags)
-        {
-            return _context
-                .Tags
-                .OrderBy(x => x.TimesUsed)
-                .Take(maxNumberOfTags);
-        }
+     
 
         public IEnumerable<Post> GetRecentPosts(int quantity)
         {
@@ -55,6 +49,28 @@ namespace SP.DAL
             _context.Add(post);
             _context.SaveChanges();
             return post;
+        }
+
+        public Post EditPost(Post post)
+        {
+            var postToEdit = _context.Posts
+                .Include(x => x.Tags)
+                .Include(x => x.Comments)
+                .Single(x => x.Id == post.Id);
+
+            postToEdit.Tags = post.Tags;
+            postToEdit.Comments = post.Comments;
+            postToEdit.Body = post.Body;
+            postToEdit.Title = post.Title;
+            postToEdit.UrlTitle = post.UrlTitle;
+            postToEdit.PhotoPath = post.PhotoPath;
+            postToEdit.Preview = post.Preview;
+            postToEdit.DateEdited = DateTime.UtcNow;
+
+            _context.Entry(postToEdit).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return postToEdit;
         }
 
         public int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate)
@@ -79,19 +95,6 @@ namespace SP.DAL
                 .OrderBy(x => x.TimesUsed);
         }
 
-        public Tag EditTag(Tag tag)
-        {
-            var retrievedTag = _context.Tags.FirstOrDefault(x => x.Id == tag.Id);
-
-            if (retrievedTag == null)
-            {
-                return null;
-            }
-
-            retrievedTag.TimesUsed = tag.TimesUsed;
-            retrievedTag.Name = tag.Name;
-            _context.SaveChanges();
-            return tag;
-        }
+        
     }
 }

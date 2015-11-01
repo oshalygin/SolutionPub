@@ -12,7 +12,7 @@ namespace SP.BLL
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IBlogDataAccess, BlogDataAccess>();
+            services.AddTransient<IPostDataAccess, PostDataAccess>();
         }
     }
 }
