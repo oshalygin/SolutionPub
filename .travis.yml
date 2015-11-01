@@ -12,3 +12,4 @@ before_script:
 script:
   - cd src/SP.WEB && bower install && npm install && gulp deploy && gulp run-jtests
   - cd ../../tests/SP.WEB.Tests && dnu restore && dnx run-csharp-web-tests -parallel none
+  - cd ../SP.BLL.Tests && dnu restore && dnx run-chsarp-bll-tests -parallel none
