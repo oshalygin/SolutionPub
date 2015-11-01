@@ -21,9 +21,10 @@ namespace SP.BLL.Tests
             var sut = new PostBLL(_postDataAccess.Object);
 
             var posts = sut.GetPostsByDateRange(null, null);
-
+                    
             Assert.Equal(Mother.PostsWithoutTagsOrComments.Count(), posts.Count());
 
         }
+
     }
 }

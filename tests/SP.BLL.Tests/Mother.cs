@@ -29,14 +29,14 @@ namespace SP.BLL.Tests
                     var post = new Post
                     {
                         Preview =
-                            i % 2 == 0 ? bodyTextFirstSample.Substring(50, 400) : bodyTextSecondSample.Substring(50, 400),
+                            i%2 == 0 ? bodyTextFirstSample.Substring(50, 400) : bodyTextSecondSample.Substring(50, 400),
                         Body =
-                            i % 2 == 0
+                            i%2 == 0
                                 ? bodyTextFirstSample + "<br><br>" + bodyTextSecondSample
                                 : bodyTextSecondSample + "<br><br>" + bodyTextFirstSample,
-                        PostedDate = DateTime.UtcNow,
-                        Title = i % 2 == 0 ? "AngularJS Routing" : "JavaScript Fundamentals",
-                        UrlTitle = i % 2 == 0 ? "AngularJS-Routing" : "JavaScript-Fundamentals",
+                        PostedDate = new DateTime(2015, 5, (i + 1)),
+                        Title = i%2 == 0 ? "AngularJS Routing" : "JavaScript Fundamentals",
+                        UrlTitle = i%2 == 0 ? "AngularJS-Routing" : "JavaScript-Fundamentals",
                         Views = random.Next(100),
                         PhotoPath = @"C:\dev\PhotoPath",
                         Inactive = false
