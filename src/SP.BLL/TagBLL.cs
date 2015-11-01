@@ -39,19 +39,18 @@ namespace SP.BLL
                 .MostCommonTag();
         }
 
-        public Tag EditTag(Tag tag)
+        public Tag IncrementTagUseCounter(Tag tag)
         {
-            throw new System.NotImplementedException();
+            return _tagDataAccess
+                .IncrementTagUseCount(tag);
         }
 
-        public bool DeleteTag(int tagId)
+        public bool RemoveTag(int tagId)
         {
-            throw new System.NotImplementedException();
-        }
+            var rowsUpdated = _tagDataAccess
+                .RemoveTag(tagId);
 
-        public Tag SaveTag(Tag tag)
-        {
-            throw new System.NotImplementedException();
+            return rowsUpdated > 0 ? true : false;
         }
     }
 }

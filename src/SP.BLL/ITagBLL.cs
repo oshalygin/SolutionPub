@@ -9,10 +9,7 @@ namespace SP.BLL
         Tag GetTag(string tagName);
         IEnumerable<Tag> Get();
         Tag GetMostCommonTag();
-        Tag EditTag(Tag tag);
-        bool DeleteTag(int tagId);
-        Tag SaveTag(Tag tag);
-
-
+        Tag IncrementTagUseCounter(Tag tag);
+        bool RemoveTag(int tagId);
     }
 }

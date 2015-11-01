@@ -7,9 +7,10 @@ namespace SP.DAL
     public interface ITagDataAccess
     {
         IEnumerable<Tag> GetTopTags(int maxNumberOfTags);
-        Tag EditTag(Tag tag);
+        Tag IncrementTagUseCount(Tag tag);
         Tag GetTag(int tagId);
         Tag GetTag(string tagName);
         Tag MostCommonTag();
+        int RemoveTag(int tagId);
     }
 }
