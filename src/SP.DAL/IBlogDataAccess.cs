@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SP.Entities;
 
 namespace SP.DAL
@@ -11,6 +12,8 @@ namespace SP.DAL
         IEnumerable<Tag> GetTopTags(int maxNumberOfTags);
         IEnumerable<Post> GetRecentPosts(int quantity);
         Post SaveNewPost(Post post);
+
+        int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate);
 
         IEnumerable<Post> GetInactivePosts();
 

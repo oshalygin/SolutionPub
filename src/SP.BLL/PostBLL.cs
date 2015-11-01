@@ -32,13 +32,15 @@ namespace SP.BLL
 
         public IEnumerable<Post> Get(int page)
         {
-            
 
-            var post = new Post();
-            post.Body =
-                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more";
-            post.Title = "Random Post";
-            post.PostedDate = DateTime.Now;
+
+            var post = new Post
+            {
+                Body =
+                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more",
+                Title = "Random Post",
+                PostedDate = DateTime.Now
+            };
 
             var listOfPosts = new List<Post>
             {
@@ -65,7 +67,12 @@ namespace SP.BLL
 
         public int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate)
         {
-            throw new NotImplementedException();
+            var postedEndingDate = toDate ?? DateTime.UtcNow.ToLocalTime();
+            var postedStartingDate = fromDate ?? DateTime.MinValue;
+
+            return _blogDataAccess
+                .GetTotalNumberOfPosts(postedStartingDate, postedEndingDate);
+
         }
 
         public Post EditPost(Post post)

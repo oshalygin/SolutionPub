@@ -55,7 +55,13 @@ namespace SP.DAL
             _context.Add(post);
             _context.SaveChanges();
             return post;
+        }
 
+        public int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate)
+        {
+            return _context
+                .Posts
+                .Count(x => x.PostedDate >= postedStartingDate && x.PostedDate <= postedEndingDate);
         }
 
         public IEnumerable<Post> GetInactivePosts()
