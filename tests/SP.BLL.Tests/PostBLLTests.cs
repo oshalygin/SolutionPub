@@ -22,7 +22,7 @@ namespace SP.BLL.Tests
 
             var posts = sut.GetPostsByDateRange(null, null);
 
-            Assert.Equal(17, posts.Count());
+            Assert.Equal(Mother.PostsWithoutTagsOrComments.Count(), posts.Count());
 
         }
     }
