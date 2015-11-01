@@ -34,8 +34,6 @@ namespace SP.DAL
                 .FirstOrDefault(x => x.Id == postId);
         }
 
-     
-
         public IEnumerable<Post> GetRecentPosts(int quantity)
         {
             return _context
@@ -73,11 +71,11 @@ namespace SP.DAL
             return postToEdit;
         }
 
-        public int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate)
+        public IEnumerable<Post> GetPostsByDateRange(DateTime postedStartingDate, DateTime postedEndingDate)
         {
             return _context
                 .Posts
-                .Count(x => x.PostedDate >= postedStartingDate && x.PostedDate <= postedEndingDate);
+                .Where(x => x.PostedDate >= postedStartingDate && x.PostedDate <= postedEndingDate);
         }
 
         public IEnumerable<Post> GetInactivePosts()
@@ -94,7 +92,5 @@ namespace SP.DAL
                 .Tags
                 .OrderBy(x => x.TimesUsed);
         }
-
-        
     }
 }

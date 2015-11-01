@@ -11,7 +11,7 @@ namespace SP.BLL
         IEnumerable<Post> Get(int page);
         Post SaveNewPost(Post post);
         IEnumerable<Post> GetInactivePosts();
-        int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate);
+        IEnumerable<Post> GetPostsByDateRange(DateTime? fromDate, DateTime? toDate);
         Post EditPost(Post post);
         Post DeactivatePost(int postId);
         bool DeletePost(int postId);

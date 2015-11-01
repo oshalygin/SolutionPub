@@ -46,13 +46,13 @@ namespace SP.BLL
                 .GetInactivePosts();
         }
 
-        public int GetTotalNumberOfPosts(DateTime? fromDate, DateTime? toDate)
+        public IEnumerable<Post> GetPostsByDateRange(DateTime? fromDate, DateTime? toDate)
         {
             var postedEndingDate = toDate ?? DateTime.UtcNow.ToLocalTime();
             var postedStartingDate = fromDate ?? DateTime.MinValue;
 
             return _blogDataAccess
-                .GetTotalNumberOfPosts(postedStartingDate, postedEndingDate);
+                .GetPostsByDateRange(postedStartingDate, postedEndingDate);
         }
 
         public Post EditPost(Post post)

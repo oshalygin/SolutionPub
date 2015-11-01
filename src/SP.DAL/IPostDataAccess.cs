@@ -12,7 +12,7 @@ namespace SP.DAL
         IEnumerable<Post> GetRecentPosts(int quantity);
         Post SaveNewPost(Post post);
         Post EditPost(Post post);
-        int GetTotalNumberOfPosts(DateTime postedStartingDate, DateTime postedEndingDate);
+        IEnumerable<Post> GetPostsByDateRange(DateTime postedStartingDate, DateTime postedEndingDate);
         IEnumerable<Post> GetInactivePosts();
 
 
