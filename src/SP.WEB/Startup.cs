@@ -74,7 +74,9 @@ namespace SP.WEB
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IPostBLL, PostBLL>();
+            services.AddTransient<ITagBLL, TagBLL>();
             services.AddTransient<IPostDataAccess, PostDataAccess>();
+            services.AddTransient<ITagDataAccess, TagDataAccess>();
 
         }
 
@@ -85,25 +87,19 @@ namespace SP.WEB
             loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
-            // Configure the HTTP request pipeline.
 
-            // Add the following to the request pipeline only in development environment.
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
             }
 
-            //todo: this doesnt actually exist yet...
             app.UseDeveloperExceptionPage();
-            //app.UseExceptionHandler("/Home/Error");
-
+            
             app.UseIISPlatformHandler();
 
-            // Add static files to the request pipeline.
             app.UseStaticFiles();
 
-            // Add cookie-based authentication to the request pipeline.
             app.UseIdentity();
 
             Mapper.Initialize(config =>

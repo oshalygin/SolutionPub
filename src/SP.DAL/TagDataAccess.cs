@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SP.Entities;
 using System.Linq;
 
@@ -34,6 +35,30 @@ namespace SP.DAL
             retrievedTag.Name = tag.Name;
             _context.SaveChanges();
             return tag;
+        }
+
+        public Tag GetTag(int tagId)
+        {
+            return _context
+                .Tags
+                .Single(x => x.Id == tagId);
+        }
+
+        public Tag GetTag(string tagName)
+        {
+            return _context
+                .Tags
+                .Single(x => string.Equals(x.Name, tagName, 
+                StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        public Tag MostCommonTag()
+        {
+            return _context
+                .Tags
+                .OrderByDescending(x => x.TimesUsed)
+                .First();
+
         }
     }
 }

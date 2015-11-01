@@ -8,5 +8,8 @@ namespace SP.DAL
     {
         IEnumerable<Tag> GetTopTags(int maxNumberOfTags);
         Tag EditTag(Tag tag);
+        Tag GetTag(int tagId);
+        Tag GetTag(string tagName);
+        Tag MostCommonTag();
     }
 }

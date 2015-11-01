@@ -1,23 +1,42 @@
 ﻿using System.Collections.Generic;
+using SP.DAL;
 using SP.Entities;
 
 namespace SP.BLL
 {
-    public class TagBLL: ITagBLL
+    public class TagBLL : ITagBLL
     {
-        public Tag GetTagById(int tagId)
+        private readonly ITagDataAccess _tagDataAccess;
+
+        public TagBLL(ITagDataAccess tagDataAccess)
         {
-            throw new System.NotImplementedException();
+            _tagDataAccess = tagDataAccess;
+        }
+
+        public Tag GetTag(int tagId)
+        {
+            return _tagDataAccess
+                .GetTag(tagId);
+        }
+
+        public Tag GetTag(string tagName)
+        {
+            return _tagDataAccess
+                .GetTag(tagName);
         }
 
         public IEnumerable<Tag> Get()
         {
-            throw new System.NotImplementedException();
+            int numberOfTagsToDisplay = 10;
+
+            return _tagDataAccess
+                .GetTopTags(numberOfTagsToDisplay);
         }
 
         public Tag GetMostCommonTag()
         {
-            throw new System.NotImplementedException();
+            return _tagDataAccess
+                .MostCommonTag();
         }
 
         public Tag EditTag(Tag tag)

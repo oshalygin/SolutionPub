@@ -9,11 +9,13 @@ namespace SP.BLL.Tests
     public class PostBLLTests
     {
 
+        private Mock<IPostDataAccess> _postDataAccess;
+
         //TODO: Switch to Nunit later because it has a setup/teardown...Currently NUnit doesn't support vNext
         [Fact]
         public void ShouldReturnAllPostsWhenNoDateRangeIsEntered()
         {
-            var _postDataAccess = new Mock<IPostDataAccess>();
+            _postDataAccess = new Mock<IPostDataAccess>();
             _postDataAccess.Setup(x => x.GetPostsByDateRange(It.IsAny<DateTime>(), It.IsAny<DateTime>()))
                 .Returns(Mother.PostsWithoutTagsOrComments);
                                 

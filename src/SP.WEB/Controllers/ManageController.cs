@@ -36,13 +36,19 @@ namespace SP.WEB.Controllers
         public async Task<IActionResult> Index(ManageMessageId? message = null)
         {
             ViewData["StatusMessage"] =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
-                : "";
+                message == ManageMessageId.ChangePasswordSuccess
+                    ? "Your password has been changed."
+                    : message == ManageMessageId.SetPasswordSuccess
+                        ? "Your password has been set."
+                        : message == ManageMessageId.SetTwoFactorSuccess
+                            ? "Your two-factor authentication provider has been set."
+                            : message == ManageMessageId.Error
+                                ? "An error has occurred."
+                                : message == ManageMessageId.AddPhoneSuccess
+                                    ? "Your phone number was added."
+                                    : message == ManageMessageId.RemovePhoneSuccess
+                                        ? "Your phone number was removed."
+                                        : "";
 
             var user = await GetCurrentUserAsync();
             var model = new IndexViewModel
@@ -84,7 +90,7 @@ namespace SP.WEB.Controllers
                     message = ManageMessageId.RemoveLoginSuccess;
                 }
             }
-            return RedirectToAction(nameof(ManageLogins), new { Message = message });
+            return RedirectToAction(nameof(ManageLogins), new {Message = message});
         }
 
         //
@@ -108,7 +114,7 @@ namespace SP.WEB.Controllers
             var user = await GetCurrentUserAsync();
             var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, model.PhoneNumber);
             await _smsSender.SendSmsAsync(model.PhoneNumber, "Your security code is: " + code);
-            return RedirectToAction(nameof(VerifyPhoneNumber), new { PhoneNumber = model.PhoneNumber });
+            return RedirectToAction(nameof(VerifyPhoneNumber), new {PhoneNumber = model.PhoneNumber});
         }
 
         //
@@ -148,7 +154,9 @@ namespace SP.WEB.Controllers
         {
             var code = await _userManager.GenerateChangePhoneNumberTokenAsync(await GetCurrentUserAsync(), phoneNumber);
             // Send an SMS to verify the phone number
-            return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
+            return phoneNumber == null
+                ? View("Error")
+                : View(new VerifyPhoneNumberViewModel {PhoneNumber = phoneNumber});
         }
 
         //
@@ -168,7 +176,7 @@ namespace SP.WEB.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.AddPhoneSuccess });
+                    return RedirectToAction(nameof(Index), new {Message = ManageMessageId.AddPhoneSuccess});
                 }
             }
             // If we got this far, something failed, redisplay the form
@@ -188,10 +196,10 @@ namespace SP.WEB.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.RemovePhoneSuccess });
+                    return RedirectToAction(nameof(Index), new {Message = ManageMessageId.RemovePhoneSuccess});
                 }
             }
-            return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
+            return RedirectToAction(nameof(Index), new {Message = ManageMessageId.Error});
         }
 
         //
@@ -219,12 +227,12 @@ namespace SP.WEB.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.ChangePasswordSuccess });
+                    return RedirectToAction(nameof(Index), new {Message = ManageMessageId.ChangePasswordSuccess});
                 }
                 AddErrors(result);
                 return View(model);
             }
-            return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
+            return RedirectToAction(nameof(Index), new {Message = ManageMessageId.Error});
         }
 
         //
@@ -253,12 +261,12 @@ namespace SP.WEB.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.SetPasswordSuccess });
+                    return RedirectToAction(nameof(Index), new {Message = ManageMessageId.SetPasswordSuccess});
                 }
                 AddErrors(result);
                 return View(model);
             }
-            return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
+            return RedirectToAction(nameof(Index), new {Message = ManageMessageId.Error});
         }
 
         //GET: /Account/Manage
@@ -266,17 +274,23 @@ namespace SP.WEB.Controllers
         public async Task<IActionResult> ManageLogins(ManageMessageId? message = null)
         {
             ViewData["StatusMessage"] =
-                message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-                : message == ManageMessageId.AddLoginSuccess ? "The external login was added."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : "";
+                message == ManageMessageId.RemoveLoginSuccess
+                    ? "The external login was removed."
+                    : message == ManageMessageId.AddLoginSuccess
+                        ? "The external login was added."
+                        : message == ManageMessageId.Error
+                            ? "An error has occurred."
+                            : "";
             var user = await GetCurrentUserAsync();
             if (user == null)
             {
                 return View("Error");
             }
             var userLogins = await _userManager.GetLoginsAsync(user);
-            var otherLogins = _signInManager.GetExternalAuthenticationSchemes().Where(auth => userLogins.All(ul => auth.AuthenticationScheme != ul.LoginProvider)).ToList();
+            var otherLogins =
+                _signInManager.GetExternalAuthenticationSchemes()
+                    .Where(auth => userLogins.All(ul => auth.AuthenticationScheme != ul.LoginProvider))
+                    .ToList();
             ViewData["ShowRemoveButton"] = user.PasswordHash != null || userLogins.Count > 1;
             return View(new ManageLoginsViewModel
             {
@@ -293,7 +307,8 @@ namespace SP.WEB.Controllers
         {
             // Request a redirect to the external login provider to link a login for the current user
             var redirectUrl = Url.Action("LinkLoginCallback", "Manage");
-            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl, User.GetUserId());
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl,
+                User.GetUserId());
             return new ChallengeResult(provider, properties);
         }
 
@@ -310,11 +325,11 @@ namespace SP.WEB.Controllers
             var info = await _signInManager.GetExternalLoginInfoAsync(User.GetUserId());
             if (info == null)
             {
-                return RedirectToAction(nameof(ManageLogins), new { Message = ManageMessageId.Error });
+                return RedirectToAction(nameof(ManageLogins), new {Message = ManageMessageId.Error});
             }
             var result = await _userManager.AddLoginAsync(user, info);
             var message = result.Succeeded ? ManageMessageId.AddLoginSuccess : ManageMessageId.Error;
-            return RedirectToAction(nameof(ManageLogins), new { Message = message });
+            return RedirectToAction(nameof(ManageLogins), new {Message = message});
         }
 
         #region Helpers
@@ -348,7 +363,7 @@ namespace SP.WEB.Controllers
             RemovePhoneSuccess,
             Error
         }
-        //TODO: fix later
+
         private async Task<ApplicationUser> GetCurrentUserAsync()
         {
             return await _userManager.FindByIdAsync("derp");
