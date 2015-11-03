@@ -32,8 +32,8 @@ namespace SP.DAL
                     FileName = parsedContentDisposition.FileName,
                     Content = fileContent,
                     Description = description,
-                    UploadDate = DateTime.UtcNow
-                    //TODO:  Add filepath
+                    UploadDate = DateTime.UtcNow,
+                    ImagePath = Path.Combine(_applicationEnvironment.ApplicationBasePath, BlogImageDatabasePath, parsedContentDisposition.FileName)                    
                 };
             }
 

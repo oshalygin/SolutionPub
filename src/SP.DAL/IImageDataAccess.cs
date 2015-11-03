@@ -10,6 +10,6 @@ namespace SP.DAL
 
         IEnumerable<Image> GetImages(int page, int pageSize);
         Image GetImage(int imageId);
-        
+        int GetTotalNumberOfImages();
     }
 }

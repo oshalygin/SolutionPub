@@ -19,7 +19,7 @@ namespace SP.DAL
         {
             return _context
                 .Images
-                .OrderBy(x=>x.UploadDate)
+                .OrderBy(x => x.UploadDate)
                 .Skip(page*pageSize)
                 .Take(pageSize);
         }
@@ -31,6 +31,11 @@ namespace SP.DAL
                 .Single(x => x.Id == imageId);
         }
 
-     
+        public int GetTotalNumberOfImages()
+        {
+            return _context
+                .Images
+                .Count();
+        }
     }
 }
