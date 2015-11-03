@@ -8,6 +8,8 @@ namespace SP.Entities
         public DateTime UploadDate { get; set; }
         public string ImagePath { get; set; }
         public string Description { get; set; }
+        public string FileName { get; set; }
+        public string Content { get; set; }
 
     }
 }

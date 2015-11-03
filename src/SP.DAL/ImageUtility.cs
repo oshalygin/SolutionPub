@@ -1,27 +1,43 @@
 ﻿
+using System;
 using System.IO;
 using Microsoft.AspNet.Http;
 using Microsoft.Dnx.Runtime;
+using Microsoft.Net.Http.Headers;
+using SP.Entities;
+
 
 namespace SP.DAL
 {
     public class ImageUtility: IImageUtility
     {        
-        private const string BlogImageDatabasePath = "~/Content/img/BlogImages/";
-
+        private const string BlogImageDatabasePath = "~/Content/img/BlogImages/";        
         private readonly IApplicationEnvironment _applicationEnvironment;
 
         public ImageUtility(IApplicationEnvironment applicationEnvironment)
         {
-            _applicationEnvironment = applicationEnvironment;
+            _applicationEnvironment = applicationEnvironment;            
         }
 
         //TODO: This needs work and testing
-        public bool SaveImage(string fileName, string description, IFormFile file)
+        public Image SaveImage(string fileName, string description, IFormFile file)
         {
-            var serverBasePath = _applicationEnvironment.ApplicationBasePath;
+            Image image;
+            using (var reader = new StreamReader(file.OpenReadStream()))
+            {
+                var fileContent = reader.ReadToEnd();
+                var parsedContentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+                image = new Image
+                {
+                    FileName = parsedContentDisposition.FileName,
+                    Content = fileContent,
+                    Description = description,
+                    UploadDate = DateTime.UtcNow
+                    //TODO:  Add filepath
+                };
+            }
 
-            return false;
+            return image;
         }
     }
 }
