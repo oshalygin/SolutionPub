@@ -39,7 +39,7 @@ namespace SP.BLL
                 .MostCommonTag();
         }
 
-        public Tag IncrementTagUseCounter(Tag tag)
+        public Tag IncrementTagCounter(Tag tag)
         {
             return _tagDataAccess
                 .IncrementTagUseCount(tag);
