@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNet.Http;
 using SP.Entities;
 
 namespace SP.DAL
@@ -29,5 +30,7 @@ namespace SP.DAL
                 .Images
                 .Single(x => x.Id == imageId);
         }
+
+     
     }
 }

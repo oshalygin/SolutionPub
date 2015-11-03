@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using Microsoft.AspNet.Http;
 using SP.Entities;
 
 namespace SP.DAL
@@ -9,5 +10,6 @@ namespace SP.DAL
 
         IEnumerable<Image> GetImages(int page, int pageSize);
         Image GetImage(int imageId);
+        
     }
 }

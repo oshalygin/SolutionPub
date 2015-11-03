@@ -18,7 +18,7 @@ namespace SP.BLL
 
         public Image SaveImage(string description, IFormFile file)
         {
-            throw new System.NotImplementedException();
+             throw new System.NotImplementedException();
         }
 
         public int GetTotalNumberOfImages()

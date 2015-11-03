@@ -1,7 +1,10 @@
 ﻿{
-	"Data": {
-		"DefaultConnection": {
+  "Data": {
+    "DefaultConnection": {
       "ConnectionString": "Server=.\\SQLEXPRESS;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
-	}
+  },
+  "ImageLocation": {
+    "BlogImages":  "../../wwwroot/img/BlogImages/"
+  }
 }
