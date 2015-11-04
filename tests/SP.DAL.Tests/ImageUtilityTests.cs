@@ -17,11 +17,14 @@ namespace SP.DAL.Tests
         {
             _applicationEnvironment = new Mock<IApplicationEnvironment>();
             _formFile = new Mock<IFormFile>();
+
         }
 
         [Test]
         public void ShouldSaveToBlogImagesFolder()
         {
+
+         
             _applicationEnvironment.Setup(x => x.ApplicationBasePath)
                 .Returns(Mother.ApplicationBasePath);
 
