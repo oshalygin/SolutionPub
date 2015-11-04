@@ -11,7 +11,7 @@ namespace SP.DAL
 {
     public class ImageUtility: IImageUtility
     {        
-        private const string BlogImageDatabasePath = "~/Content/img/BlogImages/";        
+        private const string BlogImageDatabasePath = @"~/Content/img/BlogImages/";        
         private readonly IApplicationEnvironment _applicationEnvironment;
 
         public ImageUtility(IApplicationEnvironment applicationEnvironment)

@@ -1169,6 +1169,15 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -2529,6 +2538,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NUnit/3.0.0-rc": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
         }
       },
       "Remotion.Linq/2.0.0-beta-002": {
@@ -3893,6 +3911,15 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -5108,6 +5135,28 @@
         "tools/install.ps1"
       ]
     },
+    "NUnit/3.0.0-rc": {
+      "type": "package",
+      "sha512": "mhY97YTYzO0yD9ol/pwYfgGOwr7+lIzeN0GeZaxVZWAHXPRKVZuZm6ZeQDIJRHEreVqkW2Vrt5Upc9+j9HQJaA==",
+      "files": [
+        "CHANGES.txt",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.3.0.0-rc.nupkg",
+        "NUnit.3.0.0-rc.nupkg.sha512",
+        "NUnit.nuspec"
+      ]
+    },
     "Remotion.Linq/2.0.0-beta-002": {
       "type": "package",
       "sha512": "tsCmHSCMGoI2Zs55BuOzJP74ciEdVTvo0qQnr1VLVNCn5vm2qAWkF+pvuTW9ZwA/NJKzjw/8bGK7dDK/Ng/9Ow==",
@@ -5429,6 +5478,7 @@
     "": [
       "SP.DAL >= 1.0.0-*",
       "SP.Entities >= 1.0.0-*",
+      "NUnit >= 3.0.0-rc",
       "xunit >= 2.1.0-*",
       "xunit.runner.dnx >= 2.1.0-*",
       "Moq >= 4.2.1510.2205"

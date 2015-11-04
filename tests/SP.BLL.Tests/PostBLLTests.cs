@@ -12,7 +12,7 @@ namespace SP.BLL.Tests
         private Mock<IPostDataAccess> _postDataAccess;
 
         //TODO: Switch to Nunit later because it has a setup/teardown...Currently NUnit doesn't support vNext
-        [Fact]
+       // [Fact]
         public void ShouldReturnAllPostsWhenNoDateRangeIsEntered()
         {
             _postDataAccess = new Mock<IPostDataAccess>();
