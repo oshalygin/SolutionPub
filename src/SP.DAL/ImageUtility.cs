@@ -19,7 +19,7 @@ namespace SP.DAL
             _applicationEnvironment = applicationEnvironment;            
         }
 
-        //TODO: This needs work and testing
+        //TODO: Need to be able to test this...FrameworkIssues
         public Image SaveImage(string fileName, string description, IFormFile file)
         {
             Image image;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.Data.Entity.Infrastructure;
-using Xunit;
+﻿using Xunit;
 
 namespace SP.DAL.Tests
 {
