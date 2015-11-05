@@ -8,7 +8,7 @@ namespace SP.BLL
     {
         IEnumerable<Image> Get(int? page);
         Image GetImageById(int imageId);
-        Image SaveImage(string description, IFormFile file);
+        Image SaveImage(string fileName, string description, IFormFile file);
         int GetTotalNumberOfImages();
     }
 }

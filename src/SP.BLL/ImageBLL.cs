@@ -1,29 +1,46 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNet.Http;
+using SP.DAL;
 using SP.Entities;
 
 namespace SP.BLL
 {
     public class ImageBLL: IImageBLL
     {
+
+        private readonly IImageDataAccess _imageDataAcces;
+        private readonly IImageUtility _imageUtility;
+
+        public ImageBLL(IImageDataAccess imageDataAccess, IImageUtility imageUtility)
+        {
+            _imageDataAcces = imageDataAccess;
+            _imageUtility = imageUtility;
+        }
+
         public IEnumerable<Image> Get(int? page)
         {
-            throw new System.NotImplementedException();
+            const int pageSize = 10;
+
+            return _imageDataAcces
+                .GetImages((page ?? 0), pageSize);
         }
 
         public Image GetImageById(int imageId)
         {
-            throw new System.NotImplementedException();
+            return _imageDataAcces
+                .GetImage(imageId);
         }
 
-        public Image SaveImage(string description, IFormFile file)
+        public Image SaveImage(string fileName, string description, IFormFile file)
         {
-             throw new System.NotImplementedException();
+            return _imageUtility
+                .SaveImage(fileName, description, file);
         }
 
         public int GetTotalNumberOfImages()
         {
-            throw new System.NotImplementedException();
+            return _imageDataAcces
+                .GetTotalNumberOfImages();
         }
     }
 }

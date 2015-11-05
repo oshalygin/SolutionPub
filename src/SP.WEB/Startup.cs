@@ -77,6 +77,9 @@ namespace SP.WEB
             services.AddTransient<ITagBLL, TagBLL>();
             services.AddTransient<IPostDataAccess, PostDataAccess>();
             services.AddTransient<ITagDataAccess, TagDataAccess>();
+            services.AddTransient<IImageUtility, ImageUtility>();
+            services.AddTransient<IImageDataAccess, ImageDataAccess>();
+
 
         }
 
