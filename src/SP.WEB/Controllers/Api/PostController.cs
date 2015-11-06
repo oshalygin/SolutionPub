@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using Microsoft.AspNet.Http.Extensions;
 using Microsoft.AspNet.Mvc;
 using SP.BLL;
 using SP.Entities;
@@ -48,8 +49,6 @@ namespace SP.WEB.Controllers.Api
 
         }
 
-
-
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)
@@ -62,8 +61,35 @@ namespace SP.WEB.Controllers.Api
 
             var postsViewModel = Mapper.Map<Post, PostViewModel>(posts);
             return Ok(postsViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody]PostViewModel newPost)
+        {
+            if (newPost == null)
+            {
+                return HttpBadRequest("No Post was received");
+            }
+            if (!ModelState.IsValid)
+            {
+                return HttpBadRequest(ModelState);
+            }
+
+            var postToSave =  Mapper.Map<PostViewModel, Post>(newPost);
+            var savedPost = _postBll.SaveNewPost(postToSave);
+            if (savedPost == null)
+            {
+                //TODO: Return the correct status code Conflict();
+                return HttpBadRequest("Conflicting Post");
+
+            }
+
+            //TODO:  Need to fix this, the api changed...
+            return Ok(savedPost);
+//            return Created<PostViewModel>("STUFF", savedPost);
 
         }
+
 
     }
 }
