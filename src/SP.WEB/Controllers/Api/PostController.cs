@@ -11,7 +11,7 @@ namespace SP.WEB.Controllers.Api
     [Route("api/[controller]")]
     public class PostController : Controller
     {
-        private IPostBLL _postBll;
+        private readonly IPostBLL _postBll;
 
         public PostController(IPostBLL postBll)
         {
