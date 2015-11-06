@@ -30,9 +30,15 @@ namespace SP.WEB.Controllers.Api
 
         [HttpGet]
         [Route("{tagName}")]
-        public IActionResult Get(int tagName)
+        public IActionResult Get(string tagName)
         {
-            var tag = _tagBll.GetTag(tagName);
+            int tagId;
+            var isTagId = int.TryParse(tagName, out tagId);
+
+            var tag = isTagId 
+                ? _tagBll.GetTag(tagId) 
+                : _tagBll.GetTag(tagName);
+            
             if (tag == null)
             {
                 return HttpNotFound();

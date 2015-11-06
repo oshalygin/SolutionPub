@@ -75,6 +75,8 @@ namespace SP.WEB
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IPostBLL, PostBLL>();
             services.AddTransient<ITagBLL, TagBLL>();
+            services.AddTransient<IImageBLL, ImageBLL>();
+            services.AddTransient<ICommentBLL, CommentBLL>();
             services.AddTransient<IPostDataAccess, PostDataAccess>();
             services.AddTransient<ITagDataAccess, TagDataAccess>();
             services.AddTransient<IImageUtility, ImageUtility>();
