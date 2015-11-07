@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SP.Entities;
 
 namespace SP.WEB.Models
 {
@@ -11,8 +10,10 @@ namespace SP.WEB.Models
 
         [Required]
         public string Title { get; set; }
+
         [Required]
         public string UrlTitle { get; set; }
+
         public string PhotoPath { get; set; }
         public DateTime PostedDate { get; set; }
         public DateTime DateEdited { get; set; }
@@ -21,11 +22,12 @@ namespace SP.WEB.Models
         [Required]
         [MinLength(256)]
         public string Body { get; set; }
+
         public string Preview { get; set; }
         public int Views { get; set; }
 
 
-        //public IEnumerable<Tag> Tags { get; set; }
-        //public IEnumerable<Comment> Comments { get; set; }
+        public ICollection<TagViewModel> Tags { get; set; }
+        public ICollection<CommentViewModel> Comments { get; set; }
     }
 }

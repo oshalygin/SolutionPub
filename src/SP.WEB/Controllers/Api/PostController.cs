@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Collections.Generic;
 using AutoMapper;
-using Microsoft.AspNet.Http.Extensions;
 using Microsoft.AspNet.Mvc;
 using SP.BLL;
 using SP.Entities;
@@ -22,9 +18,9 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult Get([FromQuery] string page, [FromQuery] string pageSize)
+        public IActionResult Get([FromQuery] string page)
         {
-            if (string.IsNullOrEmpty(page) || string.IsNullOrWhiteSpace(pageSize))
+            if (string.IsNullOrEmpty(page))
             {
                 var totalNumberOfPosts = 10;
                 var totals = new BlogTotals
@@ -66,24 +62,24 @@ namespace SP.WEB.Controllers.Api
 
         [HttpPost]
         public IActionResult Post([FromBody] PostViewModel newPost)
-        {           
-                if (newPost == null)
-                {
-                    return HttpBadRequest("No Post was received");
-                }
-                if (!ModelState.IsValid)
-                {
-                    return HttpBadRequest(ModelState);
-                }
+        {
+            if (newPost == null)
+            {
+                return HttpBadRequest("No Post was received");
+            }
+            if (!ModelState.IsValid)
+            {
+                return HttpBadRequest(ModelState);
+            }
 
-                var postToSave = Mapper.Map<PostViewModel, Post>(newPost);
-                var savedPost = _postBll.SaveNewPost(postToSave);
-                if (savedPost == null)
-                {
-                    //TODO: This feels a bit hacky, look into refactoring
-                    return new HttpStatusCodeResult(400);
-                }
-            
+            var postToSave = Mapper.Map<PostViewModel, Post>(newPost);
+            var savedPost = _postBll.SaveNewPost(postToSave);
+            if (savedPost == null)
+            {
+                //TODO: This feels a bit hacky, look into refactoring
+                return new HttpStatusCodeResult(400);
+            }
+
             return Created(Request.Host + Request.Path, null);
         }
     }
