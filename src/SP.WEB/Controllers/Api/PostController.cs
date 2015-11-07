@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNet.Http.Extensions;
 using Microsoft.AspNet.Mvc;
@@ -20,7 +22,7 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult Get([FromQuery]string page, [FromQuery]string pageSize)
+        public IActionResult Get([FromQuery] string page, [FromQuery] string pageSize)
         {
             if (string.IsNullOrEmpty(page) || string.IsNullOrWhiteSpace(pageSize))
             {
@@ -46,7 +48,6 @@ namespace SP.WEB.Controllers.Api
                 (_postBll.Get(pageToDisplay));
 
             return Ok(posts);
-
         }
 
         [HttpGet]
@@ -64,32 +65,26 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]PostViewModel newPost)
-        {
-            if (newPost == null)
-            {
-                return HttpBadRequest("No Post was received");
-            }
-            if (!ModelState.IsValid)
-            {
-                return HttpBadRequest(ModelState);
-            }
+        public IActionResult Post([FromBody] PostViewModel newPost)
+        {           
+                if (newPost == null)
+                {
+                    return HttpBadRequest("No Post was received");
+                }
+                if (!ModelState.IsValid)
+                {
+                    return HttpBadRequest(ModelState);
+                }
 
-            var postToSave =  Mapper.Map<PostViewModel, Post>(newPost);
-            var savedPost = _postBll.SaveNewPost(postToSave);
-            if (savedPost == null)
-            {
-                //TODO: Return the correct status code Conflict();
-                return HttpBadRequest("Conflicting Post");
-
-            }
-
-            //TODO:  Need to fix this, the api changed...
-            return Ok(savedPost);
-//            return Created<PostViewModel>("STUFF", savedPost);
-
+                var postToSave = Mapper.Map<PostViewModel, Post>(newPost);
+                var savedPost = _postBll.SaveNewPost(postToSave);
+                if (savedPost == null)
+                {
+                    //TODO: This feels a bit hacky, look into refactoring
+                    return new HttpStatusCodeResult(400);
+                }
+            
+            return Created(Request.Host + Request.Path, null);
         }
-
-
     }
 }
