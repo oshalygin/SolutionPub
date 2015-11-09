@@ -56,6 +56,8 @@ module.exports = function () {
             devPath + "/**/app.js",
             devPath + "/**/app.run.js",
             devPath + "/**/*.config.js",
+            devPath + "/**/apiendpoints.services.js",
+            devPath + "/**/httpFactory.services.js",
             devPath + "/**/*.services.js",
             devPath + "/**/*.routes.js",
             devPath + "/**/*.directive.js",
