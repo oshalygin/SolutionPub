@@ -22,7 +22,7 @@ namespace SP.WEB.Controllers.Api
         {
             if (string.IsNullOrEmpty(page))
             {
-                var totalNumberOfPosts = 10;
+                const int totalNumberOfPosts = 10;
                 var totals = new BlogTotals
                 {
                     TotalNumberOfPosts = totalNumberOfPosts
@@ -80,7 +80,32 @@ namespace SP.WEB.Controllers.Api
                 return new HttpStatusCodeResult(400);
             }
 
-            return Created(Request.Host + Request.Path, null);
+            return Created(Request.Host + Request.Path, savedPost);
         }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] PostViewModel updatedPost)
+        {
+            if (updatedPost == null)
+            {
+                return new NoContentResult();
+            }
+            if (!ModelState.IsValid)
+            {
+                return HttpBadRequest("Input Validation Errors");
+            }
+            var parsedPost = Mapper.Map<PostViewModel, Post>(updatedPost);
+            var post = _postBll.UpdatePost(parsedPost);
+            if (post == null)
+            {
+                return HttpBadRequest("Trying to update a post that does not already exist");
+            }
+
+            var postViewModel = Mapper.Map<Post, PostViewModel>(post);
+
+            return Ok(postViewModel);
+
+        }
+
     }
 }

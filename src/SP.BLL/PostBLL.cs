@@ -8,41 +8,41 @@ namespace SP.BLL
 {
     public class PostBLL : IPostBLL
     {
-        private readonly IPostDataAccess _blogDataAccess;
+        private readonly IPostDataAccess _postDataAccess;
         private const int Pagesize = 5;
 
         public PostBLL(IPostDataAccess blogDataAccess)
         {
-            _blogDataAccess = blogDataAccess;
+            _postDataAccess = blogDataAccess;
         }
 
         public Post GetPostById(int postId)
         {
-            return _blogDataAccess.GetPost(postId);
+            return _postDataAccess.GetPost(postId);
         }
 
 
         public IEnumerable<Post> GetRecentPosts(int quantity)
         {
-            return _blogDataAccess
+            return _postDataAccess
                 .GetRecentPosts(quantity);
         }
 
         public IEnumerable<Post> Get(int page)
         {
-            return _blogDataAccess
+            return _postDataAccess
                 .GetPosts(page, Pagesize);
         }
 
         public Post SaveNewPost(Post post)
         {
-            return _blogDataAccess
+            return _postDataAccess
                 .SaveNewPost(post);
         }
 
         public IEnumerable<Post> GetInactivePosts()
         {
-            return _blogDataAccess
+            return _postDataAccess
                 .GetInactivePosts();
         }
 
@@ -51,13 +51,14 @@ namespace SP.BLL
             var postedEndingDate = toDate ?? DateTime.UtcNow.ToLocalTime();
             var postedStartingDate = fromDate ?? DateTime.MinValue;
 
-            return _blogDataAccess
+            return _postDataAccess
                 .GetPostsByDateRange(postedStartingDate, postedEndingDate);
         }
 
-        public Post EditPost(Post post)
+        public Post UpdatePost(Post updatedPost)
         {
-            throw new NotImplementedException();
+            return _postDataAccess.UpdatePost(updatedPost);
+            
         }
 
         public Post DeactivatePost(int postId)

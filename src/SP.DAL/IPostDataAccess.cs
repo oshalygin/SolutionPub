@@ -11,7 +11,7 @@ namespace SP.DAL
         Post GetPost(int postId);
         IEnumerable<Post> GetRecentPosts(int quantity);
         Post SaveNewPost(Post post);
-        Post EditPost(Post post);
+        Post UpdatePost(Post post);
         IEnumerable<Post> GetPostsByDateRange(DateTime postedStartingDate, DateTime postedEndingDate);
         IEnumerable<Post> GetInactivePosts();
 

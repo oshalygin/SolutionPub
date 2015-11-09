@@ -49,7 +49,7 @@ namespace SP.DAL
             return post;
         }
 
-        public Post EditPost(Post post)
+        public Post UpdatePost(Post post)
         {
             var postToEdit = _context.Posts
                 .Include(x => x.Tags)
