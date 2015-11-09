@@ -2,7 +2,6 @@
 
     angular
         .module("app.services",
-            ["ngResource"
-            ]);
+            ["ngResource"]);
 
 })();

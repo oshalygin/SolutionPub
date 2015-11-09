@@ -332,7 +332,7 @@ namespace SP.WEB.Controllers
             return RedirectToAction(nameof(ManageLogins), new {Message = message});
         }
 
-        #region Helpers
+        
 
         private void AddErrors(IdentityResult result)
         {
@@ -377,10 +377,11 @@ namespace SP.WEB.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
+//                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
+                return null;
             }
         }
 
-        #endregion
+        
     }
 }

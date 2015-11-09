@@ -177,7 +177,8 @@ namespace SP.WEB.Controllers
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.ExternalPrincipal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
+//                return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
+                return null;
             }
         }
 
