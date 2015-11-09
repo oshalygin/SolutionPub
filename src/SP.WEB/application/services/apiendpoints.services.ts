@@ -14,11 +14,11 @@ module app.services {
         }
 
         public static get post(): string {
-            return "Post/:id";
+            return this.baseUrl + "Post/";
         }
 
         public static get tag(): string {
-            return "Tag/:id";
+            return this.baseUrl + "Tag/";
         }
 
     }
