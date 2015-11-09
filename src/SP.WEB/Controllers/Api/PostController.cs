@@ -107,5 +107,17 @@ namespace SP.WEB.Controllers.Api
 
         }
 
+        [HttpDelete]
+        public IActionResult Delete([FromBody] int postId)
+        {
+            var success = _postBll.DeletePost(postId);
+            if (success)
+            {
+                return Ok();
+            }
+            return HttpBadRequest();
+
+        }
+
     }
 }

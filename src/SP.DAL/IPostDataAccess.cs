@@ -13,8 +13,7 @@ namespace SP.DAL
         Post SaveNewPost(Post post);
         Post UpdatePost(Post post);
         IEnumerable<Post> GetPostsByDateRange(DateTime postedStartingDate, DateTime postedEndingDate);
-        IEnumerable<Post> GetInactivePosts();
-
+        bool DeletePost(int postId);
 
     }
 }

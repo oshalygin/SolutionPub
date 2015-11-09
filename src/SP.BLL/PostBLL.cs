@@ -1,6 +1,5 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using SP.DAL;
 using SP.Entities;
 
@@ -21,7 +20,6 @@ namespace SP.BLL
             return _postDataAccess.GetPost(postId);
         }
 
-
         public IEnumerable<Post> GetRecentPosts(int quantity)
         {
             return _postDataAccess
@@ -40,12 +38,6 @@ namespace SP.BLL
                 .SaveNewPost(post);
         }
 
-        public IEnumerable<Post> GetInactivePosts()
-        {
-            return _postDataAccess
-                .GetInactivePosts();
-        }
-
         public IEnumerable<Post> GetPostsByDateRange(DateTime? fromDate, DateTime? toDate)
         {
             var postedEndingDate = toDate ?? DateTime.UtcNow.ToLocalTime();
@@ -58,17 +50,11 @@ namespace SP.BLL
         public Post UpdatePost(Post updatedPost)
         {
             return _postDataAccess.UpdatePost(updatedPost);
-            
-        }
-
-        public Post DeactivatePost(int postId)
-        {
-            throw new NotImplementedException();
         }
 
         public bool DeletePost(int postId)
         {
-            throw new NotImplementedException();
+            return _postDataAccess.DeletePost(postId);
         }
     }
 }

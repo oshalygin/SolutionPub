@@ -78,19 +78,16 @@ namespace SP.DAL
                 .Where(x => x.PostedDate >= postedStartingDate && x.PostedDate <= postedEndingDate);
         }
 
-        public IEnumerable<Post> GetInactivePosts()
+        public bool DeletePost(int postId)
         {
-            return _context
+            var postToDelete = _context
                 .Posts
-                .Where(x => x.Inactive);
-        }
+                .Single(x => x.Id == postId);
 
-
-        public IEnumerable<Tag> GetTags()
-        {
-            return _context
-                .Tags
-                .OrderBy(x => x.TimesUsed);
+            _context.Posts.Remove(postToDelete);
+            _context.Entry(postToDelete).State = EntityState.Deleted;
+            return true;
         }
+        
     }
 }
