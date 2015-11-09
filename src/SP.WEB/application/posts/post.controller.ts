@@ -8,6 +8,9 @@ module app.posts {
         page: number;
         totalNumberOfPosts: number;
         maxPagesToDisplay: number;
+        //todo: create a class for totals
+        totals: any;
+        // posts: app.models.IPost[];
     }
 
     class PostController implements IPostController {
@@ -17,7 +20,9 @@ module app.posts {
         page: number;
         totalNumberOfPosts: number;
         maxPagesToDisplay: number;
+        totals: any;
         posts: any;
+        // posts: app.models.IPost[];
 
         static $inject = ["app.post.services"]
         constructor(postService: app.services.PostService) {
@@ -27,7 +32,12 @@ module app.posts {
             vm.page = 1;
             vm.pageSize = 5;
 
-            postService.getPosts()
+            postService.getTotals()
+                .then((data: any) => {
+                    vm.totals = data;
+                });
+
+            postService.getPosts(vm.page)
                 .then((data: any) => {
                     vm.posts = data;
                 });

@@ -1,4 +1,4 @@
-module app.models{
+module app.models {
 
     export interface IComment {
 
@@ -8,12 +8,12 @@ module app.models{
         name: string;
         email: string;
         isAnonymous: boolean;
-        
+
         post: app.models.IPost;
 
     }
 
-    export class Comment {
+    export class Comment implements IComment {
 
         id: number;
         body: string;

@@ -10,10 +10,20 @@ module app.services {
             super($http, this.endpoint);
         }
 
-        getPosts(): ng.IPromise<any> {
+        //TODO: refector this out of postservice
+        getTotals(): ng.IPromise<any> {
             //TODO: Get around not passing an empty object
             var emptyObject: any = {}
             return this.Get(emptyObject);
+        }
+
+        getPosts(page: number): ng.IPromise<any> {
+            var config: any = {
+                params: {
+                    page: 1
+                }
+            };
+            return this.Get(config);
         }
 
     }

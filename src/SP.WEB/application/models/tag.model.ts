@@ -10,8 +10,7 @@ module app.models {
 
     }
 
-
-    export class Tag {
+    export class Tag implements ITag {
 
         id: number;
         name: string;

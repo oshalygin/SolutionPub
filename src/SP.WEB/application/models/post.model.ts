@@ -12,13 +12,13 @@ module app.models {
         preview: string;
         views: number;
         inactive: boolean;
-        
+
         tags: app.models.ITag[];
         comments: app.models.IComment[];
 
     }
 
-    export class Post {
+    export class Post implements IPost {
 
         id: number;
         title: string;

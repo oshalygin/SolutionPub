@@ -8,7 +8,8 @@ module app.models {
         imageDescription: string;
 
     }
-    export class Image {
+    
+    export class Image implements IImage {
 
         id: number;
         uploadDate: Date;
