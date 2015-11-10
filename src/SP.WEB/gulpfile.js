@@ -44,8 +44,6 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
 
     var options = config.getWiredepDefaultOptions();
  
-
-
     return gulp
         .src(config.layoutInjector)
         .pipe(wiredep(options))

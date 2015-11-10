@@ -31,5 +31,5 @@ module app.services {
 
 
     angular.module("app.services")
-        .service("app.post.services", PostService);
+        .service("postService", PostService);
 }

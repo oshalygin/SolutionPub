@@ -16,7 +16,7 @@
                 views: {
                     "mainContent@": {
                             templateUrl: "./application/posts/posts.html",
-                            controller: "app.posts.PostController",
+                            controller: "PostController",
                             controllerAs: "vm",
                             data: {
                                 title: "SolutionPub"

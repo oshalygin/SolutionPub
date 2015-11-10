@@ -7,19 +7,40 @@
         var $rootScope;
         var $controller;
         var scope;
+        var mockPostService;
         var state;
         var vm;
 
+        beforeEach(angular.mock.module("app.services"));
         beforeEach(angular.mock.module("app"));
         beforeEach(angular.mock.module("stateMock"));
 
-        beforeEach(inject(function (_$controller_, _$rootScope_, $state) {
+        beforeEach(inject(function (_$controller_, _$rootScope_, $state, $q) {
             $rootScope = _$rootScope_;
             scope = $rootScope.$new();
             state = $state;
 
-            $controller = _$controller_("app.posts.PostController",
-                { $scope: scope });
+            mockPostService = {
+                getTotals : function () {
+                    var defer = $q.defer();
+                    return defer.promise;
+                },
+                getPosts : function (page) {
+                    var defer = $q.defer();
+                    return defer.promise;
+                }
+            };
+
+            spyOn(mockPostService, "getPosts").and.callThrough();
+            spyOn(mockPostService, "getTotals").and.callThrough();
+
+
+
+
+            $controller = _$controller_("PostController",
+                { $scope: scope,
+                  postService: mockPostService});
+
             vm = $controller;
             state.expectTransitionTo("posts");
 

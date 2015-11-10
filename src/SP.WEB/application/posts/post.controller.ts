@@ -24,7 +24,7 @@ module app.posts {
         posts: any;
         // posts: app.models.IPost[];
 
-        static $inject = ["app.post.services"]
+        static $inject = ["postService"]
         constructor(postService: app.services.PostService) {
             var vm = this;
 
@@ -46,6 +46,6 @@ module app.posts {
     }
 
     angular.module("app.posts")
-        .controller("app.posts.PostController", PostController);
+        .controller("PostController", PostController);
 
 }
