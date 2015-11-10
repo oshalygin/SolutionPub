@@ -16,6 +16,7 @@
 /// <reference path="../../src/SP.WEB/wwwroot/lib/angular-route/angular-route.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/lib/angular-ui-router/release/angular-ui-router.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/lib/angular-mocks/angular-mocks.js" />
+/// <reference path="../../src/SP.WEB/wwwroot/lib/sinon/lib/sinon.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/lib/toastr/toastr.min.js" />
 /// <reference path="statemock.js" />
