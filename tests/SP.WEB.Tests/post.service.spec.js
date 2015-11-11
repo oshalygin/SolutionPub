@@ -37,7 +37,7 @@
             var promiseFromService = postService.getPosts();
 
             promiseFromService.then(function (response) {
-                expect(response.data.value.length).toEqual(5);
+                expect(response.length).toEqual(5);
             });
 
             httpBackend.flush();
