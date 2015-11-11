@@ -43,7 +43,7 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
     log("*** Wiring up bower css, js and application into html page");
 
     var options = config.getWiredepDefaultOptions();
- 
+
     return gulp
         .src(config.layoutInjector)
         .pipe(wiredep(options))
@@ -57,6 +57,12 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
             ))
         .pipe(gulp.dest(config.layoutPage));
 
+});
+
+gulp.task("wiredep-testing", function () {
+    log("*** Wiring up angular.references.spec.js file ***");
+
+    //todo: need to fill this out...placeholder for now...
 });
 
 gulp.task("delete-webroot-lib", function (cb) {
