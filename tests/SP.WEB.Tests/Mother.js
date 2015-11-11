@@ -1,8 +1,22 @@
 var Mother = (function () {
 
     return {
-        getPosts: getPosts
+        getPosts: getPosts,
+        getTotals: getTotals
     };
+
+    function getTotals() {
+        return {
+            data: {
+                value: {
+                    "totalNumberOfPosts": 10,
+                    "totalNumberOfComments": 59,
+                    "totalNumberOfViews": 123123123,
+                    "totalNumberOfTags": 8
+                }
+            }
+        };
+    }
 
     function getPosts() {
 
