@@ -8,7 +8,7 @@ module.exports = function (config) {
         // browsers: ["Chrome"],
         frameworks: ["jasmine"],
         files: [
-          "lib/angular/angular.min.js",
+            "lib/angular/angular.min.js",
             "lib/angular-sanitize/angular-sanitize.min.js",
             "lib/angular-animate/angular-animate.min.js",
             "lib/angular-resource/angular-resource.min.js",
@@ -20,9 +20,11 @@ module.exports = function (config) {
             "application/app.core.js", "application/**/*.module.js",
             "application/app.js", "application/app.config.js",
             "application/app.run.js",
-            "application/**/*.routes.js", "application/**/*.controller.js",
+            "application/**/*.routes.js", "application/**/*.services.js", "application/**/*.controller.js",
         //Test Files
             "../../tests/SP.WEB.Tests/stateMock.js",
+            "../../tests/SP.WEB.Tests/Mother.js",
+            "../../tests/SP.WEB.Tests/*.service.spec.js",
             "../../tests/SP.WEB.Tests/*.controller.spec.js"
         ],
         reporters: ["mocha"],
