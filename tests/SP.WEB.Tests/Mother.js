@@ -9,10 +9,10 @@ var Mother = (function () {
         return {
             data: {
                 value: {
-                    "totalNumberOfPosts": 10,
-                    "totalNumberOfComments": 59,
-                    "totalNumberOfViews": 123123123,
-                    "totalNumberOfTags": 8
+                    totalNumberOfPosts: 10,
+                    totalNumberOfComments: 59,
+                    totalNumberOfViews: 123123123,
+                    totalNumberOfTags: 8
                 }
             }
         };
