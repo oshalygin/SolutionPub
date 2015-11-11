@@ -1,4 +1,12 @@
-﻿/// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/jquery/jquery.min.js" />
+﻿//<!--bower:js -->
+
+//<!--endbower -->
+//<!-- inject:js -->
+
+//<! -- endinject -->
+
+
+/// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/jquery/jquery.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/jquery/jquery-migrate.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/bootstrap/js/bootstrap.min.js" />
 /// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/back-to-top.js" />

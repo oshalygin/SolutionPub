@@ -6,6 +6,8 @@ module.exports = function () {
     var bowerJson = require("./bower.json");
     var layout = "./Views/Shared/";
     var layoutInjector = "./Views/Shared/_Layout.cshtml";
+    var testScriptInjector = "~/../..tests/SP.WEB.Tests/angular.references.spec.js";
+    var testScriptInjectorDestination = "~/../..tests/SP.WEB.Tests/";
     var javaScriptTestProject = "~/../../tests/SP.WEB.Tests/";
     var karmaConfig = __dirname + "/karma.conf.js";
 
@@ -68,7 +70,9 @@ module.exports = function () {
         ],
 
         layoutPage: layout,
-        layoutInjector: layoutInjector
+        layoutInjector: layoutInjector,
+        testScriptInjector: testScriptInjector,
+        testScriptInjectorDestination: testScriptInjectorDestination
 
     };
 
@@ -90,6 +94,25 @@ module.exports = function () {
             }
 
 
+        };
+
+        return options;
+    };
+
+    config.getWiredepTestOptions = function () {
+
+        var options = {
+            bowerJson: config.bower.json,
+            directory: config.bower.directory,
+            ignorePath: config.bower.ignorePath,
+              fileTypes: {
+                html: {
+                replace: {
+                // ReSharper disable once StringLiteralWrongQuotes
+                    js: '///<reference path="../../~{{filePath}} " />', // jshint ignore:line
+                    }
+                }
+            }
         };
 
         return options;

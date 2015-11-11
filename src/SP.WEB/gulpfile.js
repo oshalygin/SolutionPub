@@ -59,9 +59,22 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
 
 });
 
-gulp.task("wiredep-testing", function () {
+gulp.task("wiredep-test-files", function () {
     log("*** Wiring up angular.references.spec.js file ***");
 
+    var options = config.getWiredepDefaultOptions();
+    return gulp
+        .src(config.testScriptInjector)
+        .pipe(wiredep(options))
+        .pipe($.inject(gulp.src(config.js,
+            { read: false }),
+            {
+                transform: function (filepath) {
+                    // ReSharper disable once StringLiteralWrongQuotes
+                    return '///<reference path="../../~' + filepath + '" />'; //jshint ignore: line
+                }
+            }))
+        .pipe(gulp.dest(config.testScriptInjectorDestination));
     //todo: need to fill this out...placeholder for now...
 });
 
@@ -80,7 +93,7 @@ gulp.task("populate-webroot-lib", ["delete-webroot-lib"], function () {
         .pipe(gulp.dest(config.wwwrootBower));
 });
 
-//todo: wiredep-testing file
+
 
 gulp.task("transpile", ["transpile-in-dev"], function () {
 
@@ -119,7 +132,7 @@ gulp.task("tsc-watch", function () {
 
 });
 
-gulp.task("run-jtests", function (done) {
+gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
     new Server({
         configFile: config.karmaConfiguration,
         singleRun: true
