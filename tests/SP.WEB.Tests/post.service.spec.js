@@ -1,7 +1,9 @@
+/// <reference path="angular.references.spec.js" />
+
 (function () {
     "use strict";
 
-    describe("postService", function () {
+    describe("postServiceTests", function () {
 
         var postService;
         var httpBackend;
