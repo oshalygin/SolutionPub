@@ -11,7 +11,7 @@ Visit the current blog at www.techiejs.com
 
 ####Primary Technology Used in this application:
 * vNext ASP.NET 5
-* Angular 1.5
+* Angular 1.X
 * TypeScript 1.6
 * GulpJS
 * Karma
