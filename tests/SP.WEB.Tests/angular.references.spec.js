@@ -1,9 +1,7 @@
-﻿//<!--bower:js -->
+<!--bower:js -->
 
-//<!--endbower -->
-//<!-- inject:js -->
-
-//<! -- endinject -->
+<!--endbower -->
+//<!-- inject:js --><!-- endinject -->
 
 
 /// <reference path="../../src/SP.WEB/wwwroot/assets/plugins/jquery/jquery.min.js" />

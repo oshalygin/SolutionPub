@@ -1,22 +1,23 @@
 module.exports = function () {
 
     var deploymentPath = "./wwwroot/";
+    var webRootTestReferences = "./wwwroot/application";
     var devPath = "./application";
     var appJsDev = devPath + "**/*.js";
     var bowerJson = require("./bower.json");
     var layout = "./Views/Shared/";
     var layoutInjector = "./Views/Shared/_Layout.cshtml";
-    var testScriptInjector = "~/../..tests/SP.WEB.Tests/angular.references.spec.js";
-    var testScriptInjectorDestination = "~/../..tests/SP.WEB.Tests/";
+    var testScriptInjector = __dirname + "/../../tests/SP.WEB.Tests/angular.references.spec.js";
+    var testScriptInjectorDestination = __dirname + "/../../tests/SP.WEB.Tests/";
     var javaScriptTestProject = "~/../../tests/SP.WEB.Tests/";
     var karmaConfig = __dirname + "/karma.conf.js";
 
     var config = {
         appJavaScriptFiles:
         [
-            //Gulp Files
+        //Gulp Files
             "./gulp.config.js", "./gulpfile.js",
-            //Angular Files
+        //Angular Files
             appJsDev
         ],
 
@@ -69,6 +70,24 @@ module.exports = function () {
             devPath + "/**/*.js"
         ],
 
+        testJs: [
+            webRootTestReferences + "/**/*.model.js",
+            webRootTestReferences + "/**/*.module.js",
+            webRootTestReferences + "/**/*.core.js",
+            webRootTestReferences + "/**/app.js",
+            webRootTestReferences + "/**/app.run.js",
+            webRootTestReferences + "/**/*.config.js",
+            webRootTestReferences + "/**/apiendpoints.services.js",
+            webRootTestReferences + "/**/httpFactory.services.js",
+            webRootTestReferences + "/**/*.services.js",
+            webRootTestReferences + "/**/*.routes.js",
+            webRootTestReferences + "/**/*.directive.js",
+            webRootTestReferences + "/**/*.widget.js",
+            webRootTestReferences + "/**/*.filter.js",
+            webRootTestReferences + "/**/*.controller.js",
+            webRootTestReferences + "/**/*.js"
+        ],
+
         layoutPage: layout,
         layoutInjector: layoutInjector,
         testScriptInjector: testScriptInjector,
@@ -83,12 +102,12 @@ module.exports = function () {
             bowerJson: config.bower.json,
             directory: config.bower.directory,
             ignorePath: config.bower.ignorePath,
-              fileTypes: {
+            fileTypes: {
                 html: {
-                replace: {
-                // ReSharper disable once StringLiteralWrongQuotes
-                    js: '<script src="~{{filePath}}"></script>', // jshint ignore:line
-                    css: '<link rel="stylesheet" href="~{{filePath}}" />' // jshint ignore:line
+                    replace: {
+                        // ReSharper disable once StringLiteralWrongQuotes
+                        js: '<script src="~{{filePath}}"></script>', // jshint ignore:line
+                        css: '<link rel="stylesheet" href="~{{filePath}}" />' // jshint ignore:line
                     }
                 }
             }
@@ -105,11 +124,11 @@ module.exports = function () {
             bowerJson: config.bower.json,
             directory: config.bower.directory,
             ignorePath: config.bower.ignorePath,
-              fileTypes: {
+            fileTypes: {
                 html: {
-                replace: {
-                // ReSharper disable once StringLiteralWrongQuotes
-                    js: '///<reference path="../../~{{filePath}} " />', // jshint ignore:line
+                    replace: {
+                        // ReSharper disable once StringLiteralWrongQuotes
+                        js: '///<reference path="../../~{{filePath}} " />', // jshint ignore:line
                     }
                 }
             }

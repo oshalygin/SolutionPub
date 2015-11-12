@@ -62,16 +62,17 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
 gulp.task("wiredep-test-files", function () {
     log("*** Wiring up angular.references.spec.js file ***");
 
-    var options = config.getWiredepDefaultOptions();
+    var options = config.getWiredepTestOptions();
+    log(config.testScriptInjectorDestination);
     return gulp
         .src(config.testScriptInjector)
         .pipe(wiredep(options))
-        .pipe($.inject(gulp.src(config.js,
+        .pipe($.inject(gulp.src(config.testJs,
             { read: false }),
             {
                 transform: function (filepath) {
                     // ReSharper disable once StringLiteralWrongQuotes
-                    return '///<reference path="../../~' + filepath + '" />'; //jshint ignore: line
+                    return '///<reference path="../../' + filepath + '" />'; //jshint ignore: line
                 }
             }))
         .pipe(gulp.dest(config.testScriptInjectorDestination));
