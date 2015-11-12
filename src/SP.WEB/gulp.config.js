@@ -125,10 +125,14 @@ module.exports = function () {
             directory: config.bower.directory,
             ignorePath: config.bower.ignorePath,
             fileTypes: {
-                html: {
+                js: {
+                    block: /(([ \t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
+                    detect: {
+                        js: /<script.*src=['"]([^'"]+)/gi,
+                    },
                     replace: {
                         // ReSharper disable once StringLiteralWrongQuotes
-                        js: '///<reference path="../../~{{filePath}} " />', // jshint ignore:line
+                        js: '///<reference path="../..{{filePath}} "/>', // jshint ignore:line
                     }
                 }
             }

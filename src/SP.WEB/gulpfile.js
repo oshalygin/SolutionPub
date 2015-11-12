@@ -63,7 +63,7 @@ gulp.task("wiredep-test-files", function () {
     log("*** Wiring up angular.references.spec.js file ***");
 
     var options = config.getWiredepTestOptions();
-    log(config.testScriptInjectorDestination);
+
     return gulp
         .src(config.testScriptInjector)
         .pipe(wiredep(options))
@@ -72,7 +72,7 @@ gulp.task("wiredep-test-files", function () {
             {
                 transform: function (filepath) {
                     // ReSharper disable once StringLiteralWrongQuotes
-                    return '///<reference path="../../' + filepath + '" />'; //jshint ignore: line
+                    return '///<reference path="../../src/SP.WEB' + filepath + '" />'; //jshint ignore: line
                 }
             }))
         .pipe(gulp.dest(config.testScriptInjectorDestination));
