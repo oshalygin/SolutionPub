@@ -3,22 +3,22 @@
         <div class="col-sm-5 sm-margin-bottom-20">
             <img class="img-responsive" src="assets/img/main/img12.jpg" alt="">
         </div>
-        <div class="col-sm-7 news-v3">
+
+        <div class="col-sm-7 news-v3" ng-repeat="post in vm.posts">
             <div class="news-v3-in-sm no-padding">
 
-                <h2><a href="#">Incredible standard post “IMAGE”</a></h2>
+                <h2><a href="#">{{post.title}}</a></h2>
                 <ul class="list-inline posted-info">
-                    <li>{{vm.title}}</li>
+                    <li>{{post.title}}</li>
                     <li>In <a href="#">Design</a></li>
-                    <li>Posted January 24, 2015</li>
+                    <li>Posted {{post.postedDate | date}}</li>
                 </ul>
 
-                {{vm.totals}}
+
                 <br>
                 {{vm.posts}}
 
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie
-                    est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin non metus inmi efficitur...</p>
+                <p>{{post.body}}</p>
                 <ul class="post-shares">
                     <li>
                         <a href="#">
@@ -31,6 +31,8 @@
                 </ul>
             </div>
         </div>
+
+
     </div>
     <!--/end row-->
     <!-- End Post -->
