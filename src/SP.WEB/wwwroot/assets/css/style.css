@@ -16,7 +16,7 @@
 @import url(plugins/style-switcher.css);
 
 body {
-   color: #333;
+   color: #404040;
    font-size: 13px;
    line-height: 1.6;
 }
@@ -41,6 +41,15 @@ li a,
 label {
    color: #555;
 }
+
+p,
+li,
+li a,
+label .latest-list {
+   color: #eee;
+}
+
+
 
 a {
    color: #3498db;
