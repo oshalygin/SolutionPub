@@ -8,9 +8,8 @@ module app.posts {
         page: number;
         totalNumberOfPosts: number;
         maxPagesToDisplay: number;
-        //todo: create a class for totals
-        totals: any;
-        // posts: app.models.IPost[];
+        totals: app.models.IBlogTotals;
+        posts: app.models.IPost[];
     }
 
     class PostController implements IPostController {
@@ -20,9 +19,8 @@ module app.posts {
         page: number;
         totalNumberOfPosts: number;
         maxPagesToDisplay: number;
-        totals: any;
-        posts: any;
-        // posts: app.models.IPost[];
+        totals: app.models.IBlogTotals;
+        posts: app.models.IPost[];
 
         static $inject = ["postService"]
         constructor(postService: app.services.PostService) {
@@ -35,6 +33,7 @@ module app.posts {
             postService.getTotals()
                 .then((data: any) => {
                     vm.totals = data;
+                    console.log(vm.totals);
                 });
 
             postService.getPosts(vm.page)
