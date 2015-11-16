@@ -31,7 +31,8 @@
     "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
     "SP.Entities": "1.0.0-*",
     "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8"
+    "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+    "SP.Twitter": "1.0.0-*"
   },
   "commands": {
     "ef": "EntityFramework.Commands"
