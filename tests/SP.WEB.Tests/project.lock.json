@@ -2077,7 +2077,8 @@
           "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
-          "SP.Entities": "1.0.0"
+          "SP.Entities": "1.0.0",
+          "SP.Twitter": "1.0.0"
         }
       },
       "System.Collections.Immutable/1.1.36": {
@@ -4381,7 +4382,8 @@
           "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
-          "SP.Entities": "1.0.0"
+          "SP.Entities": "1.0.0",
+          "SP.Twitter": "1.0.0"
         }
       },
       "System.Collections.Immutable/1.1.36": {
@@ -6685,7 +6687,8 @@
           "Ninject.Extensions.Conventions": "3.2.1",
           "SP.BLL": "1.0.0",
           "SP.DAL": "1.0.0",
-          "SP.Entities": "1.0.0"
+          "SP.Entities": "1.0.0",
+          "SP.Twitter": "1.0.0"
         }
       },
       "System.Collections.Immutable/1.1.36": {

@@ -38,10 +38,10 @@ namespace SP.Twitter
                 httpRequestMessage.Content.Headers.ContentType =
                     new MediaTypeHeaderValue("application/x-www-form-urlencoded;charset=UTF-8");
 
-                using (var stream = httpRequestMessage.Content.ReadAsStreamAsync())
+                using (var stream = httpRequestMessage.Content.ReadAsStreamAsync().Result)
                 {
-                    var content = Encoding.ASCII.GetBytes(postBody);
-                    stream.Result.Write(content, 0, content.Length);
+                    var content = Encoding.UTF8.GetBytes(postBody);
+                    stream.Write(content, 0, content.Length);
                 }
 
                 httpRequestMessage.Headers.Add("Accept-Encoding", "gzip");

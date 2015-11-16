@@ -8385,7 +8385,8 @@
       "AutoMapper >= 4.0.4",
       "SP.Entities >= 1.0.0-*",
       "SP.BLL >= 1.0.0-*",
-      "SP.DAL >= 1.0.0-*"
+      "SP.DAL >= 1.0.0-*",
+      "SP.Twitter >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": []
   }

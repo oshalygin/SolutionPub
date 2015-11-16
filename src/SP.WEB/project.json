@@ -1,4 +1,4 @@
-﻿{
+{
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-SP-bd18072a-4f8f-4ecc-ad44-8c28f74c2d06",
   "version": "1.0.0-*",
@@ -32,7 +32,8 @@
     "AutoMapper": "4.0.4",
     "SP.Entities": "1.0.0-*",
     "SP.BLL": "1.0.0-*",
-    "SP.DAL": "1.0.0-*"
+    "SP.DAL": "1.0.0-*",
+    "SP.Twitter": "1.0.0-*"
   },
 
   "commands": {
