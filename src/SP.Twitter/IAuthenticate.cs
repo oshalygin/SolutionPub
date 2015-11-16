@@ -2,6 +2,6 @@
 {
     public interface IAuthenticate
     {
-        AuthenticationResponse AuthenticateUser(AuthenticationSettings authenticationSettings);
+        AuthenticationResponse AuthenticateUser(IAuthenticationSettings authenticationSettings);
     }
 }

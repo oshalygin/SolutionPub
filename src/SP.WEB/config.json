@@ -10,7 +10,8 @@
       "oAuthConsumerKey": "someKey1",
       "oAuthConsumerSecret": "someKey2",
       "oAuthUrl": "https://api.twitter.com/oauth2/token",
-      "screenName": "oshalygin"
+      "screenName": "oshalygin",
+      "includeRetweets": "include_rts"
     }
   }
 }

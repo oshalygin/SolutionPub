@@ -11,7 +11,7 @@ namespace SP.Twitter
     //TODO: Refactor this into reusable components once this is confirmed to work.
     public class Authenticate : IAuthenticate
     {
-        public AuthenticationResponse AuthenticateUser(AuthenticationSettings authenticationSettings)
+        public AuthenticationResponse AuthenticateUser(IAuthenticationSettings authenticationSettings)
         {
             var response = new AuthenticationResponse();
 

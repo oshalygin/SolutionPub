@@ -1,6 +1,6 @@
 ﻿namespace SP.Twitter
 {
-    public class AuthenticationSettings
+    public class AuthenticationSettings: IAuthenticationSettings
     {
         public string OauthConsumerKey { get; set; }
         public string OauthConsumerSecret { get; set; }
