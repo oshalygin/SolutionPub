@@ -33,16 +33,19 @@ namespace SP.Twitter
             {
                 var httpRequestMessage = new HttpRequestMessage();
 
+                var requestUri = new Uri(authenticationSettings.OauthUrl);
+
+                httpRequestMessage.RequestUri = requestUri;
                 httpRequestMessage.Headers.Add("Authorization", authenticationHeader);
                 httpRequestMessage.Method = HttpMethod.Post;
-                httpRequestMessage.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue("application/x-www-form-urlencoded;charset=UTF-8");
 
-                using (var stream = httpRequestMessage.Content.ReadAsStreamAsync().Result)
-                {
-                    var content = Encoding.UTF8.GetBytes(postBody);
-                    stream.Write(content, 0, content.Length);
-                }
+                var content = Encoding.UTF8.GetBytes(postBody);
+                var stream = new MemoryStream(content, 0, content.Length);
+
+                httpRequestMessage.Content = new StreamContent(stream);
+
+                httpRequestMessage.Content.Headers.ContentType =
+                    MediaTypeHeaderValue.Parse("application/x-www-form-urlencoded; charset=utf-8");
 
                 httpRequestMessage.Headers.Add("Accept-Encoding", "gzip");
                 var httpResponseMessage = client.SendAsync(httpRequestMessage).Result;
