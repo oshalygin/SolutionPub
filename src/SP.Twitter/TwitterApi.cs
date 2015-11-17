@@ -18,8 +18,8 @@
 
             _authenticationSettings = new AuthenticationSettings();
             _authenticationSettings.OauthUrl = @"https://api.twitter.com/oauth2/token";
-            _authenticationSettings.OauthConsumerKey = "Key";
-            _authenticationSettings.OauthConsumerSecret = "Secret";
+            _authenticationSettings.OauthConsumerKey = "QaM8auViHNQCp1JhB9Mpo6u1F";
+            _authenticationSettings.OauthConsumerSecret = "15NYd2AKxkL9Vix3xBRUPsKhb0Znxodg019Wv2jCzL3qQBZZ2l";
         }
 
         public string GetTimeline()

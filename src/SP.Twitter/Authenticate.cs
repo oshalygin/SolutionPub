@@ -15,13 +15,14 @@ namespace SP.Twitter
         {
             var response = new AuthenticationResponse();
 
-            var escapedConsumerKey = Uri.EscapeDataString(authenticationSettings.OauthConsumerKey);
-            var byteEncodedConsumerKey = Encoding.UTF8.GetBytes(escapedConsumerKey);
-            var authenticationConsumerKey = Convert.ToBase64String(byteEncodedConsumerKey);
 
+            var authenticationConsumerKey = Uri.EscapeDataString(authenticationSettings.OauthConsumerKey);
             var authenticationConsumerSecret = Uri.EscapeDataString(authenticationSettings.OauthConsumerSecret);
+            var byteEncodedConsumerAuthentication =
+                Encoding.UTF8.GetBytes(authenticationConsumerKey + ":" + authenticationConsumerSecret);
+            var convertedConsumerAuthentication = Convert.ToBase64String(byteEncodedConsumerAuthentication);
 
-            var authenticationHeader = $"Basic {authenticationConsumerKey}:{authenticationConsumerSecret}";
+            var authenticationHeader = $"Basic {convertedConsumerAuthentication}";
             var postBody = "grant_type=client_credentials";
 
             var httpClientHandler = new HttpClientHandler

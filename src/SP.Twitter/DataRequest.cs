@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net.Http;
 
 namespace SP.Twitter
@@ -9,13 +10,15 @@ namespace SP.Twitter
         {
             using (var client = new HttpClient())
             {
+                var requestUri = new Uri(url);
                 var httpRequestMessage = new HttpRequestMessage { Method = HttpMethod.Get };
                 httpRequestMessage.Headers.Add("Authorization", $"{tokenType} {accessToken}");
+                httpRequestMessage.RequestUri = requestUri;
 
-                var httpResponseMessage = client.SendAsync(httpRequestMessage);
+                var httpResponseMessage = client.SendAsync(httpRequestMessage).Result;
                 string response;
 
-                using (var reader = new StreamReader(httpResponseMessage.Result.Content.ReadAsStreamAsync().Result))
+                using (var reader = new StreamReader(httpResponseMessage.Content.ReadAsStreamAsync().Result))
                 {
                     response = reader.ReadToEnd();
                 }
