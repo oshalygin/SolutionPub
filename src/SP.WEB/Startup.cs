@@ -12,6 +12,7 @@ using Newtonsoft.Json.Serialization;
 using SP.BLL;
 using SP.DAL;
 using SP.Entities;
+using SP.Twitter;
 using SP.WEB.Models;
 using SP.WEB.Services;
 
@@ -76,12 +77,20 @@ namespace SP.WEB
             services.AddTransient<IPostBLL, PostBLL>();
             services.AddTransient<ITagBLL, TagBLL>();
             services.AddTransient<IImageBLL, ImageBLL>();
+            services.AddTransient<ITwitterBLL, TwitterBLL>();
             services.AddTransient<ICommentBLL, CommentBLL>();
             services.AddTransient<IPostDataAccess, PostDataAccess>();
             services.AddTransient<ITagDataAccess, TagDataAccess>();
             services.AddTransient<IImageUtility, ImageUtility>();
             services.AddTransient<IImageDataAccess, ImageDataAccess>();
+            services.AddTransient<ITwitterResourceAccess, TwitterResourceAccess>();
 
+            //TwitterAPI DI
+            services.AddTransient<ITwitterApi, TwitterApi>();
+            services.AddTransient<ITimelineSettings, TimelineSettings>();
+            services.AddTransient<IAuthenticationSettings, AuthenticationSettings>();
+            services.AddTransient<IDataRequest, DataRequest>();
+            services.AddTransient<IAuthenticate, Authenticate>();
 
         }
 
