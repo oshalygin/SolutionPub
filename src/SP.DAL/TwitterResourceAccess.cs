@@ -9,22 +9,25 @@ using SP.Twitter.Entities;
 
 namespace SP.DAL
 {
-    public class TwitterResourceAccess: ITwitterResourceAccess
+    public class TwitterResourceAccess : ITwitterResourceAccess
     {
         private readonly ITwitterApi _twitterApi;
+
         public TwitterResourceAccess(ITwitterApi twitterApi)
         {
             _twitterApi = twitterApi;
         }
+
         public IEnumerable<Tweet> Get()
         {
             var timelineList = _twitterApi.GetTimeline();
-            var deserializedTimeline =  JsonConvert
+            var deserializedTimeline = JsonConvert
                 .DeserializeObject<IEnumerable<Timeline>>(timelineList);
 
             var tweets = deserializedTimeline.Select(timeline => new Tweet
             {
-                PostedDate = ParseTwitterDateTime(timeline.CreatedAt),
+                DatePosted = new DatePosted()
+                { OriginalPostedDate = ParseTwitterDateTime(timeline.CreatedAt)},
                 Body = timeline.Text
             });
 
