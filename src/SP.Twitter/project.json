@@ -18,12 +18,12 @@
         "System.Linq": "4.0.1-beta-23409",
         "System.Runtime": "4.0.21-beta-23409",
         "System.Threading": "4.0.11-beta-23409",
-        "System.Net.Http": "4.0.1-beta-23409"
+        "System.Net.Http": "4.0.1-beta-23516"
       }
     }
   },
   "dependencies": {
-    "Microsoft.AspNet.Http.Abstractions": "1.0.0-beta8",
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
     "Newtonsoft.Json": "7.0.1"
   }
 }

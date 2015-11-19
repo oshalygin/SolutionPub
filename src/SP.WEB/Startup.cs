@@ -4,10 +4,10 @@ using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
-using Microsoft.Dnx.Runtime;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Logging;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Framework.Runtime;
 using Newtonsoft.Json.Serialization;
 using SP.BLL;
 using SP.DAL;
@@ -44,8 +44,9 @@ namespace SP.WEB
             // Add Entity Framework services to the services container.
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<BlogContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+                .AddDbContext<BlogContext>(
+                    options => options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -105,7 +106,6 @@ namespace SP.WEB
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
-                app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
             }
 
             app.UseDeveloperExceptionPage();

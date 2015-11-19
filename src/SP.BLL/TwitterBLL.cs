@@ -27,7 +27,10 @@ namespace SP.BLL
                 .Subtract(date).Seconds;
 
 
-            return null;
+
+
+            return datePosted;
+            
 
         }
     }

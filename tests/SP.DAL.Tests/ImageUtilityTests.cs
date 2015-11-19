@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.AspNet.Http;
-using Microsoft.Dnx.Runtime;
+using Microsoft.Framework.Runtime;
 using Moq;
 using Xunit;
 
