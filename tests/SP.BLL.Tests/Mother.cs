@@ -7,6 +7,11 @@ namespace SP.BLL.Tests
 {
     public static class Mother
     {
+
+        public static double FiveMinutes => 5;
+        public static int OneMonth => 1;
+        public static double FourteenHours => 14;
+
         public static IEnumerable<Post> PostsWithoutTagsOrComments
         {
             get

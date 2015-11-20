@@ -9,22 +9,43 @@ namespace SP.BLL.Tests
     {
         private Mock<ITwitterResourceAccess> _twitterResourceAccess;
 
-//        [Fact]
-        public void ShouldReturnDifferenceOfOneMinute()
+        [Fact]
+        public void ShouldBeWithinRangeOfFiveMinutes()
         {
             _twitterResourceAccess = new Mock<ITwitterResourceAccess>();
             var sut = new TwitterBLL(_twitterResourceAccess.Object);
 
-            var expected = 1;
-            var date = DateTime.Now.AddMinutes(1).ToLocalTime();
+            var date = DateTime.Now.ToLocalTime().AddMinutes(Mother.FiveMinutes);
             var postedDate = sut.ParsePostedDate(date);
-            Console.WriteLine("---------------");
-            Console.WriteLine($"Minutes: {postedDate.MinutesFromPostedDate}");
-            Console.WriteLine($"Seconds: {postedDate.SecondsFromPostedDate}");
-            Console.WriteLine("---------------");
+            
+            Assert.InRange(postedDate.MinutesFromPostedDate, 3, 6);
 
-            Assert.Equal(expected, postedDate.MinutesFromPostedDate);
+        }
 
+        [Fact]
+        public void ShouldBeWithinRangeOfOneMonth()
+        {
+            _twitterResourceAccess = new Mock<ITwitterResourceAccess>();
+            var sut = new TwitterBLL(_twitterResourceAccess.Object);
+
+
+            var date = DateTime.Now.ToLocalTime().AddMonths(Mother.OneMonth);
+            var postedDate = sut.ParsePostedDate(date);
+
+            Assert.InRange(postedDate.WeeksFromPostedDate, 3, 5);
+        }
+
+        [Fact]
+        public void ShouldBeWithinRangeOfFourteenHours()
+        {
+            _twitterResourceAccess = new Mock<ITwitterResourceAccess>();
+            var sut = new TwitterBLL(_twitterResourceAccess.Object);
+
+
+            var date = DateTime.Now.ToLocalTime().AddHours(Mother.FourteenHours);
+            var postedDate = sut.ParsePostedDate(date);
+
+            Assert.InRange(postedDate.HoursFromPostedDate, 13, 15);
         }
     }
 }
