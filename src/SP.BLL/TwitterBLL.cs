@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SP.DAL;
 using SP.Entities;
 
@@ -21,7 +22,14 @@ namespace SP.BLL
 
         public IEnumerable<Tweet> Get()
         {
-            return _twitterResourceAccess.Get();
+            return _twitterResourceAccess
+                .Get()
+                .Select(tweet => new Tweet()
+                {
+                    Id = tweet.Id,
+                    Body = tweet.Body,
+                    DatePosted = ParsePostedDate(tweet.DatePosted.OriginalPostedDate)
+                });
         }
 
         public DatePosted ParsePostedDate(DateTime date)
@@ -35,14 +43,13 @@ namespace SP.BLL
             var totalSeconds = DateTime.Now.ToLocalTime()
                 .Subtract(date.ToLocalTime())
                 .TotalSeconds;
-            var parsedSeconds = Math.Abs((long)totalSeconds);
+            var parsedSeconds = Math.Abs((long) totalSeconds);
 
 
             var totalMinutes = DivideWithRemainder(parsedSeconds, NumberOfSecondsOrMinutes, out seconds);
             var totalHours = DivideWithRemainder(totalMinutes, NumberOfSecondsOrMinutes, out minutes);
             var totalDays = DivideWithRemainder(totalHours, NumberOfHoursInOneDay, out hours);
             var weeks = DivideWithRemainder(totalDays, NumberOfDaysInAWeek, out days);
-            
 
 
             datePosted.SecondsFromPostedDate = parsedSeconds;
@@ -52,7 +59,7 @@ namespace SP.BLL
             datePosted.HoursFromPostedDate = hours;
             datePosted.DaysFromPostedDate = days;
             datePosted.WeeksFromPostedDate = weeks;
-            
+
             return datePosted;
         }
 
@@ -61,6 +68,5 @@ namespace SP.BLL
             remainder = numerator%denominator;
             return numerator/denominator;
         }
-        
     }
 }
