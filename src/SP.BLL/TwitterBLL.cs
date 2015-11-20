@@ -63,7 +63,7 @@ namespace SP.BLL
             return datePosted;
         }
 
-        private long DivideWithRemainder(long numerator, long denominator, out long remainder)
+        private static long DivideWithRemainder(long numerator, long denominator, out long remainder)
         {
             remainder = numerator%denominator;
             return numerator/denominator;
