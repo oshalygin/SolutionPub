@@ -2,7 +2,9 @@ language: csharp
 mono:
   - beta
 solution: SolutionPub.sln
-install: curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | sh && source ~/.dnx/dnvm/dnvm.sh && dnvm upgrade
+install:
+  - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+  - dnvm upgrade -r coreclr
 before_script:
   - npm install -g bower
   - npm install -g gulp
