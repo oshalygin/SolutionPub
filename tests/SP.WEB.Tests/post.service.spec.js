@@ -7,7 +7,7 @@
 
         var postService;
         var httpBackend;
-        var hostName = "http://localhost:15523";
+        var hostName = "http://localhost:51869";
         var apiEndpoint = hostName + "/api/Post/";
         var defaultApiEndPoint = hostName + "/api/Post/?page=1";
 

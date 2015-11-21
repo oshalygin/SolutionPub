@@ -5,7 +5,7 @@ module app.services {
         public static get baseUrl(): string {
 
             if (this.local) {
-                return "http://localhost:15523/api/";
+                return "http://localhost:51869/api/";
             }
             else {
                 return "http://www.solutionpub.com/api/";
