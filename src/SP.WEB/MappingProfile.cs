@@ -14,6 +14,25 @@ namespace SP.WEB
                     options => options.MapFrom(
                         src => src.Tags.Select(x => x.Tag)));
 
+            CreateMap<Tweet, TweetViewModel>()
+                .ForMember(dest => dest.OriginalPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.OriginalPostedDate))
+                .ForMember(dest => dest.WeeksFromPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.WeeksFromPostedDate))
+                .ForMember(dest => dest.DaysFromPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.DaysFromPostedDate))
+                        .ForMember(dest => dest.HoursFromPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.HoursFromPostedDate))
+                .ForMember(dest => dest.MinutesFromPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.MinutesFromPostedDate))
+                .ForMember(dest => dest.SecondsFromPostedDate,
+                    options => options.MapFrom(
+                        src => src.DatePosted.SecondsFromPostedDate));
 
             CreateMap<Tag, TagViewModel>();
             CreateMap<Comment, CommentViewModel>().ReverseMap();
