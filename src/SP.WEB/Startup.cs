@@ -115,13 +115,9 @@ namespace SP.WEB
 
             app.UseIdentity();
 
-            Mapper.Initialize(config =>
-            {
-                config.CreateMap<Post, PostViewModel>().ReverseMap();
-                config.CreateMap<Tag, TagViewModel>().ReverseMap();
-                config.CreateMap<Comment, CommentViewModel>().ReverseMap();
-                config.CreateMap<Image, ImageViewModel>().ReverseMap();
-            });
+            Mapper.Initialize(configuration =>
+            configuration.AddProfile<MappingProfile>());
+            
 
 
             // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
