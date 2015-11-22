@@ -1934,6 +1934,9 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
           "Newtonsoft.Json": "7.0.1",
           "System.Net.Http": "4.0.1-beta-23409"
         }
@@ -4103,6 +4106,9 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
           "Newtonsoft.Json": "7.0.1",
           "System.Net.Http": "4.0.1-beta-23409"
         }
@@ -6272,6 +6278,9 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
           "Newtonsoft.Json": "7.0.1",
           "System.Net.Http": "4.0.1-beta-23409"
         }
