@@ -25,8 +25,8 @@
 
         }));
 
-        it("number of tweets to display is 4", function () {
-            var expected = 4;
+        it("number of tweets to display is 3", function () {
+            var expected = 3;
             var actual = vm.tweetsToDisplay;
 
             expect(actual).toEqual(expected);

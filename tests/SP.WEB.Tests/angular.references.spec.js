@@ -37,13 +37,15 @@
 
 /*
 <!-- inject:js -->
+///<reference path="../../src/SP.WEB/wwwroot/application/models/blogTotals.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/comment.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/image.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/post.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/tag.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/tweets.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/comments/comments.module.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/images/images.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.module.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/images/images.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/posts.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/services.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/sidebar/sidebar.module.js" />
