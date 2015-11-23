@@ -2,16 +2,15 @@
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using SP.Entities;
+using System.Linq;
 
 namespace SP.DAL
 {
     public class BlogContext : IdentityDbContext<ApplicationUser>
     {
-
         public BlogContext()
         {
             Database.EnsureCreated();
-
         }
 
         public DbSet<Post> Posts { get; set; }
@@ -21,12 +20,16 @@ namespace SP.DAL
         public DbSet<PostTag> PostTag { get; set; }
 
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            string connectionString;
             var configuration = new ConfigurationBuilder().SetBasePath(@"..\")
                 .AddJsonFile("config.json");
-            var connectionString = 
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true");
+
+            var databaseConfiguration = configuration.Providers.Single();
+            databaseConfiguration.TryGet("Data:DefaultConnection:ConnectionString", out connectionString);
+
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

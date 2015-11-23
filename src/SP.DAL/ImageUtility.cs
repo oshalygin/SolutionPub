@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.AspNet.Http;
-using Microsoft.Framework.Runtime;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Net.Http.Headers;
 using SP.Entities;
 
