@@ -27,7 +27,7 @@
     "Microsoft.Extensions.Configuration.CommandLine": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
-    "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "SP.Entities": "1.0.0-*",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
+using Microsoft.Extensions.Configuration;
 using SP.Entities;
 
 namespace SP.DAL
@@ -22,6 +23,9 @@ namespace SP.DAL
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var configuration = new ConfigurationBuilder().SetBasePath(@"..\")
+                .AddJsonFile("config.json");
+            var connectionString = 
             optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SolutionPub;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
 

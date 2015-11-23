@@ -10,7 +10,6 @@ namespace SP.Twitter
         private readonly ITimelineSettings _timelineSettings;
         private readonly IAuthenticationSettings _authenticationSettings;
 
-        //TODO: Hardcoded for now, need to pull from config.json
         public TwitterApi()
         {
             const string baseTwitterConfiguration = "Data:TwitterConfiguration";
