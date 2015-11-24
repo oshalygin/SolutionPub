@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Text;
-
-namespace SP.DAL.Tests
+﻿namespace SP.DAL.Tests
 {
     public static class Mother
     {
