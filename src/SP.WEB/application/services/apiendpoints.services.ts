@@ -20,6 +20,9 @@ module app.services {
         public static get tag(): string {
             return this.baseUrl + "Tag/";
         }
+        public static get twitter(): string {
+            return this.baseUrl + "Twitter/";
+        }
 
     }
 }
