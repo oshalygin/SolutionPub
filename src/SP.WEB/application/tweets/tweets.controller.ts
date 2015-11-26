@@ -10,10 +10,17 @@ module app.tweets {
         tweetsToDisplay: number;
         tweets: app.models.ITweet[];
 
-        constructor() {
+
+        static $inject = ["twitterService"];
+        constructor(twitterService: app.services.TwitterService) {
 
             var vm = this;
             vm.tweetsToDisplay = 3;
+            twitterService.getTweets()
+                .then((data: any) => {
+                    vm.tweets = data;
+                    console.log(vm.tweets);
+                });
 
         }
     }

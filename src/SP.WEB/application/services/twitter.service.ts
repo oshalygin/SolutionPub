@@ -19,8 +19,6 @@ module app.services {
 
     }
 
-
-
     angular.module("app.services")
         .service("twitterService", TwitterService);
 }
