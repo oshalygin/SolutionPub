@@ -24,7 +24,7 @@ namespace SP.WEB
                 .ForMember(dest => dest.DaysFromPostedDate,
                     options => options.MapFrom(
                         src => src.DatePosted.DaysFromPostedDate))
-                        .ForMember(dest => dest.HoursFromPostedDate,
+                .ForMember(dest => dest.HoursFromPostedDate,
                     options => options.MapFrom(
                         src => src.DatePosted.HoursFromPostedDate))
                 .ForMember(dest => dest.MinutesFromPostedDate,
@@ -32,7 +32,10 @@ namespace SP.WEB
                         src => src.DatePosted.MinutesFromPostedDate))
                 .ForMember(dest => dest.SecondsFromPostedDate,
                     options => options.MapFrom(
-                        src => src.DatePosted.SecondsFromPostedDate));
+                        src => src.DatePosted.SecondsFromPostedDate))
+                .ForMember(dest => dest.PostedFromDate,
+                    options => options.Ignore());
+                
 
             CreateMap<Tag, TagViewModel>();
             CreateMap<Comment, CommentViewModel>().ReverseMap();
