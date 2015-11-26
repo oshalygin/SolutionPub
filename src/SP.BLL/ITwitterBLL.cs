@@ -8,5 +8,6 @@ namespace SP.BLL
     {
         IEnumerable<Tweet> Get();
         DatePosted ParsePostedDate(DateTime date);
+        string CalculatePostedFromDate(long weeks, long days, long hours, long minutes, long seconds);
     }
 }

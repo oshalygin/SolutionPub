@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using SP.DAL;
 using SP.Entities;
 
@@ -61,6 +62,31 @@ namespace SP.BLL
             datePosted.WeeksFromPostedDate = weeks;
 
             return datePosted;
+        }
+
+        public string CalculatePostedFromDate(long weeks, long days, long hours, long minutes, long seconds)
+        {
+            var weekExpression = (weeks > 1) ? "weeks" : "week";
+            var dayExpression = (days > 1) ? "days" : "day";
+            var hourExpression = (hours > 1) ? "hours" : "hour";
+            var minuteExpression = (minutes > 1) ? "minutes" : "minute";
+            var secondExpression = (seconds > 1) ? "seconds" : "second";
+
+            if (weeks > 0)
+            {
+                return $"{weeks} {weekExpression} ago";
+            }
+            if (days > 0)
+            {
+                return $"{days} {dayExpression} ago";
+            }
+            if (hours > 0)
+            {
+                return $"{hours} {hourExpression} and {minutes} {minuteExpression} ago";
+            }
+            return minutes > 0
+                ? $"{minutes} {minuteExpression} ago"
+                : $"{seconds} {secondExpression} ago";
         }
 
         private static long DivideWithRemainder(long numerator, long denominator, out long remainder)

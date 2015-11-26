@@ -9,6 +9,7 @@ module app.models {
         hoursFromPostedDate: number;
         minutesFromPostedDate: number;
         secondsFromPostedDate: number;
+        postedFromDate: string;
         body: string;
     }
 
@@ -21,6 +22,7 @@ module app.models {
         hoursFromPostedDate: number;
         minutesFromPostedDate: number;
         secondsFromPostedDate: number;
+        postedFromDate: string;
         body: string;
     }
 }

@@ -11,6 +11,7 @@ namespace SP.WEB.Models
         public long HoursFromPostedDate { get; set; }
         public long MinutesFromPostedDate { get; set; }
         public long SecondsFromPostedDate { get; set; }
+        public string PostedFromDate { get; set; }
         public string Body { get; set; }
     }
 }

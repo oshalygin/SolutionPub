@@ -1,6 +1,7 @@
 
 <div class="col-md-3">
-    <div ng-include='"application/tweets/tweets.html"'></div>
+    <!--Refactor this out into a viewstate instead-->
+    <div ng-include='"application/tweets/tweets.html"' ng-controller="app.tweets.TweetsController as vm"></div>
     <div ng-include='"application/tags/tags.html"'></div>
 
 </div>

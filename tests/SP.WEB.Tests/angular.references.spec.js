@@ -64,5 +64,6 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tags/tags.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tweets/tweets.controller.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/services/twitter.service.js" />
 <!-- endinject -->
 */
