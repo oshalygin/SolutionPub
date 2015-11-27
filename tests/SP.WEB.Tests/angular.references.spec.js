@@ -58,12 +58,12 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/apiendpoints.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/httpFactory.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/post.services.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/services/twitter.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.routes.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.routes.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/about.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tags/tags.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tweets/tweets.controller.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/services/twitter.service.js" />
 <!-- endinject -->
 */
