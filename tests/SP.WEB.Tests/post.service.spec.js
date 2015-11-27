@@ -29,7 +29,7 @@
             expect(postService).not.toEqual(null);
         });
 
-        it("when calling getPosts() the service returns back 5 loans", function () {
+        it("when calling getPosts() the service returns back 5 posts", function () {
 
             httpBackend.expectGET(defaultApiEndPoint)
                 .respond(Mother.getPosts());
