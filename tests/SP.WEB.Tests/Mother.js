@@ -2,7 +2,50 @@ var Mother = (function () {
 
     return {
         getPosts: getPosts,
-        getTotals: getTotals
+        getTotals: getTotals,
+        getTweets: getTweets
+    };
+
+    function getTweets() {
+
+        var tweets = [
+            {
+                id: 0,
+                originalPostedDate: "2015-11-25T20:10:28-08:00",
+                weeksFromPostedDate: 0,
+                daysFromPostedDate: 1,
+                hoursFromPostedDate: 0,
+                minutesFromPostedDate: 13,
+                secondsFromPostedDate: 11,
+                postedFromDate: "1 day ago",
+                body: "RT @msdev: Meet #ASPNET 5: Reimagined from the ground up. Walk through the new features: https://t.co/u69P2sKP83 https://t.co/g0OzVWya4i"
+            },
+            {
+                id: 0,
+                originalPostedDate: "2015-11-10T17:23:46-08:00",
+                weeksFromPostedDate: 2,
+                daysFromPostedDate: 2,
+                hoursFromPostedDate: 2,
+                minutesFromPostedDate: 59,
+                secondsFromPostedDate: 53,
+                postedFromDate: "2 weeks ago",
+                body: "RT @algolia: ReactJS Developers: read how we have unit tested React components using expect-jsx https://t.co/W2sy8xV7RF"
+            },
+            {
+                id: 0,
+                originalPostedDate: "2015-11-10T17:19:02-08:00",
+                weeksFromPostedDate: 2,
+                daysFromPostedDate: 2,
+                hoursFromPostedDate: 3,
+                minutesFromPostedDate: 4,
+                secondsFromPostedDate: 37,
+                postedFromDate: "2 weeks ago",
+                body: "RT @codinghorror: Two instances of the Stockfish JS Chess Engine play against each other, one using asm.js, the other without https://t.co/…"
+            }
+        ]
+
+        return tweets;
+
     };
 
     function getTotals() {
@@ -96,7 +139,7 @@ var Mother = (function () {
                 comments: []
             }
         ];
-        
+
         return posts;
     }
 
