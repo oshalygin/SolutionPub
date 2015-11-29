@@ -8,39 +8,38 @@ using Newtonsoft.Json;
 
 namespace SP.Twitter
 {
-    //TODO: Refactor this into reusable components once this is confirmed to work.
     public class Authenticate : IAuthenticate
     {
+        private const string PostBody = "grant_type=client_credentials";
+        private const string BasicAuthentication = "Basic";
+
         public AuthenticationResponse AuthenticateUser(IAuthenticationSettings authenticationSettings)
         {
-            var response = new AuthenticationResponse();
-
-
-            var authenticationConsumerKey = Uri.EscapeDataString(authenticationSettings.OauthConsumerKey);
-            var authenticationConsumerSecret = Uri.EscapeDataString(authenticationSettings.OauthConsumerSecret);
-            var byteEncodedConsumerAuthentication =
-                Encoding.UTF8.GetBytes(authenticationConsumerKey + ":" + authenticationConsumerSecret);
-            var convertedConsumerAuthentication = Convert.ToBase64String(byteEncodedConsumerAuthentication);
-
-            var authenticationHeader = $"Basic {convertedConsumerAuthentication}";
-            var postBody = "grant_type=client_credentials";
+            var authenticationHeader = ConstructAuthenticationHeader(authenticationSettings);
+            var authenticationUrl = authenticationSettings.OauthUrl;
 
             var httpClientHandler = new HttpClientHandler
             {
                 AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
             };
 
+            return SendHttpRequest(httpClientHandler, authenticationHeader, authenticationUrl);
+        }
+
+        private static AuthenticationResponse SendHttpRequest(HttpClientHandler httpClientHandler,
+            string authenticationHeader, string authenticationUrl)
+        {
             using (var client = new HttpClient(httpClientHandler))
             {
                 var httpRequestMessage = new HttpRequestMessage();
 
-                var requestUri = new Uri(authenticationSettings.OauthUrl);
+                var requestUri = new Uri(authenticationUrl);
 
                 httpRequestMessage.RequestUri = requestUri;
                 httpRequestMessage.Headers.Add("Authorization", authenticationHeader);
                 httpRequestMessage.Method = HttpMethod.Post;
 
-                var content = Encoding.UTF8.GetBytes(postBody);
+                var content = Encoding.UTF8.GetBytes(PostBody);
                 var stream = new MemoryStream(content, 0, content.Length);
 
                 httpRequestMessage.Content = new StreamContent(stream);
@@ -51,16 +50,32 @@ namespace SP.Twitter
                 httpRequestMessage.Headers.Add("Accept-Encoding", "gzip");
                 var httpResponseMessage = client.SendAsync(httpRequestMessage).Result;
 
-                using (httpResponseMessage)
-                {
-                    using (var reader = new StreamReader(httpResponseMessage.Content.ReadAsStreamAsync().Result))
-                    {
-                        var objectBody = reader.ReadToEnd();
-                        response = JsonConvert.DeserializeObject<AuthenticationResponse>(objectBody);
-                    }
-                }
+                return DeserializeTwitterResponse(httpResponseMessage);
+            }
+        }
 
-                return response;
+
+        private static string ConstructAuthenticationHeader(IAuthenticationSettings authenticationSettings)
+        {
+            var authenticationConsumerKey = Uri.EscapeDataString(authenticationSettings.OauthConsumerKey);
+            var authenticationConsumerSecret = Uri.EscapeDataString(authenticationSettings.OauthConsumerSecret);
+            var byteEncodedConsumerAuthentication =
+                Encoding.UTF8.GetBytes(authenticationConsumerKey +
+                                       ":" + authenticationConsumerSecret);
+            var convertedConsumerAuthentication = Convert.ToBase64String(byteEncodedConsumerAuthentication);
+
+            return $"{BasicAuthentication} {convertedConsumerAuthentication}";
+        }
+
+        private static AuthenticationResponse DeserializeTwitterResponse(HttpResponseMessage httpResponseMessage)
+        {
+            using (httpResponseMessage)
+            {
+                using (var reader = new StreamReader(httpResponseMessage.Content.ReadAsStreamAsync().Result))
+                {
+                    var objectBody = reader.ReadToEnd();
+                    return JsonConvert.DeserializeObject<AuthenticationResponse>(objectBody);
+                }
             }
         }
     }
