@@ -1,7 +1,6 @@
 ((): void=> {
 
     angular
-        .module("app.services",
-            []);
+        .module("app.services", []);
 
 })();

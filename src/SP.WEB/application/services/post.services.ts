@@ -1,5 +1,9 @@
 module app.services {
 
+    export interface IPostStateParams extends angular.ui.IStateParamsService {
+        id: number;
+    }
+
     export class PostService extends HttpFactory {
 
         endpoint: string;

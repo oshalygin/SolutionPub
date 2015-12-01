@@ -7,6 +7,7 @@ module app.posts {
         imageUrl: string;
         editingMode: boolean;
 
+
     }
 
     class PostDetailController implements IPostDetailController {
@@ -17,16 +18,24 @@ module app.posts {
         imageUrl: string;
         editingMode: boolean;
 
-        static $inject = ["postService"];
-        constructor(postService: app.services.PostService) {
+        static $inject = ["postService", "$stateParams"];
+        constructor(private postService: app.services.PostService,
+        private $stateParams: app.services.IPostStateParams) {
+
             var vm = this;
             vm.editingMode = false;
+            vm.postId = $stateParams.id;
 
+            vm.getPostById(vm.postId);
 
         }
 
         public getPostById(postId: number): void {
-            //TODO: Service work
+            this.postService
+                .Get(postId)
+                .then((data: any) => {
+                    this.post = data;
+                });
         }
 
         public toggleEditingMode(): void {
