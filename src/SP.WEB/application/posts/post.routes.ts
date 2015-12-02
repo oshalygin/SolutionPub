@@ -32,7 +32,7 @@
                 url: "/Posts/:id",
                 controller: "PostDetailController",
                 controllerAs: "vm",
-                templateUrl: "./applications/posts/postDetail.html"
+                templateUrl: "./application/posts/postDetail.html"
             });
     }
 
