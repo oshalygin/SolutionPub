@@ -18,7 +18,7 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult Get([FromQuery] string page)
+        public IActionResult Get([FromQuery] string page, [FromQuery]int pageSize)
         {
             if (string.IsNullOrEmpty(page))
             {
@@ -47,10 +47,10 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public IActionResult Get(int id)
+        [Route("{postUrlTitle}")]
+        public IActionResult Get(string postUrlTitle)
         {
-            var posts = _postBll.GetPostById(id);
+            var posts = _postBll.GetPostByUrlTitle(postUrlTitle);
             if (posts == null)
             {
                 return HttpNotFound();

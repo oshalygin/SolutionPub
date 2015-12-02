@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Data.Entity;
 using SP.Entities;
+using static System.String;
 
 namespace SP.DAL
 {
@@ -32,6 +33,13 @@ namespace SP.DAL
             return _context
                 .Posts
                 .FirstOrDefault(x => x.Id == postId);
+        }
+
+        public Post GetPost(string postUrlTitle)
+        {
+            return _context
+                .Posts
+                .FirstOrDefault(x => string.Equals(x.UrlTitle, postUrlTitle, StringComparison.CurrentCultureIgnoreCase));
         }
 
         public IEnumerable<Post> GetRecentPosts(int quantity)

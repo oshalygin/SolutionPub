@@ -9,6 +9,7 @@ namespace SP.DAL
         
         IEnumerable<Post> GetPosts(int page, int pageSize);
         Post GetPost(int postId);
+        Post GetPost(string postUrlTitle);
         IEnumerable<Post> GetRecentPosts(int quantity);
         Post SaveNewPost(Post post);
         Post UpdatePost(Post post);

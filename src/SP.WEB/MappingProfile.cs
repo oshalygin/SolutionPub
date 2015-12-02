@@ -13,6 +13,8 @@ namespace SP.WEB
                 .ForMember(dest => dest.Tags,
                     options => options.MapFrom(
                         src => src.Tags.Select(x => x.Tag)));
+                        
+
 
             CreateMap<Tweet, TweetViewModel>()
                 .ForMember(dest => dest.OriginalPostedDate,

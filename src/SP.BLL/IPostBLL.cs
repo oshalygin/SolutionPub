@@ -14,6 +14,8 @@ namespace SP.BLL
         Post UpdatePost(Post updatedPost);
         bool DeletePost(int postId);
 
+        Post GetPostByUrlTitle(string postUrlTitle);
+
 
     }
 }

@@ -29,7 +29,7 @@
             })
             //TODO:  First step is to have an id here, later implement title...
             .state("postDetail", {
-                url: "/Posts/:id",
+                url: "/Posts/:urlTitle",
                 controller: "PostDetailController",
                 controllerAs: "vm",
                 templateUrl: "./application/posts/postDetail.html"

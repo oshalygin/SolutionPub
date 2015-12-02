@@ -56,5 +56,11 @@ namespace SP.BLL
         {
             return _postDataAccess.DeletePost(postId);
         }
+
+        public Post GetPostByUrlTitle(string postUrlTitle)
+        {
+            return _postDataAccess
+                .GetPost(postUrlTitle);
+        }
     }
 }
