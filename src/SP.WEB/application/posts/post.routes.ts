@@ -27,12 +27,21 @@
                     }
                 }
             })
-            //TODO:  First step is to have an id here, later implement title...
             .state("postDetail", {
-                url: "/Posts/:urlTitle",
-                controller: "PostDetailController",
-                controllerAs: "vm",
-                templateUrl: "./application/posts/postDetail.html"
+                url: "/Post/:postUrlTitle",
+                views: {
+                    "mainContent@": {
+                        templateUrl: "./application/posts/postDetail.html",
+                        controller: "PostDetailController",
+                        controllerAs: "vm",
+                        data: {
+                            title: "Post Detail"
+                        }
+                    },
+                    "rightSidebar@": {
+                        templateUrl: "./application/sidebar/sidebar.html"
+                    }
+                }
             });
     }
 

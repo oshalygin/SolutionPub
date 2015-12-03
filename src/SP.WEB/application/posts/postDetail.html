@@ -1,5 +1,5 @@
 <div class="col-md-9">
-    <div class="row margin-bottom-20" ng-repeat="post in vm.posts">
+    <div class="row margin-bottom-20">
 
         <div class="col-sm-5 sm-margin-bottom-20">
             <img class="img-responsive" src="assets/img/main/img12.jpg" alt="">
@@ -8,11 +8,11 @@
         <div class="col-sm-7 news-v3">
             <div class="news-v3-in-sm no-padding">
 
-                <h2><a href="#">{{post.title}}</a></h2>
+                <h2><a href="#">{{vm.post.title}}</a></h2>
                 <ul class="list-inline posted-info">
                     <li><i class="fa fa-pencil"></i> Oleg Shalygin</li>
-                    <li><i class="fa fa-calendar"></i> {{post.postedDate | date:"MMMM dd, yyyy"}}</li>
-                    <li><i class="fa fa-cloud"> {{post.views}} Views</i></li>
+                    <li><i class="fa fa-calendar"></i> {{vm.post.postedDate | date:"MMMM dd, yyyy"}}</li>
+                    <li><i class="fa fa-cloud"> {{vm.post.views}} Views</i></li>
                 </ul>
 
                 <ul class="list-inline tags-v2">
@@ -24,12 +24,12 @@
                 </ul>
 
 
-                <div ng-bind-html="post.body"></div>
+                <div ng-bind-html="vm.post.body"></div>
                 <ul class="post-shares">
                     <li>
                         <a href="#">
                             <i class="rounded-x icon-speech"></i>
-                            <span>{{post.comments.length}}</span>
+                            <span>{{vm.post.comments.length}}</span>
                         </a>
                     </li>
                     <li><a href="#"><i class="rounded-x icon-share"></i></a></li>
@@ -39,8 +39,6 @@
             <br>
             <br>
         </div>
-
-
 
     </div>
     <!--/end row-->

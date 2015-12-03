@@ -16,7 +16,6 @@ module app.services {
 
         //TODO: refector this out of postservice
         getTotals(): ng.IPromise<any> {
-            //TODO: Get around not passing an empty object
             var emptyObject: any = {}
             return this.Get(emptyObject);
         }
@@ -29,7 +28,7 @@ module app.services {
             };
             return this.Get(config);
         }
-
+        //TODO: This needs work.
         getPost(postUrlTitle: string): ng.IPromise<any> {
             var config: any = {
                 params: {
