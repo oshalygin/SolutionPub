@@ -12,7 +12,8 @@ namespace SP.WEB
             CreateMap<Post, PostViewModel>()
                 .ForMember(dest => dest.Tags,
                     options => options.MapFrom(
-                        src => src.Tags.Select(x => x.Tag)));
+                        src => src.Tags.Select(x => x.Tag)))
+                .ForMember(dest => dest.Comments, options => options.Ignore());
                         
 
 
@@ -37,9 +38,10 @@ namespace SP.WEB
                         src => src.DatePosted.SecondsFromPostedDate))
                 .ForMember(dest => dest.PostedFromDate,
                     options => options.Ignore());
-                
 
-            CreateMap<Tag, TagViewModel>();
+
+            CreateMap<Tag, TagViewModel>().ReverseMap();
+            
             CreateMap<Comment, CommentViewModel>().ReverseMap();
             CreateMap<Image, ImageViewModel>().ReverseMap();
         }

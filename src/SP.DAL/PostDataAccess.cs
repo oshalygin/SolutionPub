@@ -39,6 +39,8 @@ namespace SP.DAL
         {
             return _context
                 .Posts
+                .Include(t => t.Tags)
+                .Include(c => c.Comments)
                 .FirstOrDefault(x => string.Equals(x.UrlTitle, postUrlTitle, StringComparison.CurrentCultureIgnoreCase));
         }
 
@@ -96,6 +98,5 @@ namespace SP.DAL
             _context.Entry(postToDelete).State = EntityState.Deleted;
             return true;
         }
-        
     }
 }
