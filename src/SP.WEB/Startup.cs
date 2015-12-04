@@ -100,6 +100,9 @@ namespace SP.WEB
             Mapper.Initialize(configuration =>
             configuration.AddProfile<MappingProfile>());
             
+
+            
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -17,6 +17,10 @@ module app.services {
             return this.baseUrl + "Post/";
         }
 
+        public static get postDetail(): string {
+            return this.baseUrl + "PostDetail/";
+        }
+
         public static get tag(): string {
             return this.baseUrl + "Tag/";
         }

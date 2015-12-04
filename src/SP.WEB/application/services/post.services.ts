@@ -1,9 +1,5 @@
 module app.services {
 
-    export interface IPostStateParams extends angular.ui.IStateParamsService {
-        postUrlTitle: string;
-    }
-
     export class PostService extends HttpFactory {
 
         endpoint: string;
@@ -28,19 +24,9 @@ module app.services {
             };
             return this.Get(config);
         }
-        //TODO: This needs work.
-        getPost(postUrlTitle: string): ng.IPromise<any> {
-            var config: any = {
-                params: {
-                    postUrlTitle: postUrlTitle
-                }
-            };
-            return this.Get(config);
-        }
+
 
     }
-
-
 
     angular.module("app.services")
         .service("postService", PostService);
