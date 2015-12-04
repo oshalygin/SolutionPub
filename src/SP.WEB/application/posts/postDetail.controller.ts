@@ -18,34 +18,22 @@ module app.posts {
         imageUrl: string;
         editingMode: boolean;
 
-        static $inject = ["postService", "$stateParams"];
-        constructor(private postService: app.services.PostService,
+        static $inject = ["postDetailService", "$stateParams"];
+        constructor(private postDetailService: app.services.PostDetailService,
             private $stateParams: app.services.IPostStateParams) {
 
             var vm = this;
             vm.editingMode = false;
             vm.postUrlTitle = $stateParams.postUrlTitle;
 
-            // vm.getPostByUrlTitle(vm.postUrlTitle);
-
-
-            postService
+            postDetailService
                 .getPost(vm.postUrlTitle)
                 .then((data: any) => {
-                    console.log("postService is called");
+                    console.log("postDetailService is called");
                     console.log(data);
                     this.post = data;
                 });
 
-
-        }
-
-        public getPostByUrlTitle(postUrlTitle: string): void {
-            this.postService
-                .getPost(postUrlTitle)
-                .then((data: any) => {
-                    this.post = data;
-                });
 
         }
 

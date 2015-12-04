@@ -18,7 +18,7 @@ namespace SP.WEB.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult Get(string postUrlTitle)
+        public IActionResult Get([FromQuery]string postUrlTitle)
         {
             var posts = _postBll.GetPostByUrlTitle(postUrlTitle);
             if (posts == null)
