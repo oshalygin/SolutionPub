@@ -12,12 +12,9 @@
                 </ul>
 
                 <ul class="list-inline tags-v2">
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">C#</a></li>
-                    <li><a href="#">.NET</a></li>
-                    <li><a href="#">AngularJS</a></li>
-                    <li><a href="#">Fundamentals</a></li>
+                    <li ng-repeat="tag in vm.post.tags"><a href="#">{{tag.name}}</a></li>
                 </ul>
+
                 <ul class="list-inline">
                     <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
