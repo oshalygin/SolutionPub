@@ -29,9 +29,11 @@ namespace SP.DAL
 
                 var postList = new List<Post>();
 
-                var angularJsTag = new Tag {TimesUsed = 3, Name = "angularjs"};
-                var javaScriptTag = new Tag {TimesUsed = 6, Name = "javascript"};
-                var cSharpTag = new Tag {TimesUsed = 2, Name = "csharp"};
+                var angularJsTag = new Tag {TimesUsed = 3, Name = "AngularJS"};
+                var javaScriptTag = new Tag {TimesUsed = 6, Name = "JavaScript"};
+                var cSharpTag = new Tag {TimesUsed = 2, Name = "C#"};
+                var fundamentalsTag = new Tag {TimesUsed = 3, Name = "Fundamentals"};
+                var dotNetTag = new Tag {TimesUsed = 6, Name = ".NET"};
 
                 _context.Tags.Add(angularJsTag);
                 _context.Tags.Add(javaScriptTag);

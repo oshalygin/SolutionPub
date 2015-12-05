@@ -39,7 +39,8 @@ namespace SP.DAL
         {
             return _context
                 .Posts
-                .Include(t => t.Tags)
+                .Include(pt => pt.Tags)
+                .ThenInclude(t => t.Tag)
                 .Include(c => c.Comments)
                 .FirstOrDefault(x => string.Equals(x.UrlTitle, postUrlTitle, StringComparison.CurrentCultureIgnoreCase));
         }
