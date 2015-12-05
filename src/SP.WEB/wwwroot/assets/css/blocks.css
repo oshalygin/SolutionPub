@@ -1,14 +1,4 @@
-/*
- * Template Name: Unify - Responsive Bootstrap Template
- * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
- * Version: 1.8
- * Author: @htmlstream
- * Website: http://htmlstream.com
-*/
 
-/*Breadcrumbs
-------------------------------------*/
-/*Default Breadcrumbs*/
 .breadcrumbs {
   overflow: hidden;
   padding: 10px 0 6px;
@@ -3384,7 +3374,7 @@
 .news-v3 .post-shares {
   padding-left: 0;
   list-style: none;
-  margin: 40px 0 0 -5px;
+  margin: 20px 0 0 -5px;
 }
 
 .news-v3 .news-v3-in-sm .post-shares {
