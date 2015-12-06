@@ -37,12 +37,13 @@
 
 /*
 <!-- inject:js -->
-///<reference path="../../src/SP.WEB/wwwroot/application/models/blogTotals.model.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/models/comment.model.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/models/image.model.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/models/post.model.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/models/tag.model.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/models/tweets.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/BlogTotals.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/Comment.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/IPostForm.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/Image.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/Post.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/Tag.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/Tweet.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/comments/comments.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/images/images.module.js" />
@@ -58,11 +59,14 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/apiendpoints.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/httpFactory.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/post.services.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/services/postDetail.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/twitter.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.routes.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.routes.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/about.controller.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/posts/newPost.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.controller.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/posts/postDetail.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tags/tags.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tweets/tweets.controller.js" />
 <!-- endinject -->
