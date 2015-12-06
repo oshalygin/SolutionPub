@@ -20,19 +20,19 @@ module app.services {
             return result;
         }
 
-        Post(params: any): ng.IPromise<any> {
-            var result: ng.IPromise<any> = this.httpService.post(this.endpoint, params)
+        Post(data: any, config?: any): ng.IPromise<any> {
+            var result: ng.IPromise<any> = this.httpService.post(this.endpoint, data)
                 .then((response: any): ng.IPromise<any> => {
-                    return this.EndpointResponse(response, params);
+                    return this.EndpointResponse(response, data);
                 });
 
             return result;
         }
 
-        Put(params: any): ng.IPromise<any> {
-            var result: ng.IPromise<any> = this.httpService.put(this.endpoint, params)
+        Put(data: any, config?: any): ng.IPromise<any> {
+            var result: ng.IPromise<any> = this.httpService.put(this.endpoint, data)
                 .then((response: any): ng.IPromise<any> => {
-                    return this.EndpointResponse(response, params);
+                    return this.EndpointResponse(response, data);
                 });
             return result;
         }

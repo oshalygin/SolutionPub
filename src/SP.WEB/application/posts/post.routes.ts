@@ -42,7 +42,24 @@
                         templateUrl: "./application/sidebar/sidebar.html"
                     }
                 }
+            })
+            .state("newPost", {
+                url: "/NewPost",
+                views: {
+                    "mainContent@": {
+                        templateUrl: "./application/posts/newPost.html",
+                        controller: "NewPostController",
+                        controllerAs: "vm",
+                        data: {
+                            title: "New Post"
+                        }
+                    },
+                    "rightSidebar@": {
+
+                    }
+                }
             });
+
     }
 
 })();

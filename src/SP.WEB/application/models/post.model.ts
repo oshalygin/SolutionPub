@@ -13,6 +13,7 @@ module app.models {
         views: number;
         inactive: boolean;
 
+        tagString: string;
         tags: app.models.ITag[];
         comments: app.models.IComment[];
 
@@ -31,6 +32,7 @@ module app.models {
         views: number;
         inactive: boolean;
 
+        tagString: string;
         tags: app.models.ITag[];
         comments: app.models.IComment[];
 

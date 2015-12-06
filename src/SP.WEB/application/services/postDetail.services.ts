@@ -22,6 +22,10 @@ module app.services {
             };
             return this.Get(config);
         }
+
+         save(post: app.models.IPost): ng.IPromise<any> {
+             return this.Post(post);
+        }
     }
 
 
