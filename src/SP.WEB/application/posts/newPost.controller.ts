@@ -5,6 +5,7 @@ module app.posts {
         post: app.models.IPost;
         imageUrl: string;
         postForm: angular.IFormController;
+        datepicker: app.models.DatePickerStatus;
 
         savePost(): void;
     }
@@ -15,6 +16,7 @@ module app.posts {
         post: app.models.IPost;
         imageUrl: string;
         postForm: angular.IFormController;
+        datepicker: app.models.DatePickerStatus;
 
         static $inject = ["postDetailService", "$state", "$scope"]
 
@@ -25,7 +27,11 @@ module app.posts {
 
             var vm = this;
             vm.title = "New Post";
+            vm.datepicker = new app.models.DatePickerStatus;
+
             vm.post = new app.models.Post();
+            vm.post.title = vm.title;
+            vm.post.postedDate = new Date();
 
             //TODO: datepicker stuff
             //TODO: progress bar stuff

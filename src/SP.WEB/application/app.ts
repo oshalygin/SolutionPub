@@ -3,6 +3,7 @@
 
     angular.module("app", [
         "app.core"
+        , "app.utilities"
         , "app.services"
         , "app.contact"
         , "app.posts"
@@ -10,8 +11,6 @@
         , "app.tags"
         , "app.images"
         , "app.tweets"
-
-
 
     ]);
 

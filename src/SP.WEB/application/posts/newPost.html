@@ -1,6 +1,60 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+        </div>
+    </div>
+
+    <div class="tag-box tag-box-v3 form-page">
+        <form name="postForm" ng-submit="vm.savePost(postForm)" novalidate>
+            <div class="headline">
+                <h3>{{vm.post.title}}</h3>
+            </div>
+
+            <div class="form-group" show-errors>
+                <h4>Title</h4>
+                <input type="text" id="standard-form" class="form-control" required name="title" ng-model="vm.post.title" placeholder="Title">
+            </div>
+
+            <!--<div class="form-group" show-errors>
+            <h4>Posted Date</h4>
+            <input type="datetime" id="standard-form" class="form-control" required name="postedDate" ng-model="vm.post.postedDate">
+        </div>-->
+            <div class="form-group" show-errors>
+                <h4>Posted Date</h4>
+                <input type="text" required class="form-control" datepicker-popup="{{vm.datePicker.format}}" name="receivedDate" ng-model="vm.post.postedDate"
+                is-open="vm.datePicker.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions"
+                date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="vm.datePicker.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+
+            <div class="form-group" show-errors>
+                <h4>Tags</h4>
+                <input type="text" id="standard-form" class="form-control" required name="tagString" ng-model="vm.post.tagString">
+                <div class="margin-bottom-40"></div>
+            </div>
+
+            <div class="form-group" show-errors>
+                <h4>Body</h4>
+                <textarea class="form-control" id="standard-form" class="form-control" required name="body" ng-model="vm.post.body" rows="20"></textarea>
+            </div>
+            <div class="margin-bottom-40"></div>
+
+
+        </form>
+    </div>
+
+</div>
+<!--
 <div class="col-md-9">
     <div class="row margin-bottom-20">
         <div class="">
+
+
+
 
 
             <form class="form-horizontal css-form" name="postForm" ng-submit="vm.savePost(postForm)" novalidate>
@@ -9,11 +63,10 @@
                     <label class="control-label col-md-2">Title:</label>
                     <div class="col-md-3">
                         <div class="input-group col-md-12">
-                            <input type="text" id="standard-form" class="form-control" required name="title" ng-model="vm.post.title">
+
                         </div>
                     </div>
                 </div>
-                <!--
 
         <div class="form-group" show-errors>
             <label class="control-label col-md-2">Post Date:</label>
@@ -25,7 +78,7 @@
                     </span>
                 </p>
             </div>
-        </div>-->
+        </div>
 
                 <div class="form-group" show-errors>
                     <label class="control-label col-md-2">Tags:</label>
@@ -67,4 +120,4 @@
         <hr>
     </div>
 
-</div>
+</div>-->

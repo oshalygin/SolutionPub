@@ -27,6 +27,7 @@
 ///<reference path="../../src/SP.WEB/lib/angular-bootstrap/ui-bootstrap-tpls.js "/>
 ///<reference path="../../src/SP.WEB/lib/angular-mocks/angular-mocks.js "/>
 ///<reference path="../../src/SP.WEB/lib/sinon/lib/sinon.js "/>
+///<reference path="../../src/SP.WEB/lib/angular-bootstrap-show-errors/src/showErrors.js "/>
 <!-- endbower -->
 */
 
@@ -39,6 +40,7 @@
 <!-- inject:js -->
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/BlogTotals.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/Comment.model.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/models/DatePickerStatus.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/IPostForm.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/Image.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/Post.model.js" />
@@ -52,6 +54,7 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/sidebar/sidebar.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tags/tags.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/tweets/tweets.module.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/utilities/utilities.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/app.core.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/app.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/app.run.js" />
@@ -63,6 +66,7 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/twitter.services.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.routes.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.routes.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/utilities/showErrors.directive.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/about.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/newPost.controller.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/post.controller.js" />
