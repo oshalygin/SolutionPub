@@ -10,7 +10,7 @@ module app.models {
             this.format = "MM/dd/yyyy";
         }
 
-        public open($event: any): void {
+        public open($event: any) {
             this.opened = true;
         }
     }

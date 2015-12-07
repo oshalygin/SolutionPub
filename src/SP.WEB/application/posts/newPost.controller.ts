@@ -5,7 +5,7 @@ module app.posts {
         post: app.models.IPost;
         imageUrl: string;
         postForm: angular.IFormController;
-        datepicker: app.models.DatePickerStatus;
+        datePicker: app.models.DatePickerStatus;
 
         savePost(): void;
     }
@@ -16,18 +16,17 @@ module app.posts {
         post: app.models.IPost;
         imageUrl: string;
         postForm: angular.IFormController;
-        datepicker: app.models.DatePickerStatus;
+        datePicker: app.models.DatePickerStatus;
 
         static $inject = ["postDetailService", "$state", "$scope"]
 
         constructor(private postDetailService: app.services.PostDetailService,
             private $state: angular.ui.IStateService,
-            $scope: angular.IScope,
             private form: app.models.IPostForm) {
 
             var vm = this;
             vm.title = "New Post";
-            vm.datepicker = new app.models.DatePickerStatus;
+            vm.datePicker = new app.models.DatePickerStatus;
 
             vm.post = new app.models.Post();
             vm.post.title = vm.title;
