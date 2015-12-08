@@ -1,13 +1,13 @@
 module app.models {
 
     export class DatePickerStatus {
-        public opened: boolean;
-        public format: string;
 
-        //TODO:  Convert to private initializers
-        constructor(){
-            this.opened = false;
-            this.format = "MM/dd/yyyy";
+        constructor(public opened: boolean,
+            public format: string) {
+
+            this.opened = opened;
+            this.format = format;
+
         }
 
         public open($event: any) {

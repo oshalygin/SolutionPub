@@ -26,13 +26,12 @@ module app.posts {
 
             var vm = this;
             vm.title = "New Post";
-            vm.datePicker = new app.models.DatePickerStatus;
+            vm.datePicker = new app.models.DatePickerStatus(false, "medium");
 
             vm.post = new app.models.Post();
             vm.post.title = vm.title;
             vm.post.postedDate = new Date();
 
-            //TODO: datepicker stuff
             //TODO: progress bar stuff
 
 
