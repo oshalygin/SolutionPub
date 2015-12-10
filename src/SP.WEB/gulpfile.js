@@ -8,6 +8,7 @@ var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
 var Server = require("karma").Server;
 var wiredep = require("wiredep").stream;
+var spawn = require("child_process").spawn;
 
 var typescriptOptions = {
 
@@ -140,7 +141,11 @@ gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
     }, done).start();
 });
 
+gulp.task("run-csharp-tests", function (callback) {
 
+    spawn("git", ["status"], { stdio: "inherit" });
+
+});
 
 //TODO: Minify HTML whitespace
 gulp.task("move-html", ["transpile"], function () {
@@ -158,6 +163,8 @@ gulp.task("deploy", ["wiredep-app", "move-html"], function () {
 
 
 });
+
+
 
 
 
