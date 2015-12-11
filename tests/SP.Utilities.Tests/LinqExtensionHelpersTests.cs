@@ -9,7 +9,7 @@ namespace SP.Utilities.Tests
         [Fact]
         public void ShouldReturnCorrectNumberOfElementsWhenCallingDistinctBy()
         {
-            const int expected = 4;
+            const int expected = 1;
             var actual = Mother.ListOfUsersWithNonDistinctFirstNames
                 .DistinctBy(x => x.FirstName).Count();
             

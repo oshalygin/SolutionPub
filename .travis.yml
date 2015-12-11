@@ -10,7 +10,7 @@ before_script:
   - npm install -g karma
   - npm install -g typescript
 script:
-  - cd src/SP.WEB && bower install && npm install && gulp deploy && gulp run-jtests
-  - cd ../../tests/SP.WEB.Tests && dnu restore && dnx run-csharp-web-tests -parallel none
-  - cd ../SP.BLL.Tests && dnu restore && dnx run-csharp-bll-tests -parallel none
-  - cd ../SP.Utilities.Tests && dnu restore && dnx run-csharp-utilities-tests -parallel none
+  - cd src/SP.WEB && bower install && npm install && gulp run-csharp-tests && gulp deploy && gulp run-jtests
+#   - cd ../../tests/SP.WEB.Tests && dnu restore && dnx run-csharp-web-tests -parallel none
+#   - cd ../SP.BLL.Tests && dnu restore && dnx run-csharp-bll-tests -parallel none
+#   - cd ../SP.Utilities.Tests && dnu restore && dnx run-csharp-utilities-tests -parallel none
