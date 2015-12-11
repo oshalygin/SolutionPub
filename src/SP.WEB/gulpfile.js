@@ -145,7 +145,7 @@ gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
 gulp.task("run-csharp-tests", function () {
 
     var exec = require('child_process').execSync;
-    var process = require('process');
+    // var process = require('process');
 
     console.log("Starting directory" + process.cwd());
     //SP.WEB.Tests
