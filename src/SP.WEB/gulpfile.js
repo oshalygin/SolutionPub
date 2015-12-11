@@ -8,7 +8,7 @@ var wiredepModule = require("wiredep");
 var rimraf = require("rimraf");
 var Server = require("karma").Server;
 var wiredep = require("wiredep").stream;
-var spawn = require("child_process").spawn;
+
 
 var typescriptOptions = {
 
@@ -141,9 +141,25 @@ gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
     }, done).start();
 });
 
-gulp.task("run-csharp-tests", function (callback) {
 
-    spawn("git", ["status"], { stdio: "inherit" });
+gulp.task("run-csharp-tests", function () {
+
+    var exec = require('child_process').execSync;
+    var process = require('process');
+
+    console.log("Starting directory" + process.cwd());
+    //SP.WEB.Tests
+    process.chdir("../../tests/SP.WEB.Tests");
+    exec("dnu restore", { stdio: "inherit" });
+    exec("dnx run-csharp-web-tests -parallel none", { stdio: "inherit" });
+    //SP.BLL.Tests
+    process.chdir("../SP.BLL.Tests");
+    exec("dnu restore", { stdio: "inherit" });
+    exec("dnx run-csharp-bll-tests -parallel none", { stdio: "inherit" });
+    //SP.Utilities.Tests
+    process.chdir("../SP.Utilities.Tests");
+    exec("dnu restore", { stdio: "inherit" });
+    exec("dnx run-csharp-utilities-tests -parallel none", { stdio: "inherit" });
 
 });
 
