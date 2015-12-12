@@ -142,7 +142,7 @@ gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
 });
 
 
-gulp.task("run-csharp-tests", function () {
+gulp.task("run-csharp-tests",["run-jtests"], function () {
 
     var exec = require('child_process').execSync;
     var process = require('process');
@@ -161,6 +161,10 @@ gulp.task("run-csharp-tests", function () {
     exec("dnu restore", { stdio: "inherit" });
     exec("dnx run-csharp-utilities-tests -parallel none", { stdio: "inherit" });
 
+});
+
+gulp.task("run-tests", ["run-csharp-tests"], function () {
+    log("*** Finished running JavaScript and C# Tests ***");
 });
 
 //TODO: Minify HTML whitespace
