@@ -1,7 +1,7 @@
 Build Status:&nbsp;&nbsp; [![Build Status](https://travis-ci.org/oshalygin/SolutionPub.svg?branch=master)](https://travis-ci.org/oshalygin/SolutionPub)
 
 ##Solution Pub
-###Built using ASP.NET 5 and AngularJS 1.5.
+###Built using ASP.NET 5 and AngularJS 1.X.
 
 
 Developed by Oleg Shalygin, primarily to make the web a better place.
