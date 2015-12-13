@@ -77,7 +77,7 @@ gulp.task("wiredep-test-files", function () {
                 }
             }))
         .pipe(gulp.dest(config.testScriptInjectorDestination));
-    //todo: need to fill this out...placeholder for now...
+    
 });
 
 gulp.task("delete-webroot-lib", function (cb) {
