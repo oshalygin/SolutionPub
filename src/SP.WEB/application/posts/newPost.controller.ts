@@ -56,7 +56,12 @@ module app.posts {
                     this.$state.go("posts");
                 },
                 (error: any) => {
-                    toastr.error("Message:" + error);
+                    console.log(error);
+                    for (var key in error.data) {
+                        if (error.data.hasOwnProperty(key)) {
+                            toastr.error(key + ":" + error.data[key]);
+                        }
+                    }
                 });
         }
 
