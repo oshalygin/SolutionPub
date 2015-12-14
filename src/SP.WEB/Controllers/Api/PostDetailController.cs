@@ -41,16 +41,17 @@ namespace SP.WEB.Controllers.Api
             {
                 return HttpBadRequest(ModelState);
             }
-
-            var postToSave = Mapper.Map<PostViewModel, Post>(newPost);
-            var savedPost = _postBll.SaveNewPost(postToSave);
-            if (savedPost == null)
-            {
-                //TODO: This feels a bit hacky, look into refactoring
-                return new HttpStatusCodeResult(400);
-            }
-
-            return Created(Request.Host + Request.Path, savedPost);
+            return Ok(newPost);
+//
+//            var postToSave = Mapper.Map<PostViewModel, Post>(newPost);
+//            var savedPost = _postBll.SaveNewPost(postToSave);
+//            if (savedPost == null)
+//            {
+//                //TODO: This feels a bit hacky, look into refactoring
+//                return new HttpStatusCodeResult(400);
+//            }
+//
+//            return Created(Request.Host + Request.Path, savedPost);
         }
 
         [HttpPut]

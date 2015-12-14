@@ -51,7 +51,7 @@ module app.posts {
             this.postDetailService
                 .save(this.post)
                 .then(() => {
-                    toastr.success("Successfully posted" + this.post.title);
+                    toastr.success("Successfully posted, " + this.post.title);
                     //TODO:  This will actually need to route to the postDetail with urlTitle, will configure later
                     this.$state.go("posts");
                 },

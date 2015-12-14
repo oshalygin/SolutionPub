@@ -14,7 +14,7 @@ module app.services {
             super($http, this.endpoint);
         }
 
-         getPost(postUrlTitle: string): ng.IPromise<any> {
+        getPost(postUrlTitle: string): ng.IPromise<any> {
             var config: any = {
                 params: {
                     postUrlTitle: postUrlTitle
@@ -23,8 +23,49 @@ module app.services {
             return this.Get(config);
         }
 
-         save(post: app.models.IPost): ng.IPromise<any> {
-             return this.Post(post);
+        save(post: app.models.IPost): ng.IPromise<any> {
+
+            var parsedUrlTitle: string = post.title
+                .split("$").join("")
+                .split("&").join("")
+                .split("+").join("")
+                .split(",").join("")
+                .split("/").join("")
+                .split(":").join("")
+                .split(";").join("")
+                .split("=").join("")
+                .split("?").join("")
+                .split("@").join("")
+                .split(".").join("")
+            //Unsafe unsafe
+                .split("<").join("")
+                .split(">").join("")
+                .split("#").join("")
+                .split("%").join("")
+                .split("{").join("")
+                .split("}").join("")
+                .split("|").join("")
+                .split("\\").join("")
+                .split("^").join("")
+                .split("~").join("")
+                .split("[").join("")
+                .split("]").join("")
+                .split("`").join("")
+            //Personal choice
+                .split("*").join("")
+                .split("(").join("")
+                .split(")").join("")
+                .split(";").join("")
+                .split("!").join("")
+                .split(":").join("")
+                .split("_").join("")
+                .split("\"").join("")
+                .split("'").join("")
+                .split(" ").join("-");
+
+            post.urlTitle = parsedUrlTitle;
+
+            return this.Post(post);
         }
     }
 
