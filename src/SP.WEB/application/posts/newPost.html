@@ -8,9 +8,7 @@
 
     <div class="tag-box tag-box-v3 form-page">
         <form name="postForm" ng-submit="vm.savePost(postForm)" novalidate>
-            <div class="headline">
-                <h3>{{vm.post.title}}</h3>
-            </div>
+
 
             <div class="row">
                 <div class="form-group col-md-6" show-errors>
@@ -64,7 +62,7 @@
                 <textarea class="form-control" id="standard-form" class="form-control" required name="body" ng-model="vm.post.body" rows="20"></textarea>
             </div>
 
-            <div class="panel-footer">
+            <div>
                 <a class="btn btn-primary" ng-click="vm.submitPost()" style="width: 300px">
                     <i class="glyphicon glyphicon-chevron-right"></i> Submit New Post
                 </a>
@@ -73,4 +71,89 @@
         </form>
     </div>
 
+    <!--<div class="tag-box tag-box-v3 form-page">
+        <div class="headline">
+            <h3>{{vm.post.title}}</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5>{{vm.post.postedDate | date:'medium'}}</h5>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-pane fade in active col-md-3">
+                    <div class="alert alert-info fade in alert-dismissable" style="margin:0; padding:5px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Warning
+                    </div>
+                    <div class="alert alert-info fade in alert-dismissable" style="margin:0; padding:5px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Warning
+                    </div>
+                    <div class="alert alert-info fade in alert-dismissable" style="margin:0; padding:5px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Warning
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-9">
+                <div ng-bind-html="vm.post.body"></div>
+            </div>
+        </div>
+    </div>-->
+
+     <div class="row margin-bottom-20">
+        <div class="news-v3">
+            <div class="col-md-12">
+
+                <h1>
+                    <a href="#">{{vm.post.title}}</a>
+                </h1>
+                <ul class="list-inline posted-info">
+                    <li><i class="fa fa-calendar"></i> {{vm.post.postedDate | date:"MMMM dd, yyyy"}}</li>
+                    <li><i class="fa fa-pencil"></i> Oleg Shalygin</li>
+                    <li>
+                        <i class="fa fa-cloud"> {{vm.post.views}} Views</i>
+                    </li>
+                    <li>
+                        <i class="fa fa-comments"> {{vm.post.comments.length || 0}} Comments</i>
+                    </li>
+                </ul>
+
+                <ul class="list-inline tags-v2">
+                    <li ng-repeat="tag in vm.post.tags">
+                        <a href="#">{{tag.name}}</a>
+                    </li>
+                </ul>
+
+                <ul class="social-icons">
+                    <li>
+                        <a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-original-title="Google Plus" class="rounded-x social_googleplus"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div ng-bind-html="vm.post.body"></div>
+
+            </div>
+            <br>
+            <br>
+        </div>
 </div>
