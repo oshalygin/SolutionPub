@@ -34,10 +34,78 @@
         it("posting a new post successfully makes a POST request when calling save(post)", function () {
 
             var post = Mother.getValidPost();
-            httpBackend.expectPOST(apiEndpoint,post).respond(200, post);
+            httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
 
+            postDetailService.save(post);
+            httpBackend.flush();
+
+        });
+
+        it("urlTitle removes whitespace and replaces it with dashes", function () {
+
+            var post = Mother.getValidPost();
+            post.title = "New Post About JavaScript";
+            var expected = "New-Post-About-JavaScript";
+
+            httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
             var promiseFromPost = postDetailService.save(post);
-            console.log(promiseFromPost);
+
+            promiseFromPost.then(function (response) {
+                expect(response.urlTitle).toEqual(expected);
+            });
+
+            httpBackend.flush();
+
+        });
+
+        it("urlTitle removes quotes from post title", function () {
+
+            var post = Mother.getValidPost();
+            post.title = "Post With \"Quotes\"";
+            var expected = "Post-With-Quotes";
+
+            httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
+            var promiseFromPost = postDetailService.save(post);
+
+            promiseFromPost.then(function (response) {
+                expect(response.urlTitle).toEqual(expected);
+            });
+
+            httpBackend.flush();
+
+        });
+
+        it("urlTitle removes special characters from post title", function () {
+
+            var post = Mother.getValidPost();
+            post.title = "Post! W!ith Strange&* Stuff-Ok";
+            var expected = "Post-With-Strange-Stuff-Ok";
+
+            httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
+            var promiseFromPost = postDetailService.save(post);
+
+            promiseFromPost.then(function (response) {
+                expect(response.urlTitle).toEqual(expected);
+            });
+
+            httpBackend.flush();
+
+        });
+
+
+        it("urlTitle removes whitespace from both sides of a dash when alone", function () {
+
+            var post = Mother.getValidPost();
+            post.title = "Post Title - JavaScript";
+            var expected = "Post-Title-JavaScript";
+
+            httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
+            var promiseFromPost = postDetailService.save(post);
+
+            promiseFromPost.then(function (response) {
+                expect(response.urlTitle).toEqual(expected);
+            });
+
             httpBackend.flush();
 
         });

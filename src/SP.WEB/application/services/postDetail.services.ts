@@ -61,6 +61,7 @@ module app.services {
                 .split("_").join("")
                 .split("\"").join("")
                 .split("'").join("")
+                .split(" - ").join("-")
                 .split(" ").join("-");
 
             post.urlTitle = parsedUrlTitle;
