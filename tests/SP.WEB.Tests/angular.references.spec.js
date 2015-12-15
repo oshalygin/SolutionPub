@@ -47,8 +47,8 @@
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/Tag.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/models/Tweet.model.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/comments/comments.module.js" />
-///<reference path="../../src/SP.WEB/wwwroot/application/images/images.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/contact/contact.module.js" />
+///<reference path="../../src/SP.WEB/wwwroot/application/images/images.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/posts/posts.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/services/services.module.js" />
 ///<reference path="../../src/SP.WEB/wwwroot/application/sidebar/sidebar.module.js" />

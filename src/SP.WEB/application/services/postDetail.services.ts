@@ -37,7 +37,7 @@ module app.services {
                 .split("?").join("")
                 .split("@").join("")
                 .split(".").join("")
-            //Unsafe unsafe
+            //Unsafe characters
                 .split("<").join("")
                 .split(">").join("")
                 .split("#").join("")
