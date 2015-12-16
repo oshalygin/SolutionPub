@@ -34,17 +34,17 @@
 
         it("calling getPost with a valid urlTitle returns back the post", function () {
 
-            var endpoint = apiEndpoint + "?postUrlTitle=A-New-Post-About-JavaScript";
+            var urlTitle = "A-New-Post-About-JavaScript";
+            var endpoint = apiEndpoint + "?postUrlTitle=" + urlTitle;
 
             httpBackend.expectGET(endpoint)
                 .respond(Mother.getValidPost());
 
-            var expected = "A-New-Post-About-JavaScript";
             var promiseFromGetPost = postDetailService
-                .getPost(expected);
+                .getPost(urlTitle);
 
             promiseFromGetPost.then(function (response) {
-                expect(response.urlTitle).toEqual(expected);
+                expect(response.urlTitle).toEqual(urlTitle);
             });
 
             httpBackend.flush();
