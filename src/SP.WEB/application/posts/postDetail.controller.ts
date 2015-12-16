@@ -29,8 +29,6 @@ module app.posts {
             postDetailService
                 .getPost(vm.postUrlTitle)
                 .then((data: any) => {
-                    console.log("postDetailService is called");
-                    console.log(data);
                     this.post = data;
                 });
 

@@ -31,9 +31,29 @@
             expect(postDetailService).not.toEqual(null);
         });
 
+
+        it("calling getPost with a valid urlTitle returns back the post", function () {
+
+            var endpoint = apiEndpoint + "?postUrlTitle=A-New-Post-About-JavaScript";
+
+            httpBackend.expectGET(endpoint)
+                .respond(Mother.getValidPost());
+
+            var expected = "A-New-Post-About-JavaScript";
+            var promiseFromGetPost = postDetailService
+                .getPost(expected);
+
+            promiseFromGetPost.then(function (response) {
+                expect(response.urlTitle).toEqual(expected);
+            });
+
+            httpBackend.flush();
+
+        });
+
         it("posting a new post successfully makes a POST request when calling save(post)", function () {
 
-            var post = Mother.getValidPost();
+            var post = Mother.getPostWithoutUrlTitle();
             httpBackend.expectPOST(apiEndpoint, post).respond(200, post);
 
             postDetailService.save(post);
@@ -43,7 +63,7 @@
 
         it("urlTitle removes whitespace and replaces it with dashes", function () {
 
-            var post = Mother.getValidPost();
+            var post = Mother.getPostWithoutUrlTitle();
             post.title = "New Post About JavaScript";
             var expected = "New-Post-About-JavaScript";
 
@@ -60,7 +80,7 @@
 
         it("urlTitle removes quotes from post title", function () {
 
-            var post = Mother.getValidPost();
+            var post = Mother.getPostWithoutUrlTitle();
             post.title = "Post With \"Quotes\"";
             var expected = "Post-With-Quotes";
 
@@ -77,7 +97,7 @@
 
         it("urlTitle removes special characters from post title", function () {
 
-            var post = Mother.getValidPost();
+            var post = Mother.getPostWithoutUrlTitle();
             post.title = "Post! W!ith Strange&* Stuff-Ok";
             var expected = "Post-With-Strange-Stuff-Ok";
 
@@ -95,7 +115,7 @@
 
         it("urlTitle removes whitespace from both sides of a dash when alone", function () {
 
-            var post = Mother.getValidPost();
+            var post = Mother.getPostWithoutUrlTitle();
             post.title = "Post Title - JavaScript";
             var expected = "Post-Title-JavaScript";
 
