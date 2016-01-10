@@ -1,17 +1,16 @@
 ﻿/// <binding Clean='clean' />
-"use strict";
 
-let gulp = require("gulp");
-let config = require("./gulp.config")();
-let $ = require("gulp-load-plugins")({ lazy: true });
-let del = require("del");
-let wiredepModule = require("wiredep");
-let rimraf = require("rimraf");
-let Server = require("karma").Server;
-let wiredep = require("wiredep").stream;
+var gulp = require("gulp");
+var config = require("./gulp.config")();
+var $ = require("gulp-load-plugins")({ lazy: true });
+var del = require("del");
+var wiredepModule = require("wiredep");
+var rimraf = require("rimraf");
+var Server = require("karma").Server;
+var wiredep = require("wiredep").stream;
 
 
-let typescriptOptions = {
+var typescriptOptions = {
 
     removeComments: true,
     target: "ES5",
@@ -44,7 +43,7 @@ gulp.task("tslint", function () {
 gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
     log("*** Wiring up bower css, js and application into html page");
 
-    let options = config.getWiredepDefaultOptions();
+    var options = config.getWiredepDefaultOptions();
 
     return gulp
         .src(config.layoutInjector)
@@ -64,7 +63,7 @@ gulp.task("wiredep-app", ["populate-webroot-lib"], function () {
 gulp.task("wiredep-test-files", function () {
     log("*** Wiring up angular.references.spec.js file ***");
 
-    let options = config.getWiredepTestOptions();
+    var options = config.getWiredepTestOptions();
 
     return gulp
         .src(config.testScriptInjector)
@@ -78,7 +77,7 @@ gulp.task("wiredep-test-files", function () {
                 }
             }))
         .pipe(gulp.dest(config.testScriptInjectorDestination));
-
+    
 });
 
 gulp.task("delete-webroot-lib", function (cb) {
@@ -145,8 +144,8 @@ gulp.task("run-jtests", ["wiredep-test-files"], function (done) {
 
 gulp.task("run-csharp-tests",["run-jtests"], function () {
 
-    let exec = require('child_process').execSync;
-    let process = require('process');
+    var exec = require('child_process').execSync;
+    var process = require('process');
 
     console.log("Starting directory" + process.cwd());
     //SP.WEB.Tests
@@ -191,7 +190,7 @@ gulp.task("deploy", ["wiredep-app", "move-html"], function () {
 
 function log(msg) {
     if (typeof (msg) === "object") {
-        for (let item in msg) {
+        for (var item in msg) {
             if (msg.hasOwnProperty(item)) {
                 $.util.log($.util.colors.blue(msg[item]));
             }
@@ -202,14 +201,14 @@ function log(msg) {
 }
 
 function cleanApplicationInWwwRoot() {
-    let deployedApplicationFolder = config.wwwrootApplication;
+    var deployedApplicationFolder = config.wwwrootApplication;
     log("Cleaning " + $.util.colors.red(deployedApplicationFolder));
     del(deployedApplicationFolder);
     log("*** Cleaning Complete ***");
 }
 
 function changedEvent(event) {
-    let srcPattern = new RegExp("/.*(?=/" + config.source + ")/");
-    let message = "File: " + event.path.replace(srcPattern, "") + " was " + event.type;
+    var srcPattern = new RegExp("/.*(?=/" + config.source + ")/");
+    var message = "File: " + event.path.replace(srcPattern, "") + " was " + event.type;
     $.util.log($.util.colors.green(message));
 }
